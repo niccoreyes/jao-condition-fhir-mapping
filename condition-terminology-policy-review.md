@@ -68,16 +68,27 @@ AO 2013-0005-B (PRPWD v4.0) explicitly adds **Cancer** and **Rare Disease** unde
 - **Edition and version matter.** GOLD ABCD vs ABE, and the ICD-10 edition adopted by DOH, change the permitted values.
 - **Link the source, or say why there is none.** 33 of 34 rows carry an inline policy or terminology link. DOH AO No. 2015-0024 (ITIS) is linked through the official NTP library — https://ntp.doh.gov.ph/download/ao2015-0024/. The Hospital HIM Manual is linked to its DOH publication — http://ehealth.doh.gov.ph/nehehrsv/sys/assets/HOSPITAL%20HEALTH%20INFORMATION%20MANAGEMENT%20MANUAL%20formerly%20HOSPITAL%20MEDICAL%20RECORDS%20MANAGEMENT%20MANUAL.pdf — but that host answers automated requests with HTTP 403, so the link is offered for human use and was not fetch-verified. Only DOH AO No. 2020-0059 (Acute Stroke) and DOH AO No. 2011-0010 (FHSIS reporting) remain name-only, because no stable public URL was confirmed.
 
-## Terminology validation (FHIRLab)
+## Terminology validation (HL7 FHIRsmith)
 
-Candidate SNOMED CT and LOINC concepts are checked against the **FHIRLab terminology server**, `https://tx.fhirlab.net/fhir`, used as a temporary terminology authority. Run:
+Candidate SNOMED CT and LOINC concepts are checked against the public **HL7 FHIRsmith** server, `https://tx.fhir.org/r4`, with the community FHIRLab server as a fallback. Run:
 
 ```bash
-python validate-terminology-fhirlab.py
+python validate-terminology.py
 ```
 
-The script performs `CodeSystem/$lookup` (falling back to `$validate-code`) for each candidate, writes `terminology-validation.json`, and **records the code-system version returned by the server** alongside the `checkedAt` timestamp. Version is recorded deliberately: a concept valid in one SNOMED CT release or LOINC release may not exist in another, and SNOMED GPS is only a subset of the International Edition.
+The script performs `CodeSystem/$lookup` (falling back to `$validate-code`) for each candidate, writes `terminology-validation.json`, and **records the server used and the code-system version it returned** alongside the `checkedAt` timestamp. Version is recorded deliberately: a concept valid in one SNOMED CT or LOINC release may not exist in another, and SNOMED GPS is only a subset of the International Edition.
 
-At the time of writing the server returned **HTTP 503** for every request, so the last run is recorded as `serverReachable: false` with no version claimed. Re-run when it responds; do not treat a candidate as validated until a version is captured. This endpoint is a temporary check, not the Philippine national terminology service and not a binding authority.
+Last run (all six candidates valid) against `https://tx.fhir.org/r4`:
+
+| Row | Code | System version returned | Display |
+| --- | --- | --- | --- |
+| 7 | SNOMED CT 840539006 | International 20250201 | COVID-19 |
+| 29 | SNOMED CT 398254007 | International 20250201 | Pre-eclampsia |
+| 48 | SNOMED CT 154283005 | International 20250201 | Pulmonary tuberculosis |
+| 9 | LOINC 69453-9 | 2.82 | Cause of death [US Standard Certificate of Death] |
+| 9 | LOINC 80359-3 | 2.82 | Cause of death.underlying [Manual] |
+| 9 | LOINC 80358-5 | 2.82 | Cause of death.underlying [Automated] |
+
+These are terminology-membership checks by a public server, not the Philippine national terminology service and not a binding. Rows with no candidate code were not sent for validation.
 
 Unresolved, requiring owner decisions: (1) reconcile PH Core's disability value set with the full PRPWD list; (2) define permanence and its value set; (3) define the diabetes "newly diagnosed" window; (4) confirm the national ICD-10-PH canonical; (5) state the GOLD edition; (6) confirm the certified-vs-coded stage for rows 9–10; (7) choose the durable terminology service and pin its editions.

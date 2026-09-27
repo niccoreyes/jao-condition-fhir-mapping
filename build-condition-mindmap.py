@@ -215,13 +215,26 @@ def example(row,kind):
     return {'resourceType':'Bundle','type':'transaction','entry':items}
 
 records=[]
+# Optional Jev quality scores (evaluate-rows-jev.py). Absent scores simply omit the block.
+EVALUATION={};EVAL_META=None
+ev_path=ROOT/'row-evaluation.json'
+if ev_path.exists():
+    _ev=json.loads(ev_path.read_text())
+    EVAL_META={'model':_ev.get('model'),'checkedAt':_ev.get('checkedAt')}
+    EVALUATION={x['excel']:x for x in _ev['results'] if 'error' not in x}
 for r in crosswalk:
     i=r['excel'];group,path,usecase,kind=MAP[i]; src=by_excel[i]; disc=comparison['discussions'][str(i)]
     obj={'excel':i,'section':src['section'],'label':src['label'],'sourcePath':f"JAOConditionSheet.{src['group']}.{src['name']}",
          'sourceId':'SRC'+src['source_id'],'definition':src['definition'],'profileKey':group,'fhirPath':path,
          'useCase':usecase,'recommendation':disc['recommend'],'humanReview':disc['review'],'comparisons':disc['compare'],
          'state':r['state'],'terminologyNote':TERMINOLOGY.get(i,'No row-specific SNOMED CT/LOINC concept is established from this source alone; use a governed value set when the actual diagnosis, finding or answer is known.'),
-         'policyBasis':POLICY[i][0],'policyUrl':POLICY[i][1],'policyOptions':POLICY[i][2],'policyGap':POLICY[i][3],'exampleKind':kind,'example':None}
+         'policyBasis':POLICY[i][0],'policyUrl':POLICY[i][1],'policyOptions':POLICY[i][2],'policyGap':POLICY[i][3],
+         'evaluation':({'composite':EVALUATION[i]['composite'],'verdict':EVALUATION[i]['verdict'],
+                        'lowConfidenceDimensions':EVALUATION[i]['lowConfidenceDimensions'],
+                        'dimensions':{k:{'normalized':v['normalized'],'confidence':v['confidence']}
+                                      for k,v in EVALUATION[i]['dimensions'].items()},
+                        'model':EVALUATION[i].get('model') or EVAL_META['model'],'checkedAt':EVAL_META['checkedAt']}
+                       if i in EVALUATION and EVAL_META else None),'exampleKind':kind,'example':None}
     if i in (9,10,13,17,21):obj['state']='Decision needed'
     if kind:
         bundle=example(src,kind)

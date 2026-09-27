@@ -1,62 +1,77 @@
 {
-  "server": "https://tx.fhirlab.net/fhir",
-  "checkedAt": "2026-09-27T05:57:26+00:00",
-  "serverReachable": false,
-  "note": "Server unreachable during this run; re-run when it responds to record code-system versions.",
+  "primaryServer": "https://tx.fhir.org/r4",
+  "fallbackServer": "https://tx.fhirlab.net/fhir",
+  "serversResponding": [
+    "https://tx.fhir.org/r4"
+  ],
+  "checkedAt": "2026-09-27T06:06:48+00:00",
+  "note": "HL7 FHIRsmith (tx.fhir.org) is the primary public server; versions are those it returned at checkedAt.",
   "results": [
     {
       "excel": 7,
       "role": "confirmed COVID-19 diagnosis (not the case-status question)",
+      "ok": true,
+      "display": "COVID-19",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
       "system": "http://snomed.info/sct",
-      "code": "840539006",
-      "reachable": false,
-      "ok": false,
-      "error": "HTTPError / HTTPError"
+      "code": "840539006"
     },
     {
       "excel": 29,
       "role": "pre-eclampsia (narrower than all PIH)",
+      "ok": true,
+      "display": "Pre-eclampsia",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
       "system": "http://snomed.info/sct",
-      "code": "398254007",
-      "reachable": false,
-      "ok": false,
-      "error": "HTTPError / HTTPError"
+      "code": "398254007"
     },
     {
       "excel": 48,
       "role": "pulmonary tuberculosis disorder (not the question answer)",
+      "ok": true,
+      "display": "Pulmonary tuberculosis",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
       "system": "http://snomed.info/sct",
-      "code": "154283005",
-      "reachable": false,
-      "ok": false,
-      "error": "HTTPError / HTTPError"
+      "code": "154283005"
     },
     {
       "excel": 9,
       "role": "US certificate Part I cause-of-death line",
+      "ok": true,
+      "display": "Cause of death [US Standard Certificate of Death]",
+      "version": "2.82",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
       "system": "http://loinc.org",
-      "code": "69453-9",
-      "reachable": false,
-      "ok": false,
-      "error": "HTTPError / HTTPError"
+      "code": "69453-9"
     },
     {
       "excel": 9,
       "role": "manually assigned underlying cause of death",
+      "ok": true,
+      "display": "Cause of death.underlying [Manual]",
+      "version": "2.82",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
       "system": "http://loinc.org",
-      "code": "80359-3",
-      "reachable": false,
-      "ok": false,
-      "error": "HTTPError / HTTPError"
+      "code": "80359-3"
     },
     {
       "excel": 9,
       "role": "automatically selected underlying cause of death",
+      "ok": true,
+      "display": "Cause of death.underlying [Automated]",
+      "version": "2.82",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
       "system": "http://loinc.org",
-      "code": "80358-5",
-      "reachable": false,
-      "ok": false,
-      "error": "HTTPError / HTTPError"
+      "code": "80358-5"
     }
   ]
 }
