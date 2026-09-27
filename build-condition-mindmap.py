@@ -65,6 +65,8 @@ PROFILE = {
 
 # Terminology candidates are evidence for review, NOT workbook bindings or PH policy.
 TERMINOLOGY = {
+  4: 'PH Core 0.2.0 ph-core-disability-type-cs has 9 codes and omits Mental, Cancer and Rare Disease from the NCDA AO 001 s. 2021 / PRPWD v4.0 list. SNOMED CT candidates verified on HL7 FHIRsmith (International 20250201): 105719004 Body disability AND/OR failure state; 21134002 Disability; 161048004 Registered disabled; 161045001 Disability - severe. https://build.fhir.org/ig/UPM-NTHC/ph-core/CodeSystem-ph-core-disability-type-cs.html',
+  5: 'No governed permanence element exists. SNOMED CT 6934004 Permanent is a qualifier value (verified on HL7 FHIRsmith, International 20250201) that needs a finding to qualify; it is not a statement of permanent disability by itself. Do not infer permanence from Condition.abatement or from idExpirationDate. https://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-disability.html',
   7: 'SNOMED CT 840539006 names confirmed COVID-19 disease, not the Yes/No case-status question; only use on a separately asserted diagnosis. https://docs.snomed.org/implementation-guides/snomed-ct-guide-for-covid-19/3-mapping-to-icd-10',
   9: 'VRDR 3.0.0: LOINC 69453-9 codes the certifier-authored Part I cause line; 80359-3 and 80358-5 code manually and automatically selected underlying causes respectively. The worksheet does not say which workflow produced its ICD-10 value. https://hl7.org/fhir/us/vrdr/StructureDefinition-vrdr-cause-of-death-part1.html',
  10: 'LOINC 69453-9 identifies a US certificate Part I cause line, not generic mortality status. Keep certifier wording in Observation.valueCodeableConcept.text; establish whether this is paired with row 9 on the same line. https://hl7.org/fhir/us/mdi/StructureDefinition-Observation-mdi-cause-of-death-part1.html',
@@ -98,7 +100,7 @@ POLICY = {
       'Deaf/Hard of Hearing; Intellectual; Learning; Mental; Physical (includes orthopedic); Psychosocial; Speech and Language Impairment; Visual; Cancer (RA 11215); Rare Disease (RA 10747); Others, specify.',
       'PH Core 0.2.0 ph-core-disability-type-vs carries only 9 codes and omits Mental Disability, Cancer and Rare Disease, and folds Deaf/Hard of Hearing into "hearing". The profile value set therefore does not yet cover the full PRPWD v4.0 national list.'),
   5: (NCDA_PWD, NCDA_PWD_URL, 'Eligibility is limited to a person with a *permanent* disability; the policy does not enumerate a permanence value set, so the workbook\u2019s Yes/No remains unbound.',
-      'Permanence is a registration precondition, not a coded element. No PH Core element or value set currently represents it.'),
+      'Recommended: an explicit coded permanence element (permanent / temporary / unknown / not-assessed) with attester and date. Permanence is a registration precondition, not a coded element today, and must not be derived from Condition.abatement, a missing answer, or idExpirationDate. See condition-pwd-scoping-review.md.'),
   7: (COVID, COVID_URL, 'Case classification: Suspect; Probable; Confirmed. A person who does not meet a case definition is not a case (explicit negative).', None),
   8: (HIM, None, 'Date of onset of the encounter-linked illness; not encounter start or record creation.', None),
   9: (MCCOD + '; ICD-10 as adopted by DOH/PSA', MCCOD_URL, 'Certified cause per the ICD-10 medical certificate of cause of death: Part I causal sequence (line a immediate, lowest used line = underlying cause) and Part II contributing conditions; coded under ICD-10 selection rules.',

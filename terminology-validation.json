@@ -4,7 +4,7 @@
   "serversResponding": [
     "https://tx.fhir.org/r4"
   ],
-  "checkedAt": "2026-09-27T06:06:48+00:00",
+  "checkedAt": "2026-09-27T06:23:29+00:00",
   "note": "HL7 FHIRsmith (tx.fhir.org) is the primary public server; versions are those it returned at checkedAt.",
   "results": [
     {
@@ -72,6 +72,61 @@
       "server": "https://tx.fhir.org/r4",
       "system": "http://loinc.org",
       "code": "80358-5"
+    },
+    {
+      "excel": 4,
+      "role": "disability / body failure state (broad umbrella)",
+      "ok": true,
+      "display": "Body disability AND/OR failure state",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
+      "system": "http://snomed.info/sct",
+      "code": "105719004"
+    },
+    {
+      "excel": 4,
+      "role": "disability (general finding)",
+      "ok": true,
+      "display": "Disability",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
+      "system": "http://snomed.info/sct",
+      "code": "21134002"
+    },
+    {
+      "excel": 4,
+      "role": "registered disabled (administrative status)",
+      "ok": true,
+      "display": "Registered disabled",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
+      "system": "http://snomed.info/sct",
+      "code": "161048004"
+    },
+    {
+      "excel": 4,
+      "role": "disability - severe (severity qualifier)",
+      "ok": true,
+      "display": "Disability - severe",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
+      "system": "http://snomed.info/sct",
+      "code": "161045001"
+    },
+    {
+      "excel": 5,
+      "role": "permanent (qualifier value)",
+      "ok": true,
+      "display": "Permanent",
+      "version": "http://snomed.info/sct/900000000000207008/version/20250201",
+      "operation": "$lookup",
+      "server": "https://tx.fhir.org/r4",
+      "system": "http://snomed.info/sct",
+      "code": "6934004"
     }
   ]
 }

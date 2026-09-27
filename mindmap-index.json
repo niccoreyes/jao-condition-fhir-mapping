@@ -27,39 +27,41 @@
         ]
       ],
       "state": "Decision needed",
-      "terminologyNote": "No row-specific SNOMED CT/LOINC concept is established from this source alone; use a governed value set when the actual diagnosis, finding or answer is known.",
+      "terminologyNote": "PH Core 0.2.0 ph-core-disability-type-cs has 9 codes and omits Mental, Cancer and Rare Disease from the NCDA AO 001 s. 2021 / PRPWD v4.0 list. SNOMED CT candidates verified on HL7 FHIRsmith (International 20250201): 105719004 Body disability AND/OR failure state; 21134002 Disability; 161048004 Registered disabled; 161045001 Disability - severe. https://build.fhir.org/ig/UPM-NTHC/ph-core/CodeSystem-ph-core-disability-type-cs.html",
       "policyBasis": "NCDA Administrative Order No. 001, s. 2021 (PWD ID issuance); DOH AO No. 2013-0005 / -A / -B (Philippine Registry for Persons with Disabilities) (v4.0 form)",
       "policyUrl": "https://ncda.gov.ph/disability-laws/administrative-orders/ncda-administrative-order-no-001-series-of-2021/",
       "policyOptions": "Deaf/Hard of Hearing; Intellectual; Learning; Mental; Physical (includes orthopedic); Psychosocial; Speech and Language Impairment; Visual; Cancer (RA 11215); Rare Disease (RA 10747); Others, specify.",
       "policyGap": "PH Core 0.2.0 ph-core-disability-type-vs carries only 9 codes and omits Mental Disability, Cancer and Rare Disease, and folds Deaf/Hard of Hearing into \"hearing\". The profile value set therefore does not yet cover the full PRPWD v4.0 national list.",
       "evaluation": {
-        "composite": 0.811,
+        "composite": 0.838,
         "verdict": "pass",
-        "lowConfidenceDimensions": [],
+        "lowConfidenceDimensions": [
+          "terminology"
+        ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.99,
-            "confidence": 0.97
+            "normalized": 0.985,
+            "confidence": 0.95
           },
           "policy_link": {
-            "normalized": 0.98,
-            "confidence": 0.94
+            "normalized": 0.975,
+            "confidence": 0.92
           },
           "policy_options": {
-            "normalized": 0.97,
-            "confidence": 0.9
+            "normalized": 0.975,
+            "confidence": 0.92
           },
           "meaning": {
-            "normalized": 0.71,
-            "confidence": 0.61
+            "normalized": 0.667,
+            "confidence": 0.58
           },
           "terminology": {
-            "normalized": 0.47,
-            "confidence": 0.52
+            "normalized": 0.66,
+            "confidence": 0.0
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "patient",
       "example": "Transaction-Excel-4.json"
@@ -91,42 +93,41 @@
         ]
       ],
       "state": "Gap",
-      "terminologyNote": "No row-specific SNOMED CT/LOINC concept is established from this source alone; use a governed value set when the actual diagnosis, finding or answer is known.",
+      "terminologyNote": "No governed permanence element exists. SNOMED CT 6934004 Permanent is a qualifier value (verified on HL7 FHIRsmith, International 20250201) that needs a finding to qualify; it is not a statement of permanent disability by itself. Do not infer permanence from Condition.abatement or from idExpirationDate. https://hl7.org/fhir/extensions/5.2.0/StructureDefinition-patient-disability.html",
       "policyBasis": "NCDA Administrative Order No. 001, s. 2021 (PWD ID issuance)",
       "policyUrl": "https://ncda.gov.ph/disability-laws/administrative-orders/ncda-administrative-order-no-001-series-of-2021/",
       "policyOptions": "Eligibility is limited to a person with a *permanent* disability; the policy does not enumerate a permanence value set, so the workbook’s Yes/No remains unbound.",
-      "policyGap": "Permanence is a registration precondition, not a coded element. No PH Core element or value set currently represents it.",
+      "policyGap": "Recommended: an explicit coded permanence element (permanent / temporary / unknown / not-assessed) with attester and date. Permanence is a registration precondition, not a coded element today, and must not be derived from Condition.abatement, a missing answer, or idExpirationDate. See condition-pwd-scoping-review.md.",
       "evaluation": {
-        "composite": 0.71,
-        "verdict": "review",
+        "composite": 0.775,
+        "verdict": "pass",
         "lowConfidenceDimensions": [
-          "meaning",
-          "terminology"
+          "meaning"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.932,
-            "confidence": 0.78
+            "normalized": 0.945,
+            "confidence": 0.81
           },
           "policy_link": {
-            "normalized": 0.882,
-            "confidence": 0.61
+            "normalized": 0.87,
+            "confidence": 0.6
           },
           "policy_options": {
-            "normalized": 0.953,
-            "confidence": 0.84
+            "normalized": 0.948,
+            "confidence": 0.83
           },
           "meaning": {
-            "normalized": 0.365,
-            "confidence": 0.44
+            "normalized": 0.367,
+            "confidence": 0.41
           },
           "terminology": {
-            "normalized": 0.552,
-            "confidence": 0.22
+            "normalized": 0.873,
+            "confidence": 0.57
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": null,
       "example": null
@@ -164,36 +165,35 @@
       "policyOptions": "Case classification: Suspect; Probable; Confirmed. A person who does not meet a case definition is not a case (explicit negative).",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.803,
+        "composite": 0.798,
         "verdict": "pass",
         "lowConfidenceDimensions": [
-          "meaning",
-          "terminology"
+          "meaning"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.87,
-            "confidence": 0.57
+            "normalized": 0.855,
+            "confidence": 0.52
           },
           "policy_link": {
-            "normalized": 0.853,
-            "confidence": 0.56
+            "normalized": 0.855,
+            "confidence": 0.52
           },
           "policy_options": {
-            "normalized": 0.983,
-            "confidence": 0.94
+            "normalized": 0.98,
+            "confidence": 0.93
           },
           "meaning": {
-            "normalized": 0.568,
-            "confidence": 0.38
+            "normalized": 0.547,
+            "confidence": 0.45
           },
           "terminology": {
-            "normalized": 0.843,
-            "confidence": 0.48
+            "normalized": 0.863,
+            "confidence": 0.54
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "answer",
       "example": "Transaction-Excel-7.json"
@@ -227,33 +227,33 @@
       "policyOptions": "Date of onset of the encounter-linked illness; not encounter start or record creation.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.8,
+        "composite": 0.805,
         "verdict": "pass",
         "lowConfidenceDimensions": [],
         "dimensions": {
           "traceability": {
-            "normalized": 0.99,
+            "normalized": 0.993,
             "confidence": 0.97
           },
           "policy_link": {
-            "normalized": 0.812,
-            "confidence": 0.74
+            "normalized": 0.825,
+            "confidence": 0.71
           },
           "policy_options": {
-            "normalized": 0.877,
-            "confidence": 0.59
+            "normalized": 0.885,
+            "confidence": 0.62
           },
           "meaning": {
-            "normalized": 0.718,
-            "confidence": 0.64
+            "normalized": 0.733,
+            "confidence": 0.62
           },
           "terminology": {
-            "normalized": 0.6,
-            "confidence": 0.53
+            "normalized": 0.585,
+            "confidence": 0.55
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-8.json"
@@ -291,7 +291,7 @@
       "policyOptions": "Certified cause per the ICD-10 medical certificate of cause of death: Part I causal sequence (line a immediate, lowest used line = underlying cause) and Part II contributing conditions; coded under ICD-10 selection rules.",
       "policyGap": "The workbook does not state whether its ICD-10 value is the certified underlying cause (Part I) or a later manually/automatically assigned code. PSA codes certificates with Iris; those are different processing stages.",
       "evaluation": {
-        "composite": 0.749,
+        "composite": 0.733,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
@@ -299,28 +299,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.83,
-            "confidence": 0.43
+            "normalized": 0.765,
+            "confidence": 0.21
           },
           "policy_link": {
-            "normalized": 0.92,
-            "confidence": 0.74
+            "normalized": 0.932,
+            "confidence": 0.77
           },
           "policy_options": {
-            "normalized": 0.845,
-            "confidence": 0.56
+            "normalized": 0.87,
+            "confidence": 0.57
           },
           "meaning": {
-            "normalized": 0.482,
-            "confidence": 0.58
+            "normalized": 0.47,
+            "confidence": 0.6
           },
           "terminology": {
-            "normalized": 0.782,
-            "confidence": 0.28
+            "normalized": 0.767,
+            "confidence": 0.23
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": null,
       "example": null
@@ -358,7 +358,7 @@
       "policyOptions": "Certifier’s own wording of the cause, based on best medical opinion and available records; duration/interval per condition.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.676,
+        "composite": 0.662,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
@@ -366,28 +366,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.772,
-            "confidence": 0.24
+            "normalized": 0.723,
+            "confidence": 0.08
           },
           "policy_link": {
-            "normalized": 0.833,
-            "confidence": 0.57
-          },
-          "policy_options": {
-            "normalized": 0.833,
-            "confidence": 0.62
-          },
-          "meaning": {
-            "normalized": 0.54,
+            "normalized": 0.84,
             "confidence": 0.55
           },
+          "policy_options": {
+            "normalized": 0.848,
+            "confidence": 0.58
+          },
+          "meaning": {
+            "normalized": 0.53,
+            "confidence": 0.59
+          },
           "terminology": {
-            "normalized": 0.49,
-            "confidence": 0.32
+            "normalized": 0.48,
+            "confidence": 0.31
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": null,
       "example": null
@@ -421,7 +421,7 @@
       "policyOptions": "Onset is the date signs/symptoms first appeared; for COVID-19 surveillance the workbook cites the same operational definition.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.732,
+        "composite": 0.739,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "policy_options",
@@ -429,28 +429,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.988,
-            "confidence": 0.96
+            "normalized": 0.99,
+            "confidence": 0.97
           },
           "policy_link": {
-            "normalized": 0.802,
-            "confidence": 0.73
+            "normalized": 0.792,
+            "confidence": 0.75
           },
           "policy_options": {
-            "normalized": 0.715,
-            "confidence": 0.45
+            "normalized": 0.73,
+            "confidence": 0.49
           },
           "meaning": {
-            "normalized": 0.578,
-            "confidence": 0.23
+            "normalized": 0.595,
+            "confidence": 0.29
           },
           "terminology": {
-            "normalized": 0.565,
+            "normalized": 0.573,
             "confidence": 0.54
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-12.json"
@@ -491,28 +491,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.885,
-            "confidence": 0.62
+            "normalized": 0.887,
+            "confidence": 0.63
           },
           "policy_link": {
-            "normalized": 0.75,
-            "confidence": 0.85
+            "normalized": 0.752,
+            "confidence": 0.87
           },
           "policy_options": {
-            "normalized": 0.87,
-            "confidence": 0.58
+            "normalized": 0.89,
+            "confidence": 0.63
           },
           "meaning": {
-            "normalized": 0.47,
-            "confidence": 0.58
+            "normalized": 0.45,
+            "confidence": 0.52
           },
           "terminology": {
-            "normalized": 0.485,
-            "confidence": 0.4
+            "normalized": 0.492,
+            "confidence": 0.43
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "answer",
       "example": "Transaction-Excel-13.json"
@@ -546,7 +546,7 @@
       "policyOptions": "Date the patient experienced the complication; combine with the same block’s time.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.674,
+        "composite": 0.686,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
@@ -554,28 +554,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.723,
-            "confidence": 0.34
+            "normalized": 0.752,
+            "confidence": 0.36
           },
           "policy_link": {
-            "normalized": 0.818,
-            "confidence": 0.74
+            "normalized": 0.812,
+            "confidence": 0.75
           },
           "policy_options": {
-            "normalized": 0.807,
-            "confidence": 0.62
+            "normalized": 0.81,
+            "confidence": 0.61
           },
           "meaning": {
-            "normalized": 0.585,
-            "confidence": 0.37
+            "normalized": 0.593,
+            "confidence": 0.4
           },
           "terminology": {
-            "normalized": 0.517,
-            "confidence": 0.56
+            "normalized": 0.53,
+            "confidence": 0.51
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-15.json"
@@ -609,7 +609,7 @@
       "policyOptions": "Time the patient experienced the complication; must pair with its date.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.712,
+        "composite": 0.713,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "meaning",
@@ -617,28 +617,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.85,
-            "confidence": 0.5
+            "normalized": 0.855,
+            "confidence": 0.52
           },
           "policy_link": {
-            "normalized": 0.805,
-            "confidence": 0.77
+            "normalized": 0.807,
+            "confidence": 0.76
           },
           "policy_options": {
-            "normalized": 0.8,
-            "confidence": 0.54
+            "normalized": 0.807,
+            "confidence": 0.56
           },
           "meaning": {
-            "normalized": 0.575,
-            "confidence": 0.28
+            "normalized": 0.562,
+            "confidence": 0.25
           },
           "terminology": {
-            "normalized": 0.573,
-            "confidence": 0.44
+            "normalized": 0.583,
+            "confidence": 0.4
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-16.json"
@@ -676,7 +676,7 @@
       "policyOptions": "Complication experienced by the patient; the workbook shows no governed complication-role code list.",
       "policyGap": "Encounter.diagnosis.use role values are not a national code list here.",
       "evaluation": {
-        "composite": 0.641,
+        "composite": 0.633,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
@@ -684,28 +684,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.743,
-            "confidence": 0.14
+            "normalized": 0.723,
+            "confidence": 0.08
           },
           "policy_link": {
             "normalized": 0.762,
-            "confidence": 0.88
+            "confidence": 0.89
           },
           "policy_options": {
-            "normalized": 0.887,
+            "normalized": 0.885,
             "confidence": 0.62
           },
           "meaning": {
-            "normalized": 0.49,
-            "confidence": 0.63
+            "normalized": 0.495,
+            "confidence": 0.66
           },
           "terminology": {
-            "normalized": 0.427,
-            "confidence": 0.35
+            "normalized": 0.41,
+            "confidence": 0.28
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-17.json"
@@ -739,35 +739,37 @@
       "policyOptions": "Date the patient experienced the complication (COMPLICATIONS block).",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.742,
+        "composite": 0.719,
         "verdict": "review",
         "lowConfidenceDimensions": [
-          "meaning"
+          "traceability",
+          "meaning",
+          "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.865,
-            "confidence": 0.55
+            "normalized": 0.805,
+            "confidence": 0.35
           },
           "policy_link": {
-            "normalized": 0.838,
-            "confidence": 0.68
+            "normalized": 0.823,
+            "confidence": 0.72
           },
           "policy_options": {
-            "normalized": 0.82,
-            "confidence": 0.61
+            "normalized": 0.818,
+            "confidence": 0.58
           },
           "meaning": {
-            "normalized": 0.65,
-            "confidence": 0.48
+            "normalized": 0.61,
+            "confidence": 0.35
           },
           "terminology": {
-            "normalized": 0.573,
-            "confidence": 0.54
+            "normalized": 0.595,
+            "confidence": 0.45
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-19.json"
@@ -801,36 +803,37 @@
       "policyOptions": "Time the patient experienced the complication (COMPLICATIONS block).",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.749,
+        "composite": 0.737,
         "verdict": "review",
         "lowConfidenceDimensions": [
+          "policy_options",
           "meaning",
           "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.882,
-            "confidence": 0.61
+            "normalized": 0.877,
+            "confidence": 0.59
           },
           "policy_link": {
-            "normalized": 0.845,
-            "confidence": 0.65
+            "normalized": 0.855,
+            "confidence": 0.62
           },
           "policy_options": {
-            "normalized": 0.792,
-            "confidence": 0.57
+            "normalized": 0.733,
+            "confidence": 0.47
           },
           "meaning": {
-            "normalized": 0.64,
-            "confidence": 0.27
+            "normalized": 0.637,
+            "confidence": 0.28
           },
           "terminology": {
-            "normalized": 0.613,
-            "confidence": 0.49
+            "normalized": 0.6,
+            "confidence": 0.45
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-20.json"
@@ -864,7 +867,7 @@
       "policyOptions": "Complication experienced by the patient (COMPLICATIONS block).",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.622,
+        "composite": 0.635,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
@@ -872,28 +875,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.645,
+            "normalized": 0.66,
             "confidence": 0.0
           },
           "policy_link": {
-            "normalized": 0.818,
-            "confidence": 0.73
+            "normalized": 0.802,
+            "confidence": 0.77
           },
           "policy_options": {
-            "normalized": 0.812,
+            "normalized": 0.843,
             "confidence": 0.62
           },
           "meaning": {
-            "normalized": 0.48,
-            "confidence": 0.71
+            "normalized": 0.49,
+            "confidence": 0.68
           },
           "terminology": {
-            "normalized": 0.48,
-            "confidence": 0.4
+            "normalized": 0.502,
+            "confidence": 0.45
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-21.json"
@@ -931,37 +934,37 @@
       "policyOptions": "Date the patient was diagnosed.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.639,
+        "composite": 0.636,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
-          "meaning",
-          "terminology"
+          "policy_options",
+          "meaning"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.64,
+            "normalized": 0.65,
             "confidence": 0.0
           },
           "policy_link": {
             "normalized": 0.802,
-            "confidence": 0.77
+            "confidence": 0.76
           },
           "policy_options": {
-            "normalized": 0.757,
-            "confidence": 0.5
+            "normalized": 0.765,
+            "confidence": 0.47
           },
           "meaning": {
-            "normalized": 0.515,
-            "confidence": 0.08
+            "normalized": 0.492,
+            "confidence": 0.16
           },
           "terminology": {
-            "normalized": 0.583,
-            "confidence": 0.48
+            "normalized": 0.575,
+            "confidence": 0.5
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "asserted",
       "example": "Transaction-Excel-23.json"
@@ -995,37 +998,38 @@
       "policyOptions": "Time the patient was diagnosed.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.688,
+        "composite": 0.669,
         "verdict": "review",
         "lowConfidenceDimensions": [
+          "traceability",
           "policy_options",
           "meaning",
           "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.85,
-            "confidence": 0.5
+            "normalized": 0.78,
+            "confidence": 0.27
           },
           "policy_link": {
-            "normalized": 0.777,
-            "confidence": 0.81
+            "normalized": 0.775,
+            "confidence": 0.78
           },
           "policy_options": {
-            "normalized": 0.735,
-            "confidence": 0.43
+            "normalized": 0.738,
+            "confidence": 0.46
           },
           "meaning": {
-            "normalized": 0.525,
-            "confidence": 0.03
+            "normalized": 0.52,
+            "confidence": 0.06
           },
           "terminology": {
             "normalized": 0.585,
-            "confidence": 0.49
+            "confidence": 0.48
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "asserted",
       "example": "Transaction-Excel-24.json"
@@ -1063,37 +1067,36 @@
       "policyOptions": "Diagnosis as represented by an ICD-10 code. National edition and ICD-10-PH canonical are not stated by the workbook.",
       "policyGap": "PH Core 0.2.0 Condition.code keeps the inherited example binding with no ICD-10-PH value set.",
       "evaluation": {
-        "composite": 0.62,
+        "composite": 0.618,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
-          "policy_link",
-          "terminology"
+          "policy_link"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.728,
-            "confidence": 0.09
+            "normalized": 0.708,
+            "confidence": 0.03
           },
           "policy_link": {
-            "normalized": 0.588,
-            "confidence": 0.41
+            "normalized": 0.575,
+            "confidence": 0.37
           },
           "policy_options": {
-            "normalized": 0.78,
-            "confidence": 0.56
+            "normalized": 0.79,
+            "confidence": 0.58
           },
           "meaning": {
-            "normalized": 0.578,
-            "confidence": 0.51
+            "normalized": 0.583,
+            "confidence": 0.5
           },
           "terminology": {
-            "normalized": 0.445,
-            "confidence": 0.48
+            "normalized": 0.455,
+            "confidence": 0.55
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-25.json"
@@ -1127,35 +1130,35 @@
       "policyOptions": "Free-text diagnosis description attached to the coded diagnosis.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.75,
+        "composite": 0.759,
         "verdict": "pass",
         "lowConfidenceDimensions": [
           "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.975,
-            "confidence": 0.92
+            "normalized": 0.983,
+            "confidence": 0.94
           },
           "policy_link": {
-            "normalized": 0.782,
+            "normalized": 0.797,
             "confidence": 0.78
           },
           "policy_options": {
-            "normalized": 0.848,
-            "confidence": 0.63
+            "normalized": 0.853,
+            "confidence": 0.61
           },
           "meaning": {
-            "normalized": 0.61,
-            "confidence": 0.5
+            "normalized": 0.627,
+            "confidence": 0.55
           },
           "terminology": {
-            "normalized": 0.547,
-            "confidence": 0.42
+            "normalized": 0.545,
+            "confidence": 0.48
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-26.json"
@@ -1189,35 +1192,35 @@
       "policyOptions": "Diagnosis remarks as narrative context.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.795,
+        "composite": 0.799,
         "verdict": "pass",
         "lowConfidenceDimensions": [
           "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.985,
-            "confidence": 0.95
+            "normalized": 0.978,
+            "confidence": 0.93
           },
           "policy_link": {
-            "normalized": 0.78,
-            "confidence": 0.84
+            "normalized": 0.777,
+            "confidence": 0.85
           },
           "policy_options": {
-            "normalized": 0.812,
-            "confidence": 0.7
+            "normalized": 0.825,
+            "confidence": 0.67
           },
           "meaning": {
-            "normalized": 0.77,
-            "confidence": 0.66
+            "normalized": 0.775,
+            "confidence": 0.65
           },
           "terminology": {
-            "normalized": 0.585,
-            "confidence": 0.47
+            "normalized": 0.603,
+            "confidence": 0.44
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "encounter",
       "example": "Transaction-Excel-27.json"
@@ -1255,7 +1258,7 @@
       "policyOptions": "Pregnancy-induced hypertension category (O10–O16); oedema/proteinuria in pregnancy, pre-eclampsia and eclampsia are distinct concepts.",
       "policyGap": "The workbook’s label pairs PIH with pre-eclampsia. SNOMED CT 398254007 denotes pre-eclampsia only, which is narrower than all PIH.",
       "evaluation": {
-        "composite": 0.681,
+        "composite": 0.686,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "policy_link",
@@ -1263,28 +1266,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.885,
-            "confidence": 0.61
+            "normalized": 0.895,
+            "confidence": 0.65
           },
           "policy_link": {
-            "normalized": 0.328,
-            "confidence": 0.0
+            "normalized": 0.335,
+            "confidence": 0.14
           },
           "policy_options": {
-            "normalized": 0.65,
-            "confidence": 0.38
+            "normalized": 0.635,
+            "confidence": 0.39
           },
           "meaning": {
-            "normalized": 0.568,
-            "confidence": 0.64
+            "normalized": 0.57,
+            "confidence": 0.65
           },
           "terminology": {
-            "normalized": 0.855,
-            "confidence": 0.52
+            "normalized": 0.87,
+            "confidence": 0.57
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "answer",
       "example": "Transaction-Excel-29.json"
@@ -1318,7 +1321,7 @@
       "policyOptions": "Past disease as represented by a code.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.764,
+        "composite": 0.763,
         "verdict": "pass",
         "lowConfidenceDimensions": [],
         "dimensions": {
@@ -1327,24 +1330,24 @@
             "confidence": 0.93
           },
           "policy_link": {
-            "normalized": 0.795,
-            "confidence": 0.79
+            "normalized": 0.792,
+            "confidence": 0.78
           },
           "policy_options": {
-            "normalized": 0.802,
-            "confidence": 0.57
+            "normalized": 0.792,
+            "confidence": 0.53
           },
           "meaning": {
-            "normalized": 0.765,
-            "confidence": 0.55
+            "normalized": 0.755,
+            "confidence": 0.53
           },
           "terminology": {
-            "normalized": 0.443,
-            "confidence": 0.58
+            "normalized": 0.46,
+            "confidence": 0.55
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-31.json"
@@ -1378,7 +1381,7 @@
       "policyOptions": "Free-text specific disease description.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.755,
+        "composite": 0.758,
         "verdict": "pass",
         "lowConfidenceDimensions": [
           "terminology"
@@ -1389,24 +1392,24 @@
             "confidence": 0.94
           },
           "policy_link": {
-            "normalized": 0.782,
-            "confidence": 0.81
+            "normalized": 0.777,
+            "confidence": 0.84
           },
           "policy_options": {
-            "normalized": 0.868,
-            "confidence": 0.56
+            "normalized": 0.875,
+            "confidence": 0.59
           },
           "meaning": {
-            "normalized": 0.623,
-            "confidence": 0.51
+            "normalized": 0.632,
+            "confidence": 0.53
           },
           "terminology": {
-            "normalized": 0.53,
-            "confidence": 0.45
+            "normalized": 0.532,
+            "confidence": 0.46
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-32.json"
@@ -1440,7 +1443,7 @@
       "policyOptions": "Present illness as recorded by the clinician.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.713,
+        "composite": 0.712,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "meaning",
@@ -1448,28 +1451,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.89,
-            "confidence": 0.63
+            "normalized": 0.882,
+            "confidence": 0.61
           },
           "policy_link": {
-            "normalized": 0.762,
-            "confidence": 0.85
+            "normalized": 0.767,
+            "confidence": 0.84
           },
           "policy_options": {
-            "normalized": 0.718,
-            "confidence": 0.5
+            "normalized": 0.735,
+            "confidence": 0.54
           },
           "meaning": {
-            "normalized": 0.66,
-            "confidence": 0.35
+            "normalized": 0.647,
+            "confidence": 0.26
           },
           "terminology": {
-            "normalized": 0.517,
-            "confidence": 0.47
+            "normalized": 0.522,
+            "confidence": 0.45
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-33.json"
@@ -1503,35 +1506,35 @@
       "policyOptions": "Co-morbidities; one Condition per clinically asserted disease.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.691,
+        "composite": 0.709,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "meaning"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.95,
-            "confidence": 0.84
+            "normalized": 0.963,
+            "confidence": 0.88
           },
           "policy_link": {
-            "normalized": 0.805,
-            "confidence": 0.75
+            "normalized": 0.818,
+            "confidence": 0.69
           },
           "policy_options": {
-            "normalized": 0.88,
-            "confidence": 0.6
+            "normalized": 0.873,
+            "confidence": 0.58
           },
           "meaning": {
-            "normalized": 0.395,
-            "confidence": 0.36
+            "normalized": 0.445,
+            "confidence": 0.43
           },
           "terminology": {
-            "normalized": 0.51,
-            "confidence": 0.6
+            "normalized": 0.52,
+            "confidence": 0.58
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-34.json"
@@ -1565,7 +1568,7 @@
       "policyOptions": "Pertinent past medical history narrative.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.713,
+        "composite": 0.717,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "meaning",
@@ -1573,28 +1576,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.955,
-            "confidence": 0.85
+            "normalized": 0.935,
+            "confidence": 0.79
           },
           "policy_link": {
-            "normalized": 0.792,
-            "confidence": 0.78
+            "normalized": 0.797,
+            "confidence": 0.79
           },
           "policy_options": {
-            "normalized": 0.838,
-            "confidence": 0.6
+            "normalized": 0.848,
+            "confidence": 0.55
           },
           "meaning": {
-            "normalized": 0.47,
-            "confidence": 0.21
+            "normalized": 0.497,
+            "confidence": 0.1
           },
           "terminology": {
-            "normalized": 0.562,
-            "confidence": 0.45
+            "normalized": 0.56,
+            "confidence": 0.49
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-35.json"
@@ -1632,7 +1635,7 @@
       "policyOptions": "Admission signs and symptoms, including “Others, specify”; no answer list is published.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.688,
+        "composite": 0.691,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "terminology"
@@ -1643,24 +1646,24 @@
             "confidence": 0.78
           },
           "policy_link": {
-            "normalized": 0.81,
-            "confidence": 0.75
+            "normalized": 0.82,
+            "confidence": 0.73
           },
           "policy_options": {
-            "normalized": 0.83,
+            "normalized": 0.848,
             "confidence": 0.56
           },
           "meaning": {
-            "normalized": 0.517,
-            "confidence": 0.6
+            "normalized": 0.515,
+            "confidence": 0.62
           },
           "terminology": {
-            "normalized": 0.393,
-            "confidence": 0.39
+            "normalized": 0.39,
+            "confidence": 0.32
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "symptom",
       "example": "Transaction-Excel-37.json"
@@ -1694,7 +1697,7 @@
       "policyOptions": "Hypertension type/subtype; the workbook names ICD-10 I10–I15 as the example range, not a single code.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.679,
+        "composite": 0.689,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "policy_link",
@@ -1703,28 +1706,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.948,
-            "confidence": 0.82
+            "normalized": 0.95,
+            "confidence": 0.83
           },
           "policy_link": {
-            "normalized": 0.64,
-            "confidence": 0.43
+            "normalized": 0.645,
+            "confidence": 0.42
           },
           "policy_options": {
-            "normalized": 0.725,
-            "confidence": 0.21
+            "normalized": 0.76,
+            "confidence": 0.2
           },
           "meaning": {
-            "normalized": 0.542,
-            "confidence": 0.27
+            "normalized": 0.547,
+            "confidence": 0.28
           },
           "terminology": {
-            "normalized": 0.51,
-            "confidence": 0.62
+            "normalized": 0.517,
+            "confidence": 0.6
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-39.json"
@@ -1758,36 +1761,35 @@
       "policyOptions": "Stroke type; the workbook names ICD-10 I60–I64 as the example range, not a single code.",
       "policyGap": "No public URL for AO 2020-0059 was verified during this review, so none is linked.",
       "evaluation": {
-        "composite": 0.698,
+        "composite": 0.706,
         "verdict": "review",
         "lowConfidenceDimensions": [
-          "policy_options",
-          "meaning"
+          "policy_options"
         ],
         "dimensions": {
           "traceability": {
             "normalized": 0.96,
-            "confidence": 0.86
+            "confidence": 0.87
           },
           "policy_link": {
             "normalized": 0.73,
             "confidence": 0.93
           },
           "policy_options": {
-            "normalized": 0.682,
-            "confidence": 0.38
+            "normalized": 0.693,
+            "confidence": 0.34
           },
           "meaning": {
-            "normalized": 0.608,
-            "confidence": 0.45
+            "normalized": 0.623,
+            "confidence": 0.5
           },
           "terminology": {
-            "normalized": 0.472,
-            "confidence": 0.61
+            "normalized": 0.485,
+            "confidence": 0.62
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-41.json"
@@ -1821,35 +1823,35 @@
       "policyOptions": "Indicator: newly diagnosed or previously diagnosed diabetes.",
       "policyGap": "The registry does not define the comparison window, so “newly” remains ambiguous.",
       "evaluation": {
-        "composite": 0.517,
+        "composite": 0.514,
         "verdict": "fail",
         "lowConfidenceDimensions": [
           "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.312,
-            "confidence": 0.76
-          },
-          "policy_link": {
-            "normalized": 0.785,
-            "confidence": 0.63
-          },
-          "policy_options": {
-            "normalized": 0.922,
+            "normalized": 0.318,
             "confidence": 0.74
           },
+          "policy_link": {
+            "normalized": 0.772,
+            "confidence": 0.65
+          },
+          "policy_options": {
+            "normalized": 0.93,
+            "confidence": 0.77
+          },
           "meaning": {
-            "normalized": 0.263,
-            "confidence": 0.83
+            "normalized": 0.265,
+            "confidence": 0.8
           },
           "terminology": {
-            "normalized": 0.588,
-            "confidence": 0.4
+            "normalized": 0.565,
+            "confidence": 0.42
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": null,
       "example": null
@@ -1883,7 +1885,7 @@
       "policyOptions": "Type of diabetes; the workbook names ICD-10 E10–E14 as the example range, not a single code.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.67,
+        "composite": 0.672,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "meaning",
@@ -1899,20 +1901,20 @@
             "confidence": 0.63
           },
           "policy_options": {
-            "normalized": 0.6,
-            "confidence": 0.58
+            "normalized": 0.595,
+            "confidence": 0.59
           },
           "meaning": {
-            "normalized": 0.615,
-            "confidence": 0.49
+            "normalized": 0.605,
+            "confidence": 0.45
           },
           "terminology": {
-            "normalized": 0.365,
-            "confidence": 0.39
+            "normalized": 0.39,
+            "confidence": 0.38
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "problem",
       "example": "Transaction-Excel-44.json"
@@ -1950,35 +1952,35 @@
       "policyOptions": "GOLD spirometric grade; the classification edition must be stated because grades are edition-specific.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.63,
+        "composite": 0.632,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.895,
-            "confidence": 0.65
+            "normalized": 0.89,
+            "confidence": 0.64
           },
           "policy_link": {
-            "normalized": 0.77,
-            "confidence": 0.79
+            "normalized": 0.772,
+            "confidence": 0.75
           },
           "policy_options": {
-            "normalized": 0.68,
-            "confidence": 0.59
+            "normalized": 0.677,
+            "confidence": 0.6
           },
           "meaning": {
-            "normalized": 0.502,
-            "confidence": 0.56
+            "normalized": 0.527,
+            "confidence": 0.55
           },
           "terminology": {
-            "normalized": 0.315,
-            "confidence": 0.31
+            "normalized": 0.3,
+            "confidence": 0.27
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "stage",
       "example": "Transaction-Excel-46.json"
@@ -2012,7 +2014,7 @@
       "policyOptions": "COPD group; GOLD used ABCD before 2023 and ABE from the 2023 report, so the edition must be stated.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.634,
+        "composite": 0.636,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "traceability",
@@ -2020,28 +2022,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.825,
-            "confidence": 0.42
+            "normalized": 0.82,
+            "confidence": 0.4
           },
           "policy_link": {
-            "normalized": 0.77,
-            "confidence": 0.67
+            "normalized": 0.802,
+            "confidence": 0.68
           },
           "policy_options": {
-            "normalized": 0.765,
-            "confidence": 0.61
+            "normalized": 0.772,
+            "confidence": 0.6
           },
           "meaning": {
-            "normalized": 0.512,
-            "confidence": 0.53
+            "normalized": 0.522,
+            "confidence": 0.52
           },
           "terminology": {
-            "normalized": 0.347,
-            "confidence": 0.39
+            "normalized": 0.323,
+            "confidence": 0.34
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "stage",
       "example": "Transaction-Excel-47.json"
@@ -2079,35 +2081,35 @@
       "policyOptions": "Pulmonary TB question answer; national TB guidance distinguishes bacteriologically confirmed, clinically diagnosed and not a TB case.",
       "policyGap": "DOH AO No. 2011-0010 (field health services reporting) is cited by name; no stable public URL was verified.",
       "evaluation": {
-        "composite": 0.737,
+        "composite": 0.738,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "terminology"
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.895,
-            "confidence": 0.65
+            "normalized": 0.868,
+            "confidence": 0.56
           },
           "policy_link": {
-            "normalized": 0.807,
-            "confidence": 0.79
+            "normalized": 0.8,
+            "confidence": 0.82
           },
           "policy_options": {
-            "normalized": 0.718,
-            "confidence": 0.71
+            "normalized": 0.752,
+            "confidence": 0.72
           },
           "meaning": {
-            "normalized": 0.507,
-            "confidence": 0.55
+            "normalized": 0.51,
+            "confidence": 0.51
           },
           "terminology": {
-            "normalized": 0.79,
-            "confidence": 0.3
+            "normalized": 0.805,
+            "confidence": 0.35
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "answer",
       "example": "Transaction-Excel-48.json"
@@ -2145,7 +2147,7 @@
       "policyOptions": "Basis for the final diagnosis of asthma, captured as supporting evidence for the asthma problem.",
       "policyGap": null,
       "evaluation": {
-        "composite": 0.658,
+        "composite": 0.644,
         "verdict": "review",
         "lowConfidenceDimensions": [
           "policy_options",
@@ -2153,28 +2155,28 @@
         ],
         "dimensions": {
           "traceability": {
-            "normalized": 0.938,
-            "confidence": 0.79
+            "normalized": 0.92,
+            "confidence": 0.73
           },
           "policy_link": {
-            "normalized": 0.76,
-            "confidence": 0.72
+            "normalized": 0.75,
+            "confidence": 0.74
           },
           "policy_options": {
-            "normalized": 0.515,
+            "normalized": 0.487,
             "confidence": 0.0
           },
           "meaning": {
-            "normalized": 0.522,
+            "normalized": 0.517,
             "confidence": 0.58
           },
           "terminology": {
-            "normalized": 0.51,
-            "confidence": 0.45
+            "normalized": 0.495,
+            "confidence": 0.43
           }
         },
         "model": "jev-1.13.0",
-        "checkedAt": "2026-09-27T06:08:51+00:00"
+        "checkedAt": "2026-09-27T06:29:11+00:00"
       },
       "exampleKind": "evidence",
       "example": "Transaction-Excel-49.json"

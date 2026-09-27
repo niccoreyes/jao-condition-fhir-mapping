@@ -30,6 +30,12 @@ CANDIDATES = [
     (9,  'US certificate Part I cause-of-death line', 'http://loinc.org', '69453-9'),
     (9,  'manually assigned underlying cause of death', 'http://loinc.org', '80359-3'),
     (9,  'automatically selected underlying cause of death', 'http://loinc.org', '80358-5'),
+    # PWD scoping (rows 4-5): disability framing and permanence candidates.
+    (4,  'disability / body failure state (broad umbrella)', 'http://snomed.info/sct', '105719004'),
+    (4,  'disability (general finding)', 'http://snomed.info/sct', '21134002'),
+    (4,  'registered disabled (administrative status)', 'http://snomed.info/sct', '161048004'),
+    (4,  'disability - severe (severity qualifier)', 'http://snomed.info/sct', '161045001'),
+    (5,  'permanent (qualifier value)', 'http://snomed.info/sct', '6934004'),
 ]
 
 def fetch(url, timeout=30):
