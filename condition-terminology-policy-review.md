@@ -28,7 +28,8 @@ AO 2013-0005-B (PRPWD v4.0) explicitly adds **Cancer** and **Rare Disease** unde
 - DOH AO 2013-0005-A — https://ncda.gov.ph/disability-laws/administrative-orders/doh-administrative-order-no-2013-0005-a/
 - DOH AO 2013-0005-B (PRPWD v4.0) PDF — https://ncda.gov.ph/wp-content/uploads/2023/07/ao2013-0005-B.pdf
 - DILG MC 017 s. 2022 — https://ncda.gov.ph/disability-laws/dilg-memorandum-circular/dilg-memorandum-circular-no-017-series-of-2022/
-- PH Core value set (draft) — https://build.fhir.org/ig/UP-Manila-SILab/ph-core/en/ValueSet-ph-core-disability-type-vs.html
+- PH Core value set (draft CI build) — https://build.fhir.org/ig/UPM-NTHC/ph-core/ValueSet-ph-core-disability-type-vs.html
+- PH Core code system (draft CI build) — https://build.fhir.org/ig/UPM-NTHC/ph-core/CodeSystem-ph-core-disability-type-cs.html
 
 ## Element-by-element policy basis
 
@@ -65,6 +66,18 @@ AO 2013-0005-B (PRPWD v4.0) explicitly adds **Cancer** and **Rare Disease** unde
 - **Policy options outrank candidate codes.** For row 7 the answer set is Suspect/Probable/Confirmed, not a SNOMED disease code; for row 43 it is Newly/Previously diagnosed, not an onset date.
 - **Ranges are not codes.** ICD-10 I10–I15, I60–I64 and E10–E14 are ranges. A profile must define the selectable codes, not adopt the range as a value.
 - **Edition and version matter.** GOLD ABCD vs ABE, and the ICD-10 edition adopted by DOH, change the permitted values.
-- **Do not link what was not verified.** DOH AO 2020-0059, AO 2015-0024, AO 2011-0010 and the Hospital HIM Manual are cited by name because no stable public URL was confirmed during this review.
+- **Link the source, or say why there is none.** 33 of 34 rows carry an inline policy or terminology link. DOH AO No. 2015-0024 (ITIS) is linked through the official NTP library — https://ntp.doh.gov.ph/download/ao2015-0024/. The Hospital HIM Manual is linked to its DOH publication — http://ehealth.doh.gov.ph/nehehrsv/sys/assets/HOSPITAL%20HEALTH%20INFORMATION%20MANAGEMENT%20MANUAL%20formerly%20HOSPITAL%20MEDICAL%20RECORDS%20MANAGEMENT%20MANUAL.pdf — but that host answers automated requests with HTTP 403, so the link is offered for human use and was not fetch-verified. Only DOH AO No. 2020-0059 (Acute Stroke) and DOH AO No. 2011-0010 (FHSIS reporting) remain name-only, because no stable public URL was confirmed.
 
-Unresolved, requiring owner decisions: (1) reconcile PH Core's disability value set with the full PRPWD list; (2) define permanence and its value set; (3) define the diabetes "newly diagnosed" window; (4) confirm the national ICD-10-PH canonical; (5) state the GOLD edition; (6) confirm the certified-vs-coded stage for rows 9–10.
+## Terminology validation (FHIRLab)
+
+Candidate SNOMED CT and LOINC concepts are checked against the **FHIRLab terminology server**, `https://tx.fhirlab.net/fhir`, used as a temporary terminology authority. Run:
+
+```bash
+python validate-terminology-fhirlab.py
+```
+
+The script performs `CodeSystem/$lookup` (falling back to `$validate-code`) for each candidate, writes `terminology-validation.json`, and **records the code-system version returned by the server** alongside the `checkedAt` timestamp. Version is recorded deliberately: a concept valid in one SNOMED CT release or LOINC release may not exist in another, and SNOMED GPS is only a subset of the International Edition.
+
+At the time of writing the server returned **HTTP 503** for every request, so the last run is recorded as `serverReachable: false` with no version claimed. Re-run when it responds; do not treat a candidate as validated until a version is captured. This endpoint is a temporary check, not the Philippine national terminology service and not a binding authority.
+
+Unresolved, requiring owner decisions: (1) reconcile PH Core's disability value set with the full PRPWD list; (2) define permanence and its value set; (3) define the diabetes "newly diagnosed" window; (4) confirm the national ICD-10-PH canonical; (5) state the GOLD edition; (6) confirm the certified-vs-coded stage for rows 9–10; (7) choose the durable terminology service and pin its editions.

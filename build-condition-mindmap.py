@@ -68,13 +68,13 @@ TERMINOLOGY = {
   7: 'SNOMED CT 840539006 names confirmed COVID-19 disease, not the Yes/No case-status question; only use on a separately asserted diagnosis. https://docs.snomed.org/implementation-guides/snomed-ct-guide-for-covid-19/3-mapping-to-icd-10',
   9: 'VRDR 3.0.0: LOINC 69453-9 codes the certifier-authored Part I cause line; 80359-3 and 80358-5 code manually and automatically selected underlying causes respectively. The worksheet does not say which workflow produced its ICD-10 value. https://hl7.org/fhir/us/vrdr/StructureDefinition-vrdr-cause-of-death-part1.html',
  10: 'LOINC 69453-9 identifies a US certificate Part I cause line, not generic mortality status. Keep certifier wording in Observation.valueCodeableConcept.text; establish whether this is paired with row 9 on the same line. https://hl7.org/fhir/us/mdi/StructureDefinition-Observation-mdi-cause-of-death-part1.html',
- 29: 'SNOMED CT 398254007 denotes pre-eclampsia, not all pregnancy-induced hypertension and not a Yes/No answer. Use only for a separately confirmed pre-eclampsia diagnosis.',
+ 29: 'SNOMED CT 398254007 denotes pre-eclampsia, not all pregnancy-induced hypertension and not a Yes/No answer. Use only for a separately confirmed pre-eclampsia diagnosis. https://evsexplore.semantics.cancer.gov/evsexplore/concept/snomedct_us/398254007',
  48: 'SNOMED CT 154283005 denotes pulmonary tuberculosis (disorder), not the question or an explicit negative result. https://evsexplore.semantics.cancer.gov/evsexplore/concept/snomedct_us/154283005',
- 39: 'I10–I15 is an ICD-10 range, not a single code. Select a precise hypertension subtype only after source detail and a national value set are confirmed.',
- 41: 'I60–I64 is an ICD-10 range, not a single code. Do not force ischemic or hemorrhagic subtype without supporting evidence.',
- 44: 'E10–E14 is an ICD-10 range, not a single code. Code only an established diabetes type.',
- 46: 'GOLD spirometric grade needs a governed grade and edition; do not treat the name of the scale as a patient result.',
- 47: 'GOLD ABCD and ABE are edition-dependent; select a versioned group scale before coding.'
+ 39: 'I10–I15 is an ICD-10 range, not a single code. Select a precise hypertension subtype only after source detail and a national value set are confirmed. https://icd.who.int/browse10/2019/en#/I10-I15',
+ 41: 'I60–I64 is an ICD-10 range, not a single code. Do not force ischemic or hemorrhagic subtype without supporting evidence. https://icd.who.int/browse10/2019/en#/I60-I69',
+ 44: 'E10–E14 is an ICD-10 range, not a single code. Code only an established diabetes type. https://icd.who.int/browse10/2019/en#/E10-E14',
+ 46: 'GOLD spirometric grade needs a governed grade and edition; do not treat the name of the scale as a patient result. GOLD is cited by name (Global Initiative for Chronic Obstructive Lung Disease report); no stable public URL was verified, so none is linked.',
+ 47: 'GOLD ABCD and ABE are edition-dependent; select a versioned group scale before coding. GOLD is cited by name (GOLD report); no stable public URL was verified.'
 }
 
 # Policy basis for each data element, with the answer options the policy itself enumerates.
@@ -91,6 +91,8 @@ MCCOD_URL = 'https://legaldex.com/laws/rules-on-medical-certification-of-cause-o
 COVID = 'DOH AO No. 2020-0013 and DM No. 2024-0073 (COVID-19 case definitions and PDITR+)'
 COVID_URL = 'https://law.upd.edu.ph/wp-content/uploads/2020/05/DOH-AO-No-2020-0013.pdf'
 HIM = 'DOH Hospital Health Information Management Manual'
+HIM_URL = ('http://ehealth.doh.gov.ph/nehehrsv/sys/assets/HOSPITAL%20HEALTH%20INFORMATION%20MANAGEMENT%20MANUAL'
+           '%20formerly%20HOSPITAL%20MEDICAL%20RECORDS%20MANAGEMENT%20MANUAL.pdf')
 POLICY = {
   4: (NCDA_PWD + '; ' + PRPWD + ' (v4.0 form)', NCDA_PWD_URL,
       'Deaf/Hard of Hearing; Intellectual; Learning; Mental; Physical (includes orthopedic); Psychosocial; Speech and Language Impairment; Visual; Cancer (RA 11215); Rare Disease (RA 10747); Others, specify.',
@@ -133,10 +135,17 @@ POLICY = {
  44: (PRPWD + ' (Diabetes Registry Form)', PRPWD_URL, 'Type of diabetes; the workbook names ICD-10 E10\u2013E14 as the example range, not a single code.', None),
  46: (PRPWD + ' (COPD Registry Form); GOLD report', PRPWD_URL, 'GOLD spirometric grade; the classification edition must be stated because grades are edition-specific.', None),
  47: (PRPWD + ' (COPD Registry Form); GOLD report', PRPWD_URL, 'COPD group; GOLD used ABCD before 2023 and ABE from the 2023 report, so the edition must be stated.', None),
- 48: ('DOH AO No. 2015-0024 (Integrated Tuberculosis Information System); DOH AO No. 2011-0010', None, 'Pulmonary TB question answer; national TB guidance distinguishes bacteriologically confirmed, clinically diagnosed and not a TB case.',
-      'No public URL for AO 2015-0024 or AO 2011-0010 was verified, so none is linked.'),
+ 48: ('DOH AO No. 2015-0024 (Integrated Tuberculosis Information System); DOH AO No. 2011-0010',
+      'https://ntp.doh.gov.ph/download/ao2015-0024/', 'Pulmonary TB question answer; national TB guidance distinguishes bacteriologically confirmed, clinically diagnosed and not a TB case.',
+      'DOH AO No. 2011-0010 (field health services reporting) is cited by name; no stable public URL was verified.'),
  49: (PRPWD, PRPWD_URL, 'Basis for the final diagnosis of asthma, captured as supporting evidence for the asthma problem.', None),
 }
+
+# The HIM Manual is published by DOH under the Health Facility Development Bureau; its host
+# blocks automated requests (HTTP 403), so the link is offered for human use and was not
+# fetch-verified. Fill it in wherever the HIM Manual is the policy basis.
+POLICY = {k: (v[0], v[1] or (HIM_URL if v[0].startswith('DOH Hospital Health Information') else None), v[2], v[3])
+           for k, v in POLICY.items()}
 
 # Use local workbook model for field paths; copy previously reviewed comparative
 # discussions from the main crosswalk without evaluating page/browser code.
