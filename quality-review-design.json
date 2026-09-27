@@ -1,0 +1,179 @@
+{
+  "model": "jev-latest",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "checkedAt": "2026-09-27T07:20:54+00:00",
+  "thresholds": {
+    "pass": 0.75,
+    "review": 0.55
+  },
+  "results": [
+    {
+      "name": "superseded (raw decimal + text list)",
+      "composite": 0.627,
+      "verdict": "review",
+      "dimensions": {
+        "legibility": {
+          "score": 2.15,
+          "normalized": 0.537,
+          "confidence": 0.76,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.07,
+            "2": 0.74,
+            "3": 0.16,
+            "4": 0.03
+          }
+        },
+        "scale_meaning": {
+          "score": 1.27,
+          "normalized": 0.318,
+          "confidence": 0.36,
+          "probabilities": {
+            "0": 0.24,
+            "1": 0.27,
+            "2": 0.48,
+            "3": 0.01,
+            "4": 0.0
+          }
+        },
+        "uncertainty": {
+          "score": 2.77,
+          "normalized": 0.693,
+          "confidence": 0.71,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.11,
+            "2": 0.05,
+            "3": 0.78,
+            "4": 0.06
+          }
+        },
+        "hierarchy": {
+          "score": 3.53,
+          "normalized": 0.882,
+          "confidence": 0.61,
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.06,
+            "2": 0.07,
+            "3": 0.09,
+            "4": 0.77
+          }
+        },
+        "consistency": {
+          "score": 2.11,
+          "normalized": 0.527,
+          "confidence": 0.28,
+          "probabilities": {
+            "0": 0.14,
+            "1": 0.1,
+            "2": 0.36,
+            "3": 0.31,
+            "4": 0.09
+          }
+        },
+        "honesty": {
+          "score": 3.74,
+          "normalized": 0.935,
+          "confidence": 0.78,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.01,
+            "3": 0.23,
+            "4": 0.76
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1197,
+        "output_tokens": 93
+      }
+    },
+    {
+      "name": "current (ring + labelled bars + hatching)",
+      "composite": 0.986,
+      "verdict": "pass",
+      "dimensions": {
+        "legibility": {
+          "score": 3.99,
+          "normalized": 0.998,
+          "confidence": 0.99,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.01,
+            "4": 0.99
+          }
+        },
+        "scale_meaning": {
+          "score": 3.99,
+          "normalized": 0.998,
+          "confidence": 1.0,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.0,
+            "4": 1.0
+          }
+        },
+        "uncertainty": {
+          "score": 3.98,
+          "normalized": 0.995,
+          "confidence": 0.98,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.01,
+            "4": 0.99
+          }
+        },
+        "hierarchy": {
+          "score": 3.91,
+          "normalized": 0.978,
+          "confidence": 0.93,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.01,
+            "3": 0.06,
+            "4": 0.93
+          }
+        },
+        "consistency": {
+          "score": 3.77,
+          "normalized": 0.943,
+          "confidence": 0.81,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.07,
+            "3": 0.07,
+            "4": 0.86
+          }
+        },
+        "honesty": {
+          "score": 3.99,
+          "normalized": 0.998,
+          "confidence": 0.99,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.01,
+            "4": 0.99
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 3449,
+        "output_tokens": 93
+      }
+    }
+  ]
+}
