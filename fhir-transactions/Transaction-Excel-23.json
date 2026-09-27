@@ -1,0 +1,77 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:8adf49df-50a2-5180-9147-3607d5b639a0",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:12b75298-ef81-5b76-b4b0-90a83efe0ed7",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "urn:uuid:8adf49df-50a2-5180-9147-3607d5b639a0"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:6d497979-0ccb-5beb-b19f-f89fea9124d6"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6d497979-0ccb-5beb-b19f-f89fea9124d6",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:8adf49df-50a2-5180-9147-3607d5b639a0"
+        },
+        "code": {
+          "text": "Illustrative encounter diagnosis"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:12b75298-ef81-5b76-b4b0-90a83efe0ed7"
+        },
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/condition-assertedDate",
+            "valueDateTime": "2026-03-01T10:30:00+08:00"
+          }
+        ],
+        "recordedDate": "2026-03-02T09:00:00+08:00"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    }
+  ]
+}

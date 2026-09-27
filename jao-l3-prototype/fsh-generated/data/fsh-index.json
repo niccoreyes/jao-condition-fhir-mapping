@@ -1,0 +1,18 @@
+[
+  {
+    "outputFile": "CodeSystem-JAOConditionSourceRows.json",
+    "fshName": "JAOConditionSourceRows",
+    "fshType": "CodeSystem",
+    "fshFile": "codeSystems/CodeSystem/JAOConditionSourceRows.fsh",
+    "startLine": 3,
+    "endLine": 44
+  },
+  {
+    "outputFile": "StructureDefinition-JAOConditionSheet.json",
+    "fshName": "JAOConditionSheet",
+    "fshType": "Logical",
+    "fshFile": "models/StructureDefinition/JAOConditionSheet.fsh",
+    "startLine": 8,
+    "endLine": 234
+  }
+]

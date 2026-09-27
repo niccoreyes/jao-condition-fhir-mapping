@@ -1,0 +1,42 @@
+{
+  "resourceType": "ImplementationGuide",
+  "id": "fhir.ph.jao.condition-working",
+  "url": "https://example.org/fhir/jao-working/ImplementationGuide/fhir.ph.jao.condition-working",
+  "version": "0.0.1-draft",
+  "name": "JAOConditionWorkingIG",
+  "title": "JAO Condition worksheet L3 working prototype",
+  "status": "draft",
+  "publisher": "JAO mapping review (working draft)",
+  "packageId": "fhir.ph.jao.condition-working",
+  "license": "CC0-1.0",
+  "fhirVersion": [
+    "4.0.1"
+  ],
+  "definition": {
+    "resource": [
+      {
+        "reference": {
+          "reference": "StructureDefinition/JAOConditionSheet"
+        },
+        "name": "JAO Condition worksheet logical data model",
+        "description": "Draft data structure for all 34 populated clinical rows in the JAO Condition worksheet, organized by its 13 source sections. Not a FHIR Condition profile.",
+        "exampleBoolean": false
+      },
+      {
+        "reference": {
+          "reference": "CodeSystem/JAOConditionSourceRows"
+        },
+        "name": "JAO Condition worksheet source row identifiers",
+        "description": "Local traceability identifiers for the JAO Condition worksheet. Not a clinical terminology or WHO concept registry.",
+        "exampleBoolean": false
+      }
+    ],
+    "page": {
+      "nameUrl": "toc.html",
+      "title": "Table of Contents",
+      "generation": "html",
+      "page": []
+    },
+    "parameter": []
+  }
+}

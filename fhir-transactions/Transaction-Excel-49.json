@@ -1,0 +1,79 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:47799c4e-a8f6-5fbc-921a-4df749a5dfd6",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:23664d51-fbf6-5a39-bf09-fcb327cb016e",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Illustrative supporting assessment"
+        },
+        "subject": {
+          "reference": "urn:uuid:47799c4e-a8f6-5fbc-921a-4df749a5dfd6"
+        },
+        "valueCodeableConcept": {
+          "text": "Illustrative finding"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8e6067d4-e95c-5164-ae1a-28c6e4172e66",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:47799c4e-a8f6-5fbc-921a-4df749a5dfd6"
+        },
+        "code": {
+          "text": "Illustrative asthma diagnosis"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "evidence": [
+          {
+            "detail": [
+              {
+                "reference": "urn:uuid:23664d51-fbf6-5a39-bf09-fcb327cb016e"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:7f714db5-5f36-5b0a-a10f-4afbd8317c98",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:353e4850-c5f5-5927-a61c-09a28e62d842",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Pulmonary Tuberculosis"
+        },
+        "subject": {
+          "reference": "urn:uuid:7f714db5-5f36-5b0a-a10f-4afbd8317c98"
+        },
+        "effectiveDateTime": "2026-03-01T10:30:00+08:00",
+        "valueCodeableConcept": {
+          "text": "Illustrative answer"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

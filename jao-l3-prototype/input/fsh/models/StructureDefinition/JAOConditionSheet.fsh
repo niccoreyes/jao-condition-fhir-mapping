@@ -1,0 +1,235 @@
+// WHO L3 logical-model method adapted to the JAO Condition worksheet.
+// This is a WORKING PROTOTYPE, not an approved WHO DAK or PH Core artifact.
+// Source codes are local provisional identifiers, NOT WHO SMART codes.
+// Worksheet cardinalities and answer value sets are not supplied; 0..1 is
+// provisional for source fields. Review repeatability, requiredness and types.
+// This model is source/implementation independent. FHIR paths live in the
+// separate mapping crosswalk; no PH Core profile rules are inherited here.
+Logical: JAOConditionSheet
+Id: JAOConditionSheet
+Title: "JAO Condition worksheet logical data model"
+Description: "Draft data structure for all 34 populated clinical rows in the JAO Condition worksheet, organized by its 13 source sections. Not a FHIR Condition profile."
+* ^status = #draft
+* ^experimental = true
+* ^purpose = "Preserve source concepts and row identifiers independently of FHIR resource choices; support review of cardinality, terminology, and mapping."
+* ^mapping[+].identity = "worksheet"
+* ^mapping[=].uri = "urn:jao:condition-worksheet"
+* ^mapping[=].name = "JAO Condition worksheet coordinates"
+
+* masterPersonData 0..1 BackboneElement "MASTER PERSON DATA" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* masterPersonData.disabilityType 0..1 CodeableConcept "Type of Disability" "Type of disability as represented by a code."
+* masterPersonData.disabilityType ^code[0] = JAOConditionSourceRows#SRC8 "Type of Disability"
+* masterPersonData.disabilityType ^mapping[+].identity = "worksheet"
+* masterPersonData.disabilityType ^mapping[=].map = "Condition!E4; SOURCE ROW 8; NO 6"
+* masterPersonData.disabilityType ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): Identification Card Relative to Republic Act 9442"
+
+* masterPersonData.permanentDisability 0..1 boolean "With Permanent Disability" "Yes/No"
+* masterPersonData.permanentDisability ^code[0] = JAOConditionSourceRows#SRC9 "With Permanent Disability"
+* masterPersonData.permanentDisability ^mapping[+].identity = "worksheet"
+* masterPersonData.permanentDisability ^mapping[=].map = "Condition!E5; SOURCE ROW 9; NO 7"
+* masterPersonData.permanentDisability ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* encounterLog 0..1 BackboneElement "ENCOUNTER LOG" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* encounterLog.covid19CaseStatus 0..1 CodeableConcept "COVID-19" "If the patient is a COVID-19 case or not."
+* encounterLog.covid19CaseStatus ^code[0] = JAOConditionSourceRows#SRC129 "COVID-19"
+* encounterLog.covid19CaseStatus ^mapping[+].identity = "worksheet"
+* encounterLog.covid19CaseStatus ^mapping[=].map = "Condition!E7; SOURCE ROW 129; NO 17"
+* encounterLog.covid19CaseStatus ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* encounterLog.illnessOnsetDate 0..1 date "Date of Onset of Illness" "Date of Onset of Illness"
+* encounterLog.illnessOnsetDate ^code[0] = JAOConditionSourceRows#SRC136 "Date of Onset of Illness"
+* encounterLog.illnessOnsetDate ^mapping[+].identity = "worksheet"
+* encounterLog.illnessOnsetDate ^mapping[=].map = "Condition!E8; SOURCE ROW 136; NO 24"
+* encounterLog.illnessOnsetDate ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* encounterLog.underlyingCauseOfDeathCode 0..1 CodeableConcept "Underlying Cause of Death (ICD-10)" "Disease or injury that initiated the train of events leading directly to death"
+* encounterLog.underlyingCauseOfDeathCode ^code[0] = JAOConditionSourceRows#SRC147 "Underlying Cause of Death (ICD-10)"
+* encounterLog.underlyingCauseOfDeathCode ^mapping[+].identity = "worksheet"
+* encounterLog.underlyingCauseOfDeathCode ^mapping[=].map = "Condition!E9; SOURCE ROW 147; NO 35"
+* encounterLog.underlyingCauseOfDeathCode ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* encounterLog.underlyingCauseOfDeathDescription 0..1 string "Underlying Cause of Death Description" "Underlying Cause of Death Description"
+* encounterLog.underlyingCauseOfDeathDescription ^code[0] = JAOConditionSourceRows#SRC148 "Underlying Cause of Death Description"
+* encounterLog.underlyingCauseOfDeathDescription ^mapping[+].identity = "worksheet"
+* encounterLog.underlyingCauseOfDeathDescription ^mapping[=].map = "Condition!E10; SOURCE ROW 148; NO 36"
+* encounterLog.underlyingCauseOfDeathDescription ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* covid19 0..1 BackboneElement "COVID-19" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* covid19.illnessOnsetDate 0..1 date "Date of Onset of Illness" "The date when the signs (i.e. objective clinical finding as determined by a licensed physician) of illness first appeared and/or when the symptom/s (e.g. fever, cough, colds, sore throat, shortness of breath/difficulty breathing) were first felt."
+* covid19.illnessOnsetDate ^code[0] = JAOConditionSourceRows#SRC202 "Date of Onset of Illness"
+* covid19.illnessOnsetDate ^mapping[+].identity = "worksheet"
+* covid19.illnessOnsetDate ^mapping[=].map = "Condition!E12; SOURCE ROW 202; NO 7"
+* covid19.illnessOnsetDate ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* covid19.otherIllnessHistory 0..1 CodeableConcept "History of Other Illness" "If with other history of other illness"
+* covid19.otherIllnessHistory ^code[0] = JAOConditionSourceRows#SRC210 "History of Other Illness"
+* covid19.otherIllnessHistory ^mapping[+].identity = "worksheet"
+* covid19.otherIllnessHistory ^mapping[=].map = "Condition!E13; SOURCE ROW 210; NO 15"
+* covid19.otherIllnessHistory ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* detectedIssue 0..1 BackboneElement "DETECTED ISSUE" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* detectedIssue.complicationDate 0..1 date "Date of Complication" "Date the patient experienced complication"
+* detectedIssue.complicationDate ^code[0] = JAOConditionSourceRows#SRC300 "Date of Complication"
+* detectedIssue.complicationDate ^mapping[+].identity = "worksheet"
+* detectedIssue.complicationDate ^mapping[=].map = "Condition!E15; SOURCE ROW 300; NO 4"
+* detectedIssue.complicationDate ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual 1"
+
+* detectedIssue.complicationTime 0..1 time "Time of Complication" "Time of the patient experienced complication"
+* detectedIssue.complicationTime ^code[0] = JAOConditionSourceRows#SRC301 "Time of Complication"
+* detectedIssue.complicationTime ^mapping[+].identity = "worksheet"
+* detectedIssue.complicationTime ^mapping[=].map = "Condition!E16; SOURCE ROW 301; NO 5"
+* detectedIssue.complicationTime ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* detectedIssue.complication 0..1 CodeableConcept "Complication" "Complication experienced by the patient"
+* detectedIssue.complication ^code[0] = JAOConditionSourceRows#SRC302 "Complication"
+* detectedIssue.complication ^mapping[+].identity = "worksheet"
+* detectedIssue.complication ^mapping[=].map = "Condition!E17; SOURCE ROW 302; NO 6"
+* detectedIssue.complication ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* complications 0..1 BackboneElement "COMPLICATIONS" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* complications.complicationDate 0..1 date "Date of Complication" "Date the patient experienced complication"
+* complications.complicationDate ^code[0] = JAOConditionSourceRows#SRC322 "Date of Complication"
+* complications.complicationDate ^mapping[+].identity = "worksheet"
+* complications.complicationDate ^mapping[=].map = "Condition!E19; SOURCE ROW 322; NO 4"
+* complications.complicationDate ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual"
+
+* complications.complicationTime 0..1 time "Time of Complication" "Time of the patient experienced complication"
+* complications.complicationTime ^code[0] = JAOConditionSourceRows#SRC323 "Time of Complication"
+* complications.complicationTime ^mapping[+].identity = "worksheet"
+* complications.complicationTime ^mapping[=].map = "Condition!E20; SOURCE ROW 323; NO 5"
+* complications.complicationTime ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* complications.complication 0..1 CodeableConcept "Complication" "Complication experienced by the patient"
+* complications.complication ^code[0] = JAOConditionSourceRows#SRC324 "Complication"
+* complications.complication ^mapping[+].identity = "worksheet"
+* complications.complication ^mapping[=].map = "Condition!E21; SOURCE ROW 324; NO 6"
+* complications.complication ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* diagnosis 0..1 BackboneElement "DIAGNOSIS" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* diagnosis.diagnosedDate 0..1 date "Date Diagnosed" "The date when the patient was diagnosed"
+* diagnosis.diagnosedDate ^code[0] = JAOConditionSourceRows#SRC333 "Date Diagnosed"
+* diagnosis.diagnosedDate ^mapping[+].identity = "worksheet"
+* diagnosis.diagnosedDate ^mapping[=].map = "Condition!E23; SOURCE ROW 333; NO 4"
+* diagnosis.diagnosedDate ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual"
+
+* diagnosis.diagnosedTime 0..1 time "Time Diagnosed" "Time the patient was diagnosed"
+* diagnosis.diagnosedTime ^code[0] = JAOConditionSourceRows#SRC334 "Time Diagnosed"
+* diagnosis.diagnosedTime ^mapping[+].identity = "worksheet"
+* diagnosis.diagnosedTime ^mapping[=].map = "Condition!E24; SOURCE ROW 334; NO 5"
+* diagnosis.diagnosedTime ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* diagnosis.diagnosisCode 0..1 CodeableConcept "Diagnosis Code" "Diagnosis as represented by a code."
+* diagnosis.diagnosisCode ^code[0] = JAOConditionSourceRows#SRC336 "Diagnosis Code"
+* diagnosis.diagnosisCode ^mapping[+].identity = "worksheet"
+* diagnosis.diagnosisCode ^mapping[=].map = "Condition!E25; SOURCE ROW 336; NO 7"
+* diagnosis.diagnosisCode ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* diagnosis.diagnosisDescription 0..1 string "Diagnosis Description" "Diagnosis description"
+* diagnosis.diagnosisDescription ^code[0] = JAOConditionSourceRows#SRC337 "Diagnosis Description"
+* diagnosis.diagnosisDescription ^mapping[+].identity = "worksheet"
+* diagnosis.diagnosisDescription ^mapping[=].map = "Condition!E26; SOURCE ROW 337; NO 8"
+* diagnosis.diagnosisDescription ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* diagnosis.diagnosisRemarks 0..1 string "Diagnosis Remarks" "Diagnosis remarks"
+* diagnosis.diagnosisRemarks ^code[0] = JAOConditionSourceRows#SRC338 "Diagnosis Remarks"
+* diagnosis.diagnosisRemarks ^mapping[+].identity = "worksheet"
+* diagnosis.diagnosisRemarks ^mapping[=].map = "Condition!E27; SOURCE ROW 338; NO 9"
+* diagnosis.diagnosisRemarks ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* pregnancy 0..1 BackboneElement "PREGNANCY" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* pregnancy.pregnancyInducedHypertensionAnswer 0..1 CodeableConcept "If Pregnancy - Induced Hypertension (Pre - Eclampsia)" "Yes, No/None"
+* pregnancy.pregnancyInducedHypertensionAnswer ^code[0] = JAOConditionSourceRows#SRC418 "If Pregnancy - Induced Hypertension (Pre - Eclampsia)"
+* pregnancy.pregnancyInducedHypertensionAnswer ^mapping[+].identity = "worksheet"
+* pregnancy.pregnancyInducedHypertensionAnswer ^mapping[=].map = "Condition!E29; SOURCE ROW 418; NO 12"
+* pregnancy.pregnancyInducedHypertensionAnswer ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* pastMedicalHistory 0..1 BackboneElement "PAST MEDICAL HISTORY" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* pastMedicalHistory.disease 0..1 CodeableConcept "Disease" "Disease as represented by a code."
+* pastMedicalHistory.disease ^code[0] = JAOConditionSourceRows#SRC744 "Disease"
+* pastMedicalHistory.disease ^mapping[+].identity = "worksheet"
+* pastMedicalHistory.disease ^mapping[=].map = "Condition!E31; SOURCE ROW 744; NO 4"
+* pastMedicalHistory.disease ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual 1"
+
+* pastMedicalHistory.diseaseDescription 0..1 string "Disease Description" "Specific Disease Description"
+* pastMedicalHistory.diseaseDescription ^code[0] = JAOConditionSourceRows#SRC745 "Disease Description"
+* pastMedicalHistory.diseaseDescription ^mapping[+].identity = "worksheet"
+* pastMedicalHistory.diseaseDescription ^mapping[=].map = "Condition!E32; SOURCE ROW 745; NO 5"
+* pastMedicalHistory.diseaseDescription ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* pastMedicalHistory.presentIllness 0..1 string "Present Illness" "Present Illness"
+* pastMedicalHistory.presentIllness ^code[0] = JAOConditionSourceRows#SRC746 "Present Illness"
+* pastMedicalHistory.presentIllness ^mapping[+].identity = "worksheet"
+* pastMedicalHistory.presentIllness ^mapping[=].map = "Condition!E33; SOURCE ROW 746; NO 6"
+* pastMedicalHistory.presentIllness ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* pastMedicalHistory.comorbidities 0..1 CodeableConcept "Co-morbidities" "Co-morbidities"
+* pastMedicalHistory.comorbidities ^code[0] = JAOConditionSourceRows#SRC747 "Co-morbidities"
+* pastMedicalHistory.comorbidities ^mapping[+].identity = "worksheet"
+* pastMedicalHistory.comorbidities ^mapping[=].map = "Condition!E34; SOURCE ROW 747; NO 7"
+* pastMedicalHistory.comorbidities ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* pastMedicalHistory.pertinentPastHistory 0..1 string "Pertinent Past Medical History" "Pertinent Past Medical History"
+* pastMedicalHistory.pertinentPastHistory ^code[0] = JAOConditionSourceRows#SRC748 "Pertinent Past Medical History"
+* pastMedicalHistory.pertinentPastHistory ^mapping[+].identity = "worksheet"
+* pastMedicalHistory.pertinentPastHistory ^mapping[=].map = "Condition!E35; SOURCE ROW 748; NO 8"
+* pastMedicalHistory.pertinentPastHistory ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* signsSymptomsOnEncounter 0..1 BackboneElement "PERTINENT SIGNS & SYMPTOMS ON ENCOUNTER" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* signsSymptomsOnEncounter.otherSignsSymptoms 0..1 string "Pertinent Signs and Symptoms on Admission, Others specify" "Pertinent Signs and Symptoms on Admission, Others specify"
+* signsSymptomsOnEncounter.otherSignsSymptoms ^code[0] = JAOConditionSourceRows#SRC793 "Pertinent Signs and Symptoms on Admission, Others specify"
+* signsSymptomsOnEncounter.otherSignsSymptoms ^mapping[+].identity = "worksheet"
+* signsSymptomsOnEncounter.otherSignsSymptoms ^mapping[=].map = "Condition!E37; SOURCE ROW 793; NO 4"
+* signsSymptomsOnEncounter.otherSignsSymptoms ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual"
+
+* hypertensionRegistry 0..1 BackboneElement "DISEASE REGISTRY - HYPERTENSION" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* hypertensionRegistry.hypertensionType 0..1 CodeableConcept "Type of Hypertension" "Type of Hypertension Code"
+* hypertensionRegistry.hypertensionType ^code[0] = JAOConditionSourceRows#SRC898 "Type of Hypertension"
+* hypertensionRegistry.hypertensionType ^mapping[+].identity = "worksheet"
+* hypertensionRegistry.hypertensionType ^mapping[=].map = "Condition!E39; SOURCE ROW 898; NO 4"
+* hypertensionRegistry.hypertensionType ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non- Communicable Diseases. Injury Related Cases. Persons with Disabilities. and Violence Against Women and Children Registry System)"
+
+* strokeRegistry 0..1 BackboneElement "DISEASE REGISTRY - STROKE" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* strokeRegistry.strokeType 0..1 CodeableConcept "Type of Stroke" "Type of Stroke Code"
+* strokeRegistry.strokeType ^code[0] = JAOConditionSourceRows#SRC908 "Type of Stroke"
+* strokeRegistry.strokeType ^mapping[+].identity = "worksheet"
+* strokeRegistry.strokeType ^mapping[=].map = "Condition!E41; SOURCE ROW 908; NO 4"
+* strokeRegistry.strokeType ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non- Communicable Diseases, Injury Related Cases, Persons with Disabilities. and Violence Against Women and Children Registry System)"
+
+* diabetesRegistry 0..1 BackboneElement "DISEASE REGISTRY - DIABETES MELLITUS" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* diabetesRegistry.diabetesDiagnosisRecency 0..1 CodeableConcept "Newly or Previously Diagnosed Diabetes" "Indicator if patient is newly diagnosed or not"
+* diabetesRegistry.diabetesDiagnosisRecency ^code[0] = JAOConditionSourceRows#SRC917 "Newly or Previously Diagnosed Diabetes"
+* diabetesRegistry.diabetesDiagnosisRecency ^mapping[+].identity = "worksheet"
+* diabetesRegistry.diabetesDiagnosisRecency ^mapping[=].map = "Condition!E43; SOURCE ROW 917; NO 4"
+* diabetesRegistry.diabetesDiagnosisRecency ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non-"
+
+* diabetesRegistry.diabetesType 0..1 CodeableConcept "Type of Diabetes" "Type of Diabetes as represented by a code."
+* diabetesRegistry.diabetesType ^code[0] = JAOConditionSourceRows#SRC918 "Type of Diabetes"
+* diabetesRegistry.diabetesType ^mapping[+].identity = "worksheet"
+* diabetesRegistry.diabetesType ^mapping[=].map = "Condition!E44; SOURCE ROW 918; NO 5"
+* diabetesRegistry.diabetesType ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* copdRegistry 0..1 BackboneElement "DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE" "Grouping from the Condition worksheet; not a separate FHIR resource or assertion."
+* copdRegistry.goldClassification 0..1 CodeableConcept "GOLD Classification" "GOLD Classification Code"
+* copdRegistry.goldClassification ^code[0] = JAOConditionSourceRows#SRC927 "GOLD Classification"
+* copdRegistry.goldClassification ^mapping[+].identity = "worksheet"
+* copdRegistry.goldClassification ^mapping[=].map = "Condition!E46; SOURCE ROW 927; NO 4"
+* copdRegistry.goldClassification ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non-Communicable Diseases, Injury Related Cases, Persons with Disabilities. and Violence Against Women and Children Registry System)"
+
+* copdRegistry.copdGroup 0..1 CodeableConcept "COPD Group" "COPD Group Code"
+* copdRegistry.copdGroup ^code[0] = JAOConditionSourceRows#SRC928 "COPD Group"
+* copdRegistry.copdGroup ^mapping[+].identity = "worksheet"
+* copdRegistry.copdGroup ^mapping[=].map = "Condition!E47; SOURCE ROW 928; NO 5"
+* copdRegistry.copdGroup ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review."
+
+* copdRegistry.pulmonaryTuberculosisAnswer 0..1 CodeableConcept "Pulmonary Tuberculosis" "Does the patient have Pulmonary Tuberculosis?"
+* copdRegistry.pulmonaryTuberculosisAnswer ^code[0] = JAOConditionSourceRows#SRC933 "Pulmonary Tuberculosis"
+* copdRegistry.pulmonaryTuberculosisAnswer ^mapping[+].identity = "worksheet"
+* copdRegistry.pulmonaryTuberculosisAnswer ^mapping[=].map = "Condition!E48; SOURCE ROW 933; NO 10"
+* copdRegistry.pulmonaryTuberculosisAnswer ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2015-0024: Implementing Guidelines on Integrated Tuberculosis Information System (ITIS) 3. DOH AO 2011-0010: Implementing Procedures and Guidelines in Reporting Field Health Services Data to the DOH Central Office"
+
+* copdRegistry.asthmaDiagnosisBasis 0..1 string "Basis for the final diagnosis of Asthma" "Basis for the final diagnosis of Asthma"
+* copdRegistry.asthmaDiagnosisBasis ^code[0] = JAOConditionSourceRows#SRC934 "Basis for the final diagnosis of Asthma"
+* copdRegistry.asthmaDiagnosisBasis ^mapping[+].identity = "worksheet"
+* copdRegistry.asthmaDiagnosisBasis ^mapping[=].map = "Condition!E49; SOURCE ROW 934; NO 11"
+* copdRegistry.asthmaDiagnosisBasis ^comment = "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non-Communicable Diseases, Injury Related Cases, Persons with Disabilities, and Violence Against Women and Children Registry System)"
+

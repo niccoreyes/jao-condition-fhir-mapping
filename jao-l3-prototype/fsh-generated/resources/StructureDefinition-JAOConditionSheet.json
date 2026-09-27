@@ -1,0 +1,1121 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "JAOConditionSheet",
+  "url": "https://example.org/fhir/jao-working/StructureDefinition/JAOConditionSheet",
+  "name": "JAOConditionSheet",
+  "title": "JAO Condition worksheet logical data model",
+  "status": "draft",
+  "experimental": true,
+  "description": "Draft data structure for all 34 populated clinical rows in the JAO Condition worksheet, organized by its 13 source sections. Not a FHIR Condition profile.",
+  "purpose": "Preserve source concepts and row identifiers independently of FHIR resource choices; support review of cardinality, terminology, and mapping.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "worksheet",
+      "uri": "urn:jao:condition-worksheet",
+      "name": "JAO Condition worksheet coordinates"
+    }
+  ],
+  "kind": "logical",
+  "abstract": false,
+  "type": "https://example.org/fhir/jao-working/StructureDefinition/JAOConditionSheet",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Base",
+  "derivation": "specialization",
+  "differential": {
+    "element": [
+      {
+        "id": "JAOConditionSheet",
+        "path": "JAOConditionSheet",
+        "short": "JAO Condition worksheet logical data model",
+        "definition": "Draft data structure for all 34 populated clinical rows in the JAO Condition worksheet, organized by its 13 source sections. Not a FHIR Condition profile."
+      },
+      {
+        "id": "JAOConditionSheet.masterPersonData",
+        "path": "JAOConditionSheet.masterPersonData",
+        "short": "MASTER PERSON DATA",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.masterPersonData.disabilityType",
+        "path": "JAOConditionSheet.masterPersonData.disabilityType",
+        "code": [
+          {
+            "code": "SRC8",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Type of Disability"
+          }
+        ],
+        "short": "Type of Disability",
+        "definition": "Type of disability as represented by a code.",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): Identification Card Relative to Republic Act 9442",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E4; SOURCE ROW 8; NO 6"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.masterPersonData.permanentDisability",
+        "path": "JAOConditionSheet.masterPersonData.permanentDisability",
+        "code": [
+          {
+            "code": "SRC9",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "With Permanent Disability"
+          }
+        ],
+        "short": "With Permanent Disability",
+        "definition": "Yes/No",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E5; SOURCE ROW 9; NO 7"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.encounterLog",
+        "path": "JAOConditionSheet.encounterLog",
+        "short": "ENCOUNTER LOG",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.encounterLog.covid19CaseStatus",
+        "path": "JAOConditionSheet.encounterLog.covid19CaseStatus",
+        "code": [
+          {
+            "code": "SRC129",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "COVID-19"
+          }
+        ],
+        "short": "COVID-19",
+        "definition": "If the patient is a COVID-19 case or not.",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E7; SOURCE ROW 129; NO 17"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.encounterLog.illnessOnsetDate",
+        "path": "JAOConditionSheet.encounterLog.illnessOnsetDate",
+        "code": [
+          {
+            "code": "SRC136",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Date of Onset of Illness"
+          }
+        ],
+        "short": "Date of Onset of Illness",
+        "definition": "Date of Onset of Illness",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E8; SOURCE ROW 136; NO 24"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.encounterLog.underlyingCauseOfDeathCode",
+        "path": "JAOConditionSheet.encounterLog.underlyingCauseOfDeathCode",
+        "code": [
+          {
+            "code": "SRC147",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Underlying Cause of Death (ICD-10)"
+          }
+        ],
+        "short": "Underlying Cause of Death (ICD-10)",
+        "definition": "Disease or injury that initiated the train of events leading directly to death",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E9; SOURCE ROW 147; NO 35"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.encounterLog.underlyingCauseOfDeathDescription",
+        "path": "JAOConditionSheet.encounterLog.underlyingCauseOfDeathDescription",
+        "code": [
+          {
+            "code": "SRC148",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Underlying Cause of Death Description"
+          }
+        ],
+        "short": "Underlying Cause of Death Description",
+        "definition": "Underlying Cause of Death Description",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E10; SOURCE ROW 148; NO 36"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.covid19",
+        "path": "JAOConditionSheet.covid19",
+        "short": "COVID-19",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.covid19.illnessOnsetDate",
+        "path": "JAOConditionSheet.covid19.illnessOnsetDate",
+        "code": [
+          {
+            "code": "SRC202",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Date of Onset of Illness"
+          }
+        ],
+        "short": "Date of Onset of Illness",
+        "definition": "The date when the signs (i.e. objective clinical finding as determined by a licensed physician) of illness first appeared and/or when the symptom/s (e.g. fever, cough, colds, sore throat, shortness of breath/difficulty breathing) were first felt.",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E12; SOURCE ROW 202; NO 7"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.covid19.otherIllnessHistory",
+        "path": "JAOConditionSheet.covid19.otherIllnessHistory",
+        "code": [
+          {
+            "code": "SRC210",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "History of Other Illness"
+          }
+        ],
+        "short": "History of Other Illness",
+        "definition": "If with other history of other illness",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E13; SOURCE ROW 210; NO 15"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.detectedIssue",
+        "path": "JAOConditionSheet.detectedIssue",
+        "short": "DETECTED ISSUE",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.detectedIssue.complicationDate",
+        "path": "JAOConditionSheet.detectedIssue.complicationDate",
+        "code": [
+          {
+            "code": "SRC300",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Date of Complication"
+          }
+        ],
+        "short": "Date of Complication",
+        "definition": "Date the patient experienced complication",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual 1",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E15; SOURCE ROW 300; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.detectedIssue.complicationTime",
+        "path": "JAOConditionSheet.detectedIssue.complicationTime",
+        "code": [
+          {
+            "code": "SRC301",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Time of Complication"
+          }
+        ],
+        "short": "Time of Complication",
+        "definition": "Time of the patient experienced complication",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "time"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E16; SOURCE ROW 301; NO 5"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.detectedIssue.complication",
+        "path": "JAOConditionSheet.detectedIssue.complication",
+        "code": [
+          {
+            "code": "SRC302",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Complication"
+          }
+        ],
+        "short": "Complication",
+        "definition": "Complication experienced by the patient",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E17; SOURCE ROW 302; NO 6"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.complications",
+        "path": "JAOConditionSheet.complications",
+        "short": "COMPLICATIONS",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.complications.complicationDate",
+        "path": "JAOConditionSheet.complications.complicationDate",
+        "code": [
+          {
+            "code": "SRC322",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Date of Complication"
+          }
+        ],
+        "short": "Date of Complication",
+        "definition": "Date the patient experienced complication",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E19; SOURCE ROW 322; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.complications.complicationTime",
+        "path": "JAOConditionSheet.complications.complicationTime",
+        "code": [
+          {
+            "code": "SRC323",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Time of Complication"
+          }
+        ],
+        "short": "Time of Complication",
+        "definition": "Time of the patient experienced complication",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "time"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E20; SOURCE ROW 323; NO 5"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.complications.complication",
+        "path": "JAOConditionSheet.complications.complication",
+        "code": [
+          {
+            "code": "SRC324",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Complication"
+          }
+        ],
+        "short": "Complication",
+        "definition": "Complication experienced by the patient",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E21; SOURCE ROW 324; NO 6"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diagnosis",
+        "path": "JAOConditionSheet.diagnosis",
+        "short": "DIAGNOSIS",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diagnosis.diagnosedDate",
+        "path": "JAOConditionSheet.diagnosis.diagnosedDate",
+        "code": [
+          {
+            "code": "SRC333",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Date Diagnosed"
+          }
+        ],
+        "short": "Date Diagnosed",
+        "definition": "The date when the patient was diagnosed",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E23; SOURCE ROW 333; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diagnosis.diagnosedTime",
+        "path": "JAOConditionSheet.diagnosis.diagnosedTime",
+        "code": [
+          {
+            "code": "SRC334",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Time Diagnosed"
+          }
+        ],
+        "short": "Time Diagnosed",
+        "definition": "Time the patient was diagnosed",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "time"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E24; SOURCE ROW 334; NO 5"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diagnosis.diagnosisCode",
+        "path": "JAOConditionSheet.diagnosis.diagnosisCode",
+        "code": [
+          {
+            "code": "SRC336",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Diagnosis Code"
+          }
+        ],
+        "short": "Diagnosis Code",
+        "definition": "Diagnosis as represented by a code.",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E25; SOURCE ROW 336; NO 7"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diagnosis.diagnosisDescription",
+        "path": "JAOConditionSheet.diagnosis.diagnosisDescription",
+        "code": [
+          {
+            "code": "SRC337",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Diagnosis Description"
+          }
+        ],
+        "short": "Diagnosis Description",
+        "definition": "Diagnosis description",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E26; SOURCE ROW 337; NO 8"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diagnosis.diagnosisRemarks",
+        "path": "JAOConditionSheet.diagnosis.diagnosisRemarks",
+        "code": [
+          {
+            "code": "SRC338",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Diagnosis Remarks"
+          }
+        ],
+        "short": "Diagnosis Remarks",
+        "definition": "Diagnosis remarks",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E27; SOURCE ROW 338; NO 9"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pregnancy",
+        "path": "JAOConditionSheet.pregnancy",
+        "short": "PREGNANCY",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pregnancy.pregnancyInducedHypertensionAnswer",
+        "path": "JAOConditionSheet.pregnancy.pregnancyInducedHypertensionAnswer",
+        "code": [
+          {
+            "code": "SRC418",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "If Pregnancy - Induced Hypertension (Pre - Eclampsia)"
+          }
+        ],
+        "short": "If Pregnancy - Induced Hypertension (Pre - Eclampsia)",
+        "definition": "Yes, No/None",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E29; SOURCE ROW 418; NO 12"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pastMedicalHistory",
+        "path": "JAOConditionSheet.pastMedicalHistory",
+        "short": "PAST MEDICAL HISTORY",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pastMedicalHistory.disease",
+        "path": "JAOConditionSheet.pastMedicalHistory.disease",
+        "code": [
+          {
+            "code": "SRC744",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Disease"
+          }
+        ],
+        "short": "Disease",
+        "definition": "Disease as represented by a code.",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual 1",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E31; SOURCE ROW 744; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pastMedicalHistory.diseaseDescription",
+        "path": "JAOConditionSheet.pastMedicalHistory.diseaseDescription",
+        "code": [
+          {
+            "code": "SRC745",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Disease Description"
+          }
+        ],
+        "short": "Disease Description",
+        "definition": "Specific Disease Description",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E32; SOURCE ROW 745; NO 5"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pastMedicalHistory.presentIllness",
+        "path": "JAOConditionSheet.pastMedicalHistory.presentIllness",
+        "code": [
+          {
+            "code": "SRC746",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Present Illness"
+          }
+        ],
+        "short": "Present Illness",
+        "definition": "Present Illness",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E33; SOURCE ROW 746; NO 6"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pastMedicalHistory.comorbidities",
+        "path": "JAOConditionSheet.pastMedicalHistory.comorbidities",
+        "code": [
+          {
+            "code": "SRC747",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Co-morbidities"
+          }
+        ],
+        "short": "Co-morbidities",
+        "definition": "Co-morbidities",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E34; SOURCE ROW 747; NO 7"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.pastMedicalHistory.pertinentPastHistory",
+        "path": "JAOConditionSheet.pastMedicalHistory.pertinentPastHistory",
+        "code": [
+          {
+            "code": "SRC748",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Pertinent Past Medical History"
+          }
+        ],
+        "short": "Pertinent Past Medical History",
+        "definition": "Pertinent Past Medical History",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E35; SOURCE ROW 748; NO 8"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.signsSymptomsOnEncounter",
+        "path": "JAOConditionSheet.signsSymptomsOnEncounter",
+        "short": "PERTINENT SIGNS & SYMPTOMS ON ENCOUNTER",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.signsSymptomsOnEncounter.otherSignsSymptoms",
+        "path": "JAOConditionSheet.signsSymptomsOnEncounter.otherSignsSymptoms",
+        "code": [
+          {
+            "code": "SRC793",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Pertinent Signs and Symptoms on Admission, Others specify"
+          }
+        ],
+        "short": "Pertinent Signs and Symptoms on Admission, Others specify",
+        "definition": "Pertinent Signs and Symptoms on Admission, Others specify",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH Hospital Health Information Management Manual",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E37; SOURCE ROW 793; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.hypertensionRegistry",
+        "path": "JAOConditionSheet.hypertensionRegistry",
+        "short": "DISEASE REGISTRY - HYPERTENSION",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.hypertensionRegistry.hypertensionType",
+        "path": "JAOConditionSheet.hypertensionRegistry.hypertensionType",
+        "code": [
+          {
+            "code": "SRC898",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Type of Hypertension"
+          }
+        ],
+        "short": "Type of Hypertension",
+        "definition": "Type of Hypertension Code",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non- Communicable Diseases. Injury Related Cases. Persons with Disabilities. and Violence Against Women and Children Registry System)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E39; SOURCE ROW 898; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.strokeRegistry",
+        "path": "JAOConditionSheet.strokeRegistry",
+        "short": "DISEASE REGISTRY - STROKE",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.strokeRegistry.strokeType",
+        "path": "JAOConditionSheet.strokeRegistry.strokeType",
+        "code": [
+          {
+            "code": "SRC908",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Type of Stroke"
+          }
+        ],
+        "short": "Type of Stroke",
+        "definition": "Type of Stroke Code",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non- Communicable Diseases, Injury Related Cases, Persons with Disabilities. and Violence Against Women and Children Registry System)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E41; SOURCE ROW 908; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diabetesRegistry",
+        "path": "JAOConditionSheet.diabetesRegistry",
+        "short": "DISEASE REGISTRY - DIABETES MELLITUS",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diabetesRegistry.diabetesDiagnosisRecency",
+        "path": "JAOConditionSheet.diabetesRegistry.diabetesDiagnosisRecency",
+        "code": [
+          {
+            "code": "SRC917",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Newly or Previously Diagnosed Diabetes"
+          }
+        ],
+        "short": "Newly or Previously Diagnosed Diabetes",
+        "definition": "Indicator if patient is newly diagnosed or not",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non-",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E43; SOURCE ROW 917; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.diabetesRegistry.diabetesType",
+        "path": "JAOConditionSheet.diabetesRegistry.diabetesType",
+        "code": [
+          {
+            "code": "SRC918",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Type of Diabetes"
+          }
+        ],
+        "short": "Type of Diabetes",
+        "definition": "Type of Diabetes as represented by a code.",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E44; SOURCE ROW 918; NO 5"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.copdRegistry",
+        "path": "JAOConditionSheet.copdRegistry",
+        "short": "DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE",
+        "definition": "Grouping from the Condition worksheet; not a separate FHIR resource or assertion.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "BackboneElement"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.copdRegistry.goldClassification",
+        "path": "JAOConditionSheet.copdRegistry.goldClassification",
+        "code": [
+          {
+            "code": "SRC927",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "GOLD Classification"
+          }
+        ],
+        "short": "GOLD Classification",
+        "definition": "GOLD Classification Code",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non-Communicable Diseases, Injury Related Cases, Persons with Disabilities. and Violence Against Women and Children Registry System)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E46; SOURCE ROW 927; NO 4"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.copdRegistry.copdGroup",
+        "path": "JAOConditionSheet.copdRegistry.copdGroup",
+        "code": [
+          {
+            "code": "SRC928",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "COPD Group"
+          }
+        ],
+        "short": "COPD Group",
+        "definition": "COPD Group Code",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E47; SOURCE ROW 928; NO 5"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.copdRegistry.pulmonaryTuberculosisAnswer",
+        "path": "JAOConditionSheet.copdRegistry.pulmonaryTuberculosisAnswer",
+        "code": [
+          {
+            "code": "SRC933",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Pulmonary Tuberculosis"
+          }
+        ],
+        "short": "Pulmonary Tuberculosis",
+        "definition": "Does the patient have Pulmonary Tuberculosis?",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): 1. DOH Hospital Health Information Management Manual 2. DOH AO 2015-0024: Implementing Guidelines on Integrated Tuberculosis Information System (ITIS) 3. DOH AO 2011-0010: Implementing Procedures and Guidelines in Reporting Field Health Services Data to the DOH Central Office",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E48; SOURCE ROW 933; NO 10"
+          }
+        ]
+      },
+      {
+        "id": "JAOConditionSheet.copdRegistry.asthmaDiagnosisBasis",
+        "path": "JAOConditionSheet.copdRegistry.asthmaDiagnosisBasis",
+        "code": [
+          {
+            "code": "SRC934",
+            "system": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+            "display": "Basis for the final diagnosis of Asthma"
+          }
+        ],
+        "short": "Basis for the final diagnosis of Asthma",
+        "definition": "Basis for the final diagnosis of Asthma",
+        "comment": "Source terminology binding blank. Cardinality and datatype are provisional pending source-owner review. Source of definition (worksheet): DOH AO 2013-0005: National Policy on the Unified Registry Systems of the Department of Health (Chronic Non-Communicable Diseases, Injury Related Cases, Persons with Disabilities, and Violence Against Women and Children Registry System)",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mapping": [
+          {
+            "identity": "worksheet",
+            "map": "Condition!E49; SOURCE ROW 934; NO 11"
+          }
+        ]
+      }
+    ]
+  }
+}

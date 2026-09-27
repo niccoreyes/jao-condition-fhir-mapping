@@ -1,0 +1,11 @@
+# Local prototype only: not an official PH Core or WHO IG.
+id: fhir.ph.jao.condition-working
+canonical: https://example.org/fhir/jao-working
+name: JAOConditionWorkingIG
+title: JAO Condition worksheet L3 working prototype
+status: draft
+version: 0.0.1-draft
+fhirVersion: 4.0.1
+publisher:
+  name: JAO mapping review (working draft)
+license: CC0-1.0

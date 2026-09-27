@@ -1,0 +1,184 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "JAOConditionSourceRows",
+  "id": "JAOConditionSourceRows",
+  "title": "JAO Condition worksheet source row identifiers",
+  "description": "Local traceability identifiers for the JAO Condition worksheet. Not a clinical terminology or WHO concept registry.",
+  "url": "https://example.org/fhir/jao-working/CodeSystem/JAOConditionSourceRows",
+  "concept": [
+    {
+      "code": "SRC8",
+      "display": "Type of Disability",
+      "definition": "Excel row 4; SOURCE ROW 8; section MASTER PERSON DATA"
+    },
+    {
+      "code": "SRC9",
+      "display": "With Permanent Disability",
+      "definition": "Excel row 5; SOURCE ROW 9; section MASTER PERSON DATA"
+    },
+    {
+      "code": "SRC129",
+      "display": "COVID-19",
+      "definition": "Excel row 7; SOURCE ROW 129; section ENCOUNTER LOG"
+    },
+    {
+      "code": "SRC136",
+      "display": "Date of Onset of Illness",
+      "definition": "Excel row 8; SOURCE ROW 136; section ENCOUNTER LOG"
+    },
+    {
+      "code": "SRC147",
+      "display": "Underlying Cause of Death (ICD-10)",
+      "definition": "Excel row 9; SOURCE ROW 147; section ENCOUNTER LOG"
+    },
+    {
+      "code": "SRC148",
+      "display": "Underlying Cause of Death Description",
+      "definition": "Excel row 10; SOURCE ROW 148; section ENCOUNTER LOG"
+    },
+    {
+      "code": "SRC202",
+      "display": "Date of Onset of Illness",
+      "definition": "Excel row 12; SOURCE ROW 202; section COVID-19"
+    },
+    {
+      "code": "SRC210",
+      "display": "History of Other Illness",
+      "definition": "Excel row 13; SOURCE ROW 210; section COVID-19"
+    },
+    {
+      "code": "SRC300",
+      "display": "Date of Complication",
+      "definition": "Excel row 15; SOURCE ROW 300; section DETECTED ISSUE"
+    },
+    {
+      "code": "SRC301",
+      "display": "Time of Complication",
+      "definition": "Excel row 16; SOURCE ROW 301; section DETECTED ISSUE"
+    },
+    {
+      "code": "SRC302",
+      "display": "Complication",
+      "definition": "Excel row 17; SOURCE ROW 302; section DETECTED ISSUE"
+    },
+    {
+      "code": "SRC322",
+      "display": "Date of Complication",
+      "definition": "Excel row 19; SOURCE ROW 322; section COMPLICATIONS"
+    },
+    {
+      "code": "SRC323",
+      "display": "Time of Complication",
+      "definition": "Excel row 20; SOURCE ROW 323; section COMPLICATIONS"
+    },
+    {
+      "code": "SRC324",
+      "display": "Complication",
+      "definition": "Excel row 21; SOURCE ROW 324; section COMPLICATIONS"
+    },
+    {
+      "code": "SRC333",
+      "display": "Date Diagnosed",
+      "definition": "Excel row 23; SOURCE ROW 333; section DIAGNOSIS"
+    },
+    {
+      "code": "SRC334",
+      "display": "Time Diagnosed",
+      "definition": "Excel row 24; SOURCE ROW 334; section DIAGNOSIS"
+    },
+    {
+      "code": "SRC336",
+      "display": "Diagnosis Code",
+      "definition": "Excel row 25; SOURCE ROW 336; section DIAGNOSIS"
+    },
+    {
+      "code": "SRC337",
+      "display": "Diagnosis Description",
+      "definition": "Excel row 26; SOURCE ROW 337; section DIAGNOSIS"
+    },
+    {
+      "code": "SRC338",
+      "display": "Diagnosis Remarks",
+      "definition": "Excel row 27; SOURCE ROW 338; section DIAGNOSIS"
+    },
+    {
+      "code": "SRC418",
+      "display": "If Pregnancy - Induced Hypertension (Pre - Eclampsia)",
+      "definition": "Excel row 29; SOURCE ROW 418; section PREGNANCY"
+    },
+    {
+      "code": "SRC744",
+      "display": "Disease",
+      "definition": "Excel row 31; SOURCE ROW 744; section PAST MEDICAL HISTORY"
+    },
+    {
+      "code": "SRC745",
+      "display": "Disease Description",
+      "definition": "Excel row 32; SOURCE ROW 745; section PAST MEDICAL HISTORY"
+    },
+    {
+      "code": "SRC746",
+      "display": "Present Illness",
+      "definition": "Excel row 33; SOURCE ROW 746; section PAST MEDICAL HISTORY"
+    },
+    {
+      "code": "SRC747",
+      "display": "Co-morbidities",
+      "definition": "Excel row 34; SOURCE ROW 747; section PAST MEDICAL HISTORY"
+    },
+    {
+      "code": "SRC748",
+      "display": "Pertinent Past Medical History",
+      "definition": "Excel row 35; SOURCE ROW 748; section PAST MEDICAL HISTORY"
+    },
+    {
+      "code": "SRC793",
+      "display": "Pertinent Signs and Symptoms on Admission, Others specify",
+      "definition": "Excel row 37; SOURCE ROW 793; section PERTINENT SIGNS & SYMPTOMS ON ENCOUNTER"
+    },
+    {
+      "code": "SRC898",
+      "display": "Type of Hypertension",
+      "definition": "Excel row 39; SOURCE ROW 898; section DISEASE REGISTRY - HYPERTENSION"
+    },
+    {
+      "code": "SRC908",
+      "display": "Type of Stroke",
+      "definition": "Excel row 41; SOURCE ROW 908; section DISEASE REGISTRY - STROKE"
+    },
+    {
+      "code": "SRC917",
+      "display": "Newly or Previously Diagnosed Diabetes",
+      "definition": "Excel row 43; SOURCE ROW 917; section DISEASE REGISTRY - DIABETES MELLITUS"
+    },
+    {
+      "code": "SRC918",
+      "display": "Type of Diabetes",
+      "definition": "Excel row 44; SOURCE ROW 918; section DISEASE REGISTRY - DIABETES MELLITUS"
+    },
+    {
+      "code": "SRC927",
+      "display": "GOLD Classification",
+      "definition": "Excel row 46; SOURCE ROW 927; section DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE"
+    },
+    {
+      "code": "SRC928",
+      "display": "COPD Group",
+      "definition": "Excel row 47; SOURCE ROW 928; section DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE"
+    },
+    {
+      "code": "SRC933",
+      "display": "Pulmonary Tuberculosis",
+      "definition": "Excel row 48; SOURCE ROW 933; section DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE"
+    },
+    {
+      "code": "SRC934",
+      "display": "Basis for the final diagnosis of Asthma",
+      "definition": "Excel row 49; SOURCE ROW 934; section DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE"
+    }
+  ],
+  "experimental": true,
+  "count": 34
+}

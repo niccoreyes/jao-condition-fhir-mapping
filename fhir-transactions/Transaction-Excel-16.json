@@ -1,0 +1,71 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:7f296830-a46e-5e39-a954-02dafa5dd4a3",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5107b3d1-ba64-5bb4-ab5d-c0374425661f",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "urn:uuid:7f296830-a46e-5e39-a954-02dafa5dd4a3"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:4fd28bd4-6d61-5d1e-b019-47a9c5c89369"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4fd28bd4-6d61-5d1e-b019-47a9c5c89369",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:7f296830-a46e-5e39-a954-02dafa5dd4a3"
+        },
+        "code": {
+          "text": "Illustrative complication diagnosis"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:5107b3d1-ba64-5bb4-ab5d-c0374425661f"
+        },
+        "onsetDateTime": "2026-03-01T10:30:00+08:00"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    }
+  ]
+}

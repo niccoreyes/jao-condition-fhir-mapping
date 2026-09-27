@@ -1,0 +1,37 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:cf20413a-55c0-51eb-9245-229e3e07c06c",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:2d28d2fb-b059-5d23-a47c-9417ee78f10c",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "COVID-19"
+        },
+        "subject": {
+          "reference": "urn:uuid:cf20413a-55c0-51eb-9245-229e3e07c06c"
+        },
+        "effectiveDateTime": "2026-03-01T10:30:00+08:00",
+        "valueCodeableConcept": {
+          "text": "Illustrative answer"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

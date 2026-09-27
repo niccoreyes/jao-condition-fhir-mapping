@@ -1,0 +1,37 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:47ca691e-1379-5243-8a5a-4c602fe3a982",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f329692f-6705-5c85-bf5c-59f8cf2b92d2",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "Pertinent Signs and Symptoms on Admission, Others specify"
+        },
+        "subject": {
+          "reference": "urn:uuid:47ca691e-1379-5243-8a5a-4c602fe3a982"
+        },
+        "effectiveDateTime": "2026-03-01T10:30:00+08:00",
+        "valueCodeableConcept": {
+          "text": "Illustrative symptom"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

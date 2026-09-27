@@ -1,0 +1,37 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:ca7d1c9d-4665-5aad-b84b-f322d2bd80ad",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b04fb256-41d0-5dbd-bc9e-2d5a7d31a4f5",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "If Pregnancy - Induced Hypertension (Pre - Eclampsia)"
+        },
+        "subject": {
+          "reference": "urn:uuid:ca7d1c9d-4665-5aad-b84b-f322d2bd80ad"
+        },
+        "effectiveDateTime": "2026-03-01T10:30:00+08:00",
+        "valueCodeableConcept": {
+          "text": "Illustrative answer"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}

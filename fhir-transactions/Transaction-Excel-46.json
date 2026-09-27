@@ -1,0 +1,68 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:c7245db7-1a81-560c-9be5-5d3666b23166",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:483c72bf-8e4b-57f3-9d7e-ad98021c7651",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:c7245db7-1a81-560c-9be5-5d3666b23166"
+        },
+        "code": {
+          "text": "Illustrative COPD diagnosis"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "problem-list-item"
+              }
+            ]
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "stage": [
+          {
+            "type": {
+              "text": "GOLD spirometric grade"
+            },
+            "summary": {
+              "text": "Illustrative grade"
+            }
+          },
+          {
+            "type": {
+              "text": "GOLD clinical group"
+            },
+            "summary": {
+              "text": "Illustrative group; edition unassigned"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    }
+  ]
+}

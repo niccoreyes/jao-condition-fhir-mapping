@@ -1,0 +1,29 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:ac249916-8d6e-52d0-8da4-63809dabbd72",
+      "resource": {
+        "resourceType": "Patient",
+        "extension": [
+          {
+            "url": "https://fhir.doh.gov.ph/phcore/StructureDefinition/ph-core-pwd-disability",
+            "extension": [
+              {
+                "url": "disabilityType",
+                "valueCodeableConcept": {
+                  "text": "Illustrative disability type"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    }
+  ]
+}

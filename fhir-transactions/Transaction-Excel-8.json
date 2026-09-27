@@ -1,0 +1,71 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:31847c69-86e8-5378-9e1e-ee35efbb2637",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c4d1ec0d-76d6-507a-ac2e-322aa2557301",
+      "resource": {
+        "resourceType": "Encounter",
+        "status": "finished",
+        "class": {
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+          "code": "AMB"
+        },
+        "subject": {
+          "reference": "urn:uuid:31847c69-86e8-5378-9e1e-ee35efbb2637"
+        },
+        "diagnosis": [
+          {
+            "condition": {
+              "reference": "urn:uuid:4df3df60-153a-5159-bc89-7b4bd99bc872"
+            }
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Encounter"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:4df3df60-153a-5159-bc89-7b4bd99bc872",
+      "resource": {
+        "resourceType": "Condition",
+        "subject": {
+          "reference": "urn:uuid:31847c69-86e8-5378-9e1e-ee35efbb2637"
+        },
+        "code": {
+          "text": "Illustrative encounter illness"
+        },
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                "code": "encounter-diagnosis"
+              }
+            ]
+          }
+        ],
+        "encounter": {
+          "reference": "urn:uuid:c4d1ec0d-76d6-507a-ac2e-322aa2557301"
+        },
+        "onsetDateTime": "2026-03-01T10:30:00+08:00"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:5c47d44c-4c2a-5c3d-9ec3-3fbb31e32a43",
+      "resource": {
+        "resourceType": "Patient"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:60621509-a39a-5acf-bf30-c6bd69df214e",
+      "resource": {
+        "resourceType": "Observation",
+        "status": "final",
+        "code": {
+          "text": "History of Other Illness"
+        },
+        "subject": {
+          "reference": "urn:uuid:5c47d44c-4c2a-5c3d-9ec3-3fbb31e32a43"
+        },
+        "effectiveDateTime": "2026-03-01T10:30:00+08:00",
+        "valueCodeableConcept": {
+          "text": "Illustrative answer"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ]
+}
