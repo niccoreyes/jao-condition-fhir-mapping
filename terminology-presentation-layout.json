@@ -1,0 +1,11 @@
+{
+  "desktopHorizontalScrollRequired": false,
+  "dialogContentWidthPx": 938,
+  "modalWidthPx": 938,
+  "source": "Chromium agent-browser DOM measurements of the rendered modal",
+  "tableContentWidthPx": 894,
+  "tableViewportShareOfModal": 0.953,
+  "tableViewportWidthPx": 894,
+  "terminologyParent": "dialog-body",
+  "view": "1280x800 desktop, Excel row 4 dialog"
+}

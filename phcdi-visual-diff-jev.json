@@ -1,0 +1,62 @@
+{
+  "purpose": "presentation-only Jev ranking; not source verification, clinical truth, equivalence, accessibility certification, or approval",
+  "model": "jev-1.13.0",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "checkedAt": "2026-09-28T02:03:13+00:00",
+  "requestCount": 1,
+  "beforeComparison": "Not run: no pre-edit row-diff UI existed to score on the same four fixed presentation dimensions.",
+  "dimensions": {
+    "status_clarity": {
+      "score": 3.94,
+      "normalized": 0.985,
+      "confidence": 0.95,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.06,
+        "4": 0.94
+      }
+    },
+    "diff_scanability": {
+      "score": 3.98,
+      "normalized": 0.995,
+      "confidence": 0.98,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.01,
+        "4": 0.99
+      }
+    },
+    "provenance_clarity": {
+      "score": 3.64,
+      "normalized": 0.91,
+      "confidence": 0.7,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.01,
+        "3": 0.33,
+        "4": 0.66
+      }
+    },
+    "mobile_presentation": {
+      "score": 3.93,
+      "normalized": 0.983,
+      "confidence": 0.94,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.06,
+        "4": 0.9400000000000001
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 1439,
+    "output_tokens": 69
+  }
+}

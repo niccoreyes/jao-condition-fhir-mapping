@@ -1,0 +1,128 @@
+{
+  "purpose": "terminology-presentation only; not clinical truth",
+  "model": "jev-1.13.0",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "checkedAt": "2026-09-27T15:25:29+00:00",
+  "weights": {
+    "separation": 0.16,
+    "options_source": 0.13,
+    "candidate_provenance": 0.16,
+    "absence": 0.11,
+    "responsive": 0.12,
+    "accessibility": 0.1,
+    "layout_room": 0.22
+  },
+  "thresholds": {
+    "pass": 0.75,
+    "layoutRoom": 0.75,
+    "desktopTableShare": 0.8
+  },
+  "composite": 0.935,
+  "verdict": "pass",
+  "gates": {
+    "weightedScore": true,
+    "layoutRoom": true,
+    "desktopGeometry": true
+  },
+  "layoutMetrics": {
+    "desktopHorizontalScrollRequired": false,
+    "dialogContentWidthPx": 938,
+    "modalWidthPx": 938,
+    "source": "Chromium agent-browser DOM measurements of the rendered modal",
+    "tableContentWidthPx": 894,
+    "tableViewportShareOfModal": 0.953,
+    "tableViewportWidthPx": 894,
+    "terminologyParent": "dialog-body",
+    "view": "1280x800 desktop, Excel row 4 dialog"
+  },
+  "dimensions": {
+    "separation": {
+      "score": 3.74,
+      "normalized": 0.935,
+      "confidence": 0.79,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.01,
+        "3": 0.24,
+        "4": 0.75
+      }
+    },
+    "options_source": {
+      "score": 3.92,
+      "normalized": 0.98,
+      "confidence": 0.93,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.01,
+        "3": 0.05,
+        "4": 0.94
+      }
+    },
+    "candidate_provenance": {
+      "score": 3.95,
+      "normalized": 0.988,
+      "confidence": 0.96,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.04,
+        "4": 0.96
+      }
+    },
+    "absence": {
+      "score": 3.84,
+      "normalized": 0.96,
+      "confidence": 0.87,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.02,
+        "3": 0.1,
+        "4": 0.88
+      }
+    },
+    "responsive": {
+      "score": 3.33,
+      "normalized": 0.833,
+      "confidence": 0.44,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.14,
+        "3": 0.36,
+        "4": 0.49
+      }
+    },
+    "accessibility": {
+      "score": 3.26,
+      "normalized": 0.815,
+      "confidence": 0.58,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.09,
+        "3": 0.52,
+        "4": 0.38
+      }
+    },
+    "layout_room": {
+      "score": 3.87,
+      "normalized": 0.968,
+      "confidence": 0.89,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.03,
+        "3": 0.05,
+        "4": 0.92
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 8261,
+    "output_tokens": 105
+  }
+}

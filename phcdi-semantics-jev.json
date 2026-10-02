@@ -1,0 +1,498 @@
+{
+  "model": "jev-1.13.0",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "checkedAt": "2026-09-28T02:29:56+00:00",
+  "purpose": "advisory semantic/workflow signal only; cannot alter deterministic structural comparison",
+  "options": {
+    "overlap": "The element definition and proposed assertion describe meaning and workflow that substantially overlap, beyond a generic FHIR path resemblance.",
+    "partial": "Some meaning or workflow is shared, but important distinctions or missing details prevent a full match.",
+    "conflict": "The element definition explicitly describes a different meaning or workflow from the proposed assertion.",
+    "no-support": "The cited element definition does not substantively support the proposed assertion; any resemblance is generic or lexical.",
+    "undetermined": "Evidence is too incomplete, ambiguous, or unresolved to judge semantic/workflow correspondence."
+  },
+  "requested": 34,
+  "scored": 34,
+  "skipped": 0,
+  "results": [
+    {
+      "excel": 4,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.0,
+        "overlap": 0.0,
+        "no-support": 0.88,
+        "undetermined": 0.0,
+        "conflict": 0.12
+      },
+      "confidence": 0.85,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 5,
+      "choice": "undetermined",
+      "probabilities": {
+        "no-support": 0.31,
+        "overlap": 0.0,
+        "partial": 0.0,
+        "undetermined": 0.69,
+        "conflict": 0.0
+      },
+      "confidence": 0.61,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 7,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.48,
+        "overlap": 0.01,
+        "no-support": 0.49,
+        "undetermined": 0.01,
+        "conflict": 0.01
+      },
+      "confidence": 0.37,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 8,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.87,
+        "overlap": 0.07,
+        "no-support": 0.05,
+        "undetermined": 0.01,
+        "conflict": 0.0
+      },
+      "confidence": 0.83,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 9,
+      "choice": "no-support",
+      "probabilities": {
+        "no-support": 0.82,
+        "overlap": 0.0,
+        "partial": 0.16,
+        "undetermined": 0.0,
+        "conflict": 0.02
+      },
+      "confidence": 0.77,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 10,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.26,
+        "overlap": 0.0,
+        "no-support": 0.74,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.66,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 12,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.79,
+        "overlap": 0.05,
+        "no-support": 0.15,
+        "undetermined": 0.01,
+        "conflict": 0.0
+      },
+      "confidence": 0.75,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 13,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.26,
+        "overlap": 0.0,
+        "no-support": 0.74,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.66,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 15,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.55,
+        "overlap": 0.01,
+        "no-support": 0.43,
+        "undetermined": 0.0,
+        "conflict": 0.01
+      },
+      "confidence": 0.44,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 16,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.17,
+        "overlap": 0.0,
+        "no-support": 0.72,
+        "undetermined": 0.01,
+        "conflict": 0.1
+      },
+      "confidence": 0.65,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 17,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.59,
+        "overlap": 0.01,
+        "no-support": 0.37,
+        "undetermined": 0.0,
+        "conflict": 0.03
+      },
+      "confidence": 0.48,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 19,
+      "choice": "partial",
+      "probabilities": {
+        "no-support": 0.33,
+        "overlap": 0.02,
+        "partial": 0.65,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.55,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 20,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.23,
+        "overlap": 0.0,
+        "no-support": 0.71,
+        "undetermined": 0.01,
+        "conflict": 0.05
+      },
+      "confidence": 0.64,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 21,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.63,
+        "overlap": 0.01,
+        "no-support": 0.34,
+        "undetermined": 0.0,
+        "conflict": 0.02
+      },
+      "confidence": 0.53,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 23,
+      "choice": "conflict",
+      "probabilities": {
+        "partial": 0.0,
+        "overlap": 0.0,
+        "no-support": 0.0,
+        "undetermined": 0.0,
+        "conflict": 1.0
+      },
+      "confidence": 1.0,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 24,
+      "choice": "conflict",
+      "probabilities": {
+        "partial": 0.0,
+        "overlap": 0.0,
+        "no-support": 0.01,
+        "undetermined": 0.0,
+        "conflict": 0.99
+      },
+      "confidence": 0.98,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 25,
+      "choice": "partial",
+      "probabilities": {
+        "no-support": 0.33,
+        "overlap": 0.01,
+        "partial": 0.66,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.58,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 26,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.54,
+        "overlap": 0.04,
+        "no-support": 0.42,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.43,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 27,
+      "choice": "partial",
+      "probabilities": {
+        "no-support": 0.09,
+        "overlap": 0.15,
+        "partial": 0.76,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.7,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 29,
+      "choice": "no-support",
+      "probabilities": {
+        "no-support": 0.9,
+        "overlap": 0.0,
+        "partial": 0.1,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.87,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 31,
+      "choice": "partial",
+      "probabilities": {
+        "no-support": 0.43,
+        "overlap": 0.01,
+        "partial": 0.56,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.45,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 32,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.3,
+        "overlap": 0.01,
+        "no-support": 0.6900000000000001,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.6,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 33,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.73,
+        "overlap": 0.02,
+        "no-support": 0.25,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.65,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 34,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.28,
+        "overlap": 0.01,
+        "no-support": 0.71,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.63,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 35,
+      "choice": "partial",
+      "probabilities": {
+        "partial": 0.58,
+        "overlap": 0.01,
+        "no-support": 0.41,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.47,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 37,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.34,
+        "overlap": 0.01,
+        "no-support": 0.65,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.56,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 39,
+      "choice": "no-support",
+      "probabilities": {
+        "no-support": 0.83,
+        "overlap": 0.0,
+        "partial": 0.17,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.78,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 41,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.14,
+        "overlap": 0.0,
+        "no-support": 0.86,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.82,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 43,
+      "choice": "undetermined",
+      "probabilities": {
+        "partial": 0.03,
+        "overlap": 0.0,
+        "no-support": 0.19,
+        "undetermined": 0.57,
+        "conflict": 0.21
+      },
+      "confidence": 0.48,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 44,
+      "choice": "no-support",
+      "probabilities": {
+        "no-support": 0.76,
+        "overlap": 0.0,
+        "partial": 0.24,
+        "undetermined": 0.0,
+        "conflict": 0.0
+      },
+      "confidence": 0.69,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 46,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.24,
+        "overlap": 0.0,
+        "no-support": 0.39,
+        "undetermined": 0.01,
+        "conflict": 0.36
+      },
+      "confidence": 0.24,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 47,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.09,
+        "overlap": 0.0,
+        "no-support": 0.55,
+        "undetermined": 0.0,
+        "conflict": 0.36
+      },
+      "confidence": 0.43,
+      "humanReview": true,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 48,
+      "choice": "no-support",
+      "probabilities": {
+        "partial": 0.12,
+        "overlap": 0.0,
+        "no-support": 0.86,
+        "undetermined": 0.0,
+        "conflict": 0.02
+      },
+      "confidence": 0.82,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 49,
+      "choice": "no-support",
+      "probabilities": {
+        "no-support": 0.75,
+        "overlap": 0.0,
+        "partial": 0.07,
+        "undetermined": 0.01,
+        "conflict": 0.17
+      },
+      "confidence": 0.68,
+      "humanReview": false,
+      "model": "jev-1.13.0"
+    }
+  ],
+  "usage": {
+    "input_tokens": 19206,
+    "output_tokens": 1892
+  }
+}

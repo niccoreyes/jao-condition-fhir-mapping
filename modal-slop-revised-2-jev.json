@@ -1,0 +1,575 @@
+{
+  "purpose": "AI-slop/presentation editorial aid only; not generated explanations, clinical truth, approval, source verification or pixel/accessibility certification",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "checkedAt": "2026-09-27T16:10:55+00:00",
+  "passName": "modal-slop-revised-2-jev",
+  "fixedExemplars": [
+    {
+      "row": 4,
+      "surface": "mobile"
+    },
+    {
+      "row": 23,
+      "surface": "desktop"
+    },
+    {
+      "row": 43,
+      "surface": "desktop"
+    },
+    {
+      "row": 49,
+      "surface": "mobile"
+    }
+  ],
+  "maxPasses": 3,
+  "weights": {
+    "redundancy": 0.2,
+    "actionable_language": 0.2,
+    "evidence_attribution": 0.25,
+    "phcdi_historical_separation": 0.2,
+    "mobile_density": 0.15
+  },
+  "thresholds": {
+    "overall": 0.75,
+    "eachCriticalDimension": 0.75,
+    "criticalDimensions": [
+      "actionable_language",
+      "evidence_attribution",
+      "phcdi_historical_separation"
+    ]
+  },
+  "inputDigest": "aa7acdda7cf33c751263c0c66b75717b07574b519b5195e4899e79a927bd4e6b",
+  "rubricDigest": "283e9af3bea90486bee625359f7b4457871de3ad556c8766c85ec1729c8f657e",
+  "results": [
+    {
+      "row": 4,
+      "surface": "mobile",
+      "model": "jev-1.13.0",
+      "requestCount": 1,
+      "weights": {
+        "redundancy": 0.2,
+        "actionable_language": 0.2,
+        "evidence_attribution": 0.25,
+        "phcdi_historical_separation": 0.2,
+        "mobile_density": 0.15
+      },
+      "composite": 0.8483,
+      "dimensions": {
+        "redundancy": {
+          "score": 2.52,
+          "normalized": 0.63,
+          "confidence": 0.55,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.1,
+            "2": 0.3,
+            "3": 0.57,
+            "4": 0.03
+          },
+          "rubricLevels": [
+            "Repeated generic disclaimers and overlapping next steps obscure the row-specific evidence.",
+            "Several repeated warnings or repeated source-to-profile explanations make the dialog needlessly long.",
+            "Some repeated boilerplate remains, but the key content is still distinguishable.",
+            "Shared caveats are concise and non-duplicative; row-specific evidence remains available.",
+            "Every section earns its space: repeated boilerplate is removed while no necessary qualification or source detail is lost."
+          ],
+          "reason": "Rubric level 3 interpretation: Shared caveats are concise and non-duplicative; row-specific evidence remains available. Evidence spans: Keep this row on PH Core Patient for the administrative disability type. Represent a separately managed clinical condition only when clinically asserted."
+        },
+        "actionable_language": {
+          "score": 3.62,
+          "normalized": 0.905,
+          "confidence": 0.68,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.05,
+            "3": 0.26,
+            "4": 0.68
+          },
+          "rubricLevels": [
+            "Labels and recommendations are vague, inflated, or imply an unapproved clinical or policy decision.",
+            "Important advice is wordy or overconfident; the next human decision is difficult to identify.",
+            "The row question and recommendation can be found but wording has avoidable length or ambiguous status.",
+            "Concise labels separate proposal, existing artifact and unresolved decision; next review action is clear.",
+            "Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty."
+          ],
+          "reason": "Rubric level 4 interpretation: Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty. Evidence spans: Keep this row on PH Core Patient for the administrative disability type. Represent a separately managed clinical condition only when clinically asserted."
+        },
+        "evidence_attribution": {
+          "score": 3.73,
+          "normalized": 0.9325,
+          "confidence": 0.77,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.01,
+            "3": 0.26,
+            "4": 0.73
+          },
+          "rubricLevels": [
+            "Clinical/source claims have no traceable source-row identity or useful inline citation.",
+            "Some source identity or references are present but claims and cited evidence are hard to connect.",
+            "Source row and evidence are present, though attribution is inconsistently prominent or references are generic.",
+            "Excel row, source path/ID and named policy/terminology links stay close to the claims they support.",
+            "Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added."
+          ],
+          "reason": "Rubric level 4 interpretation: Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added. Evidence spans: Excel 4 / JAOConditionSheet.masterPersonData.disabilityType / SRC8"
+        },
+        "phcdi_historical_separation": {
+          "score": 3.68,
+          "normalized": 0.92,
+          "confidence": 0.74,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.03,
+            "3": 0.26,
+            "4": 0.71
+          },
+          "rubricLevels": [
+            "PHCDI is presented as current clinical advice, endorsement, binding or JAO mapping.",
+            "Historical comparison may be mistaken for current recommendation or approval.",
+            "PHCDI is called historical but its scope limitation competes with recommendation content.",
+            "PHCDI is a clearly separate, neutral historical comparison, not advice or a JAO crosswalk.",
+            "Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation."
+          ],
+          "reason": "Rubric level 4 interpretation: Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation. Evidence spans: The shorthand RegistrationNo is an identifier ('PDD Reg No.'); no disability-type classification or PWD extension is listed. Its meaning is not established as a PWD ID."
+        },
+        "mobile_density": {
+          "score": 3.31,
+          "normalized": 0.8275,
+          "confidence": 0.51,
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.0,
+            "2": 0.05,
+            "3": 0.47,
+            "4": 0.45
+          },
+          "rubricLevels": [
+            "Mobile dialog clips or hides source evidence, decisions, links, or keyboard-operable navigation.",
+            "Mobile first screen is dominated by repeated copy or oversized controls; evidence and actions are cumbersome.",
+            "Mobile content remains available, but the first screen is dense or navigation requires unnecessary scrolling.",
+            "At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable.",
+            "Mobile first screen gives row identity and concise distinct decisions with compact operable navigation; detail is progressive without hiding critical gaps, provenance or links."
+          ],
+          "reason": "Rubric level 3 interpretation: At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable. Evidence spans: Confirm the source code list and whether this is a legal PWD registration type or a clinical diagnosis."
+        }
+      },
+      "inputDigest": "907b0c08c78baa4b0969631bf0e99402e6f571a246bede9b0947a198dd5ab505",
+      "rubricDigest": "283e9af3bea90486bee625359f7b4457871de3ad556c8766c85ec1729c8f657e",
+      "evidenceReferences": {
+        "recommendation": "Keep this row on PH Core Patient for the administrative disability type. Represent a separately managed clinical condition only when clinically asserted.",
+        "unresolved_question": "Confirm the source code list and whether this is a legal PWD registration type or a clinical diagnosis.",
+        "source_identity": "Excel 4 / JAOConditionSheet.masterPersonData.disabilityType / SRC8",
+        "historical_comparison": "The shorthand RegistrationNo is an identifier ('PDD Reg No.'); no disability-type classification or PWD extension is listed. Its meaning is not established as a PWD ID.",
+        "claim_sources": [
+          "mindmap-index.json row 4",
+          "condition-row-profile-mindmap.html openRow renderer"
+        ]
+      },
+      "usage": {
+        "input_tokens": 6827,
+        "output_tokens": 88
+      }
+    },
+    {
+      "row": 23,
+      "surface": "desktop",
+      "model": "jev-1.13.0",
+      "requestCount": 1,
+      "weights": {
+        "redundancy": 0.2,
+        "actionable_language": 0.2,
+        "evidence_attribution": 0.25,
+        "phcdi_historical_separation": 0.2,
+        "mobile_density": 0.15
+      },
+      "composite": 0.8464,
+      "dimensions": {
+        "redundancy": {
+          "score": 2.72,
+          "normalized": 0.68,
+          "confidence": 0.68,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.06,
+            "2": 0.21,
+            "3": 0.68,
+            "4": 0.05
+          },
+          "rubricLevels": [
+            "Repeated generic disclaimers and overlapping next steps obscure the row-specific evidence.",
+            "Several repeated warnings or repeated source-to-profile explanations make the dialog needlessly long.",
+            "Some repeated boilerplate remains, but the key content is still distinguishable.",
+            "Shared caveats are concise and non-duplicative; row-specific evidence remains available.",
+            "Every section earns its space: repeated boilerplate is removed while no necessary qualification or source detail is lost."
+          ],
+          "reason": "Rubric level 3 interpretation: Shared caveats are concise and non-duplicative; row-specific evidence remains available. Evidence spans: If this is the clinician\u2019s first assertion date, consider condition-assertedDate; use recordedDate only for the actual record-created date."
+        },
+        "actionable_language": {
+          "score": 3.63,
+          "normalized": 0.9075,
+          "confidence": 0.69,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.02,
+            "3": 0.32,
+            "4": 0.66
+          },
+          "rubricLevels": [
+            "Labels and recommendations are vague, inflated, or imply an unapproved clinical or policy decision.",
+            "Important advice is wordy or overconfident; the next human decision is difficult to identify.",
+            "The row question and recommendation can be found but wording has avoidable length or ambiguous status.",
+            "Concise labels separate proposal, existing artifact and unresolved decision; next review action is clear.",
+            "Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty."
+          ],
+          "reason": "Rubric level 4 interpretation: Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty. Evidence spans: If this is the clinician\u2019s first assertion date, consider condition-assertedDate; use recordedDate only for the actual record-created date."
+        },
+        "evidence_attribution": {
+          "score": 3.78,
+          "normalized": 0.945,
+          "confidence": 0.82,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.01,
+            "3": 0.2,
+            "4": 0.79
+          },
+          "rubricLevels": [
+            "Clinical/source claims have no traceable source-row identity or useful inline citation.",
+            "Some source identity or references are present but claims and cited evidence are hard to connect.",
+            "Source row and evidence are present, though attribution is inconsistently prominent or references are generic.",
+            "Excel row, source path/ID and named policy/terminology links stay close to the claims they support.",
+            "Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added."
+          ],
+          "reason": "Rubric level 4 interpretation: Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added. Evidence spans: Excel 23 / JAOConditionSheet.diagnosis.diagnosedDate / SRC333"
+        },
+        "phcdi_historical_separation": {
+          "score": 3.55,
+          "normalized": 0.8875,
+          "confidence": 0.63,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.01,
+            "2": 0.05,
+            "3": 0.34,
+            "4": 0.6
+          },
+          "rubricLevels": [
+            "PHCDI is presented as current clinical advice, endorsement, binding or JAO mapping.",
+            "Historical comparison may be mistaken for current recommendation or approval.",
+            "PHCDI is called historical but its scope limitation competes with recommendation content.",
+            "PHCDI is a clearly separate, neutral historical comparison, not advice or a JAO crosswalk.",
+            "Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation."
+          ],
+          "reason": "Rubric level 4 interpretation: Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation. Evidence spans: JAO says date diagnosed; the catalog explicitly defines recordedDate as NHDR upload time, not clinician diagnosis/assertion time."
+        },
+        "mobile_density": {
+          "score": 3.07,
+          "normalized": 0.7675,
+          "confidence": 0.57,
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.01,
+            "2": 0.11,
+            "3": 0.55,
+            "4": 0.3
+          },
+          "rubricLevels": [
+            "Mobile dialog clips or hides source evidence, decisions, links, or keyboard-operable navigation.",
+            "Mobile first screen is dominated by repeated copy or oversized controls; evidence and actions are cumbersome.",
+            "Mobile content remains available, but the first screen is dense or navigation requires unnecessary scrolling.",
+            "At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable.",
+            "Mobile first screen gives row identity and concise distinct decisions with compact operable navigation; detail is progressive without hiding critical gaps, provenance or links."
+          ],
+          "reason": "Rubric level 3 interpretation: At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable. Evidence spans: Does \u201cDate Diagnosed\u201d mean first clinical assertion, confirmed diagnosis, or the system entry timestamp?"
+        }
+      },
+      "inputDigest": "b29d25076978538d12acf8232c380ac9374a50564092a266e54b06ac10ef2bdb",
+      "rubricDigest": "283e9af3bea90486bee625359f7b4457871de3ad556c8766c85ec1729c8f657e",
+      "evidenceReferences": {
+        "recommendation": "If this is the clinician\u2019s first assertion date, consider condition-assertedDate; use recordedDate only for the actual record-created date.",
+        "unresolved_question": "Does \u201cDate Diagnosed\u201d mean first clinical assertion, confirmed diagnosis, or the system entry timestamp?",
+        "source_identity": "Excel 23 / JAOConditionSheet.diagnosis.diagnosedDate / SRC333",
+        "historical_comparison": "JAO says date diagnosed; the catalog explicitly defines recordedDate as NHDR upload time, not clinician diagnosis/assertion time.",
+        "claim_sources": [
+          "mindmap-index.json row 23",
+          "condition-row-profile-mindmap.html openRow renderer"
+        ]
+      },
+      "usage": {
+        "input_tokens": 6596,
+        "output_tokens": 88
+      }
+    },
+    {
+      "row": 43,
+      "surface": "desktop",
+      "model": "jev-1.13.0",
+      "requestCount": 1,
+      "weights": {
+        "redundancy": 0.2,
+        "actionable_language": 0.2,
+        "evidence_attribution": 0.25,
+        "phcdi_historical_separation": 0.2,
+        "mobile_density": 0.15
+      },
+      "composite": 0.8543,
+      "dimensions": {
+        "redundancy": {
+          "score": 2.74,
+          "normalized": 0.685,
+          "confidence": 0.69,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.05,
+            "2": 0.2,
+            "3": 0.68,
+            "4": 0.06
+          },
+          "rubricLevels": [
+            "Repeated generic disclaimers and overlapping next steps obscure the row-specific evidence.",
+            "Several repeated warnings or repeated source-to-profile explanations make the dialog needlessly long.",
+            "Some repeated boilerplate remains, but the key content is still distinguishable.",
+            "Shared caveats are concise and non-duplicative; row-specific evidence remains available.",
+            "Every section earns its space: repeated boilerplate is removed while no necessary qualification or source detail is lost."
+          ],
+          "reason": "Rubric level 3 interpretation: Shared caveats are concise and non-duplicative; row-specific evidence remains available. Evidence spans: Do not infer the indicator from a date comparison. Define a time-bounded registry assertion or a governed extension only after its meaning is settled."
+        },
+        "actionable_language": {
+          "score": 3.73,
+          "normalized": 0.9325,
+          "confidence": 0.78,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.02,
+            "3": 0.23,
+            "4": 0.75
+          },
+          "rubricLevels": [
+            "Labels and recommendations are vague, inflated, or imply an unapproved clinical or policy decision.",
+            "Important advice is wordy or overconfident; the next human decision is difficult to identify.",
+            "The row question and recommendation can be found but wording has avoidable length or ambiguous status.",
+            "Concise labels separate proposal, existing artifact and unresolved decision; next review action is clear.",
+            "Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty."
+          ],
+          "reason": "Rubric level 4 interpretation: Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty. Evidence spans: Do not infer the indicator from a date comparison. Define a time-bounded registry assertion or a governed extension only after its meaning is settled."
+        },
+        "evidence_attribution": {
+          "score": 3.63,
+          "normalized": 0.9075,
+          "confidence": 0.69,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.03,
+            "3": 0.31,
+            "4": 0.66
+          },
+          "rubricLevels": [
+            "Clinical/source claims have no traceable source-row identity or useful inline citation.",
+            "Some source identity or references are present but claims and cited evidence are hard to connect.",
+            "Source row and evidence are present, though attribution is inconsistently prominent or references are generic.",
+            "Excel row, source path/ID and named policy/terminology links stay close to the claims they support.",
+            "Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added."
+          ],
+          "reason": "Rubric level 4 interpretation: Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added. Evidence spans: Excel 43 / JAOConditionSheet.diabetesRegistry.diabetesDiagnosisRecency / SRC917"
+        },
+        "phcdi_historical_separation": {
+          "score": 3.82,
+          "normalized": 0.955,
+          "confidence": 0.85,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.01,
+            "3": 0.16,
+            "4": 0.83
+          },
+          "rubricLevels": [
+            "PHCDI is presented as current clinical advice, endorsement, binding or JAO mapping.",
+            "Historical comparison may be mistaken for current recommendation or approval.",
+            "PHCDI is called historical but its scope limitation competes with recommendation content.",
+            "PHCDI is a clearly separate, neutral historical comparison, not advice or a JAO crosswalk.",
+            "Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation."
+          ],
+          "reason": "Rubric level 4 interpretation: Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation. Evidence spans: Neither the new/previous diagnosis indicator nor a comparison window is present; onset and upload times are different facts."
+        },
+        "mobile_density": {
+          "score": 3.01,
+          "normalized": 0.7525,
+          "confidence": 0.55,
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.01,
+            "2": 0.14,
+            "3": 0.54,
+            "4": 0.28
+          },
+          "rubricLevels": [
+            "Mobile dialog clips or hides source evidence, decisions, links, or keyboard-operable navigation.",
+            "Mobile first screen is dominated by repeated copy or oversized controls; evidence and actions are cumbersome.",
+            "Mobile content remains available, but the first screen is dense or navigation requires unnecessary scrolling.",
+            "At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable.",
+            "Mobile first screen gives row identity and concise distinct decisions with compact operable navigation; detail is progressive without hiding critical gaps, provenance or links."
+          ],
+          "reason": "Rubric level 3 interpretation: At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable. Evidence spans: New relative to first-ever diagnosis, current encounter, registration period, or reporting year? What are the values for unknown?"
+        }
+      },
+      "inputDigest": "a66cd1f8688987d3f792a8fab68a432d77082347e391d628ea2aa99901d6b226",
+      "rubricDigest": "283e9af3bea90486bee625359f7b4457871de3ad556c8766c85ec1729c8f657e",
+      "evidenceReferences": {
+        "recommendation": "Do not infer the indicator from a date comparison. Define a time-bounded registry assertion or a governed extension only after its meaning is settled.",
+        "unresolved_question": "New relative to first-ever diagnosis, current encounter, registration period, or reporting year? What are the values for unknown?",
+        "source_identity": "Excel 43 / JAOConditionSheet.diabetesRegistry.diabetesDiagnosisRecency / SRC917",
+        "historical_comparison": "Neither the new/previous diagnosis indicator nor a comparison window is present; onset and upload times are different facts.",
+        "claim_sources": [
+          "mindmap-index.json row 43",
+          "condition-row-profile-mindmap.html openRow renderer"
+        ]
+      },
+      "usage": {
+        "input_tokens": 6613,
+        "output_tokens": 88
+      }
+    },
+    {
+      "row": 49,
+      "surface": "mobile",
+      "model": "jev-1.13.0",
+      "requestCount": 1,
+      "weights": {
+        "redundancy": 0.2,
+        "actionable_language": 0.2,
+        "evidence_attribution": 0.25,
+        "phcdi_historical_separation": 0.2,
+        "mobile_density": 0.15
+      },
+      "composite": 0.8339,
+      "dimensions": {
+        "redundancy": {
+          "score": 2.62,
+          "normalized": 0.655,
+          "confidence": 0.62,
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.08,
+            "2": 0.24,
+            "3": 0.63,
+            "4": 0.04
+          },
+          "rubricLevels": [
+            "Repeated generic disclaimers and overlapping next steps obscure the row-specific evidence.",
+            "Several repeated warnings or repeated source-to-profile explanations make the dialog needlessly long.",
+            "Some repeated boilerplate remains, but the key content is still distinguishable.",
+            "Shared caveats are concise and non-duplicative; row-specific evidence remains available.",
+            "Every section earns its space: repeated boilerplate is removed while no necessary qualification or source detail is lost."
+          ],
+          "reason": "Rubric level 3 interpretation: Shared caveats are concise and non-duplicative; row-specific evidence remains available. Evidence spans: Attach coded evidence or references to the asthma Condition only for actual supporting findings, with clinical assessment details in their appropriate resources."
+        },
+        "actionable_language": {
+          "score": 3.57,
+          "normalized": 0.8925,
+          "confidence": 0.64,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.04,
+            "3": 0.35,
+            "4": 0.61
+          },
+          "rubricLevels": [
+            "Labels and recommendations are vague, inflated, or imply an unapproved clinical or policy decision.",
+            "Important advice is wordy or overconfident; the next human decision is difficult to identify.",
+            "The row question and recommendation can be found but wording has avoidable length or ambiguous status.",
+            "Concise labels separate proposal, existing artifact and unresolved decision; next review action is clear.",
+            "Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty."
+          ],
+          "reason": "Rubric level 4 interpretation: Specific, restrained row wording states what is proposed and what a reviewer must resolve, without implying approval or clinical certainty. Evidence spans: Attach coded evidence or references to the asthma Condition only for actual supporting findings, with clinical assessment details in their appropriate resources."
+        },
+        "evidence_attribution": {
+          "score": 3.53,
+          "normalized": 0.8825,
+          "confidence": 0.61,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.04,
+            "3": 0.38,
+            "4": 0.58
+          },
+          "rubricLevels": [
+            "Clinical/source claims have no traceable source-row identity or useful inline citation.",
+            "Some source identity or references are present but claims and cited evidence are hard to connect.",
+            "Source row and evidence are present, though attribution is inconsistently prominent or references are generic.",
+            "Excel row, source path/ID and named policy/terminology links stay close to the claims they support.",
+            "Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added."
+          ],
+          "reason": "Rubric level 4 interpretation: Exact source assertion, row/path/ID and source-backed policy/terminology references remain explicit and readily traceable; no unsupported claim is added. Evidence spans: Excel 49 / JAOConditionSheet.copdRegistry.asthmaDiagnosisBasis / SRC934"
+        },
+        "phcdi_historical_separation": {
+          "score": 3.6,
+          "normalized": 0.9,
+          "confidence": 0.67,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.02,
+            "3": 0.34,
+            "4": 0.64
+          },
+          "rubricLevels": [
+            "PHCDI is presented as current clinical advice, endorsement, binding or JAO mapping.",
+            "Historical comparison may be mistaken for current recommendation or approval.",
+            "PHCDI is called historical but its scope limitation competes with recommendation content.",
+            "PHCDI is a clearly separate, neutral historical comparison, not advice or a JAO crosswalk.",
+            "Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation."
+          ],
+          "reason": "Rubric level 4 interpretation: Distinct placement and concise explicit wording preserve PHCDI\u2019s historical inventory role and prevent normative interpretation. Evidence spans: Condition.evidence.detail is absent from the CSV Condition rows; Encounter's reference definition mentions evidence.detail only in prose, not as an adopted asthma evidence element."
+        },
+        "mobile_density": {
+          "score": 3.3,
+          "normalized": 0.825,
+          "confidence": 0.42,
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.0,
+            "2": 0.05,
+            "3": 0.45,
+            "4": 0.47000000000000003
+          },
+          "rubricLevels": [
+            "Mobile dialog clips or hides source evidence, decisions, links, or keyboard-operable navigation.",
+            "Mobile first screen is dominated by repeated copy or oversized controls; evidence and actions are cumbersome.",
+            "Mobile content remains available, but the first screen is dense or navigation requires unnecessary scrolling.",
+            "At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable.",
+            "Mobile first screen gives row identity and concise distinct decisions with compact operable navigation; detail is progressive without hiding critical gaps, provenance or links."
+          ],
+          "reason": "Rubric level 3 interpretation: At mobile width, identity, decision and compact section navigation are readable; full evidence remains reachable. Evidence spans: Does \u201cbasis\u201d mean spirometry, clinician assessment, response to therapy, or a local checklist? Why is this asthma field under COPD?"
+        }
+      },
+      "inputDigest": "f19b7f21412524e7d9876ab5f5f003faa86405ee07695af2cc83830afd36b88f",
+      "rubricDigest": "283e9af3bea90486bee625359f7b4457871de3ad556c8766c85ec1729c8f657e",
+      "evidenceReferences": {
+        "recommendation": "Attach coded evidence or references to the asthma Condition only for actual supporting findings, with clinical assessment details in their appropriate resources.",
+        "unresolved_question": "Does \u201cbasis\u201d mean spirometry, clinician assessment, response to therapy, or a local checklist? Why is this asthma field under COPD?",
+        "source_identity": "Excel 49 / JAOConditionSheet.copdRegistry.asthmaDiagnosisBasis / SRC934",
+        "historical_comparison": "Condition.evidence.detail is absent from the CSV Condition rows; Encounter's reference definition mentions evidence.detail only in prose, not as an adopted asthma evidence element.",
+        "claim_sources": [
+          "mindmap-index.json row 49",
+          "condition-row-profile-mindmap.html openRow renderer"
+        ]
+      },
+      "usage": {
+        "input_tokens": 6640,
+        "output_tokens": 88
+      }
+    }
+  ],
+  "comparisonCaveat": "Directional comparison only. Matching fixed exemplar and rubric does not ensure exact replay if input HTML/source changed; compare recorded per-row input/rubric digests.",
+  "limitations": "Jev returns typed judgments/probabilities/confidence, not explanations. Reasons above are code-derived from rubric levels and displayed source spans. All source claims require independent human review."
+}

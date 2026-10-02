@@ -1,0 +1,1362 @@
+{
+  "model": "jev-1.13.0",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "checkedAt": "2026-09-28T04:28:16+00:00",
+  "purpose": "advisory per-row similarity of documented meaning/workflow between each proposed FHIR mapping and the historical PHCDI CSV evidence; never alters deterministic structural status",
+  "measure": "similarityPct = round(proposedScore/4*100) from a Jev Score over five ordered levels",
+  "levels": [
+    "No PHCDI element corresponds; any cited element is unrelated or only a generic container.",
+    "A cited element is adjacent or a parent carrier only; meaning or workflow differs substantially.",
+    "Partial overlap: some shared structure or intent, but important meaning, timing, granularity or workflow is missing.",
+    "Substantial overlap in documented meaning and workflow, with minor unresolved differences.",
+    "The cited element and the proposed assertion describe the same documented meaning and workflow."
+  ],
+  "bands": {
+    "none": [
+      0,
+      24
+    ],
+    "weak": [
+      25,
+      49
+    ],
+    "partial": [
+      50,
+      74
+    ],
+    "close": [
+      75,
+      100
+    ]
+  },
+  "thresholds": {
+    "confidenceReviewBelow": 0.5,
+    "counterpartReviewBelow": 0.5,
+    "humanReviewBands": [
+      "none",
+      "weak",
+      "partial"
+    ]
+  },
+  "requested": 34,
+  "scored": 34,
+  "skipped": 0,
+  "summary": {
+    "meanSimilarityPct": 45.5,
+    "bandCounts": {
+      "none": 4,
+      "weak": 17,
+      "partial": 12,
+      "close": 1
+    },
+    "comparableCount": 26,
+    "lowConfidenceCount": 1,
+    "humanReviewCount": 33,
+    "limitations": "Advisory ranking signal only. Jev judges described text, not rendered meaning: it is not source verification, policy approval, FHIR conformance, clinical truth, clinical equivalence, or a binding. Probabilities and confidence are retained and low-confidence, low-counterpart or none/weak/partial-band rows are routed to human review. This measure never changes the deterministic phcdiPathComparison status."
+  },
+  "results": [
+    {
+      "excel": 4,
+      "label": "Type of Disability",
+      "similarityScore": 0.03,
+      "similarityPct": 1,
+      "band": "none",
+      "probabilities": {
+        "0": 0.97,
+        "1": 0.03,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0
+      },
+      "confidence": 0.98,
+      "counterpartProbability": 0.06,
+      "counterpartProbabilities": {
+        "true": 0.06,
+        "false": 0.94
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "unsupported-extension/slice",
+        "matchedCount": 0,
+        "totalCount": 4,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 9,
+          "element": "RegistrationNo"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 5,
+      "label": "With Permanent Disability",
+      "similarityScore": 0.0,
+      "similarityPct": 0,
+      "band": "none",
+      "probabilities": {
+        "0": 1.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.0,
+        "4": 0.0
+      },
+      "confidence": 1.0,
+      "counterpartProbability": 0.09,
+      "counterpartProbabilities": {
+        "true": 0.09,
+        "false": 0.91
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "unsupported-extension/slice",
+        "matchedCount": 0,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 7,
+      "label": "COVID-19",
+      "similarityScore": 2.12,
+      "similarityPct": 53,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.12,
+        "2": 0.61,
+        "3": 0.23,
+        "4": 0.02
+      },
+      "confidence": 0.65,
+      "counterpartProbability": 0.91,
+      "counterpartProbabilities": {
+        "true": 0.91,
+        "false": 0.09
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 4,
+        "totalCount": 4,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        },
+        {
+          "physicalCsvRow": 299,
+          "element": "Observation.code"
+        },
+        {
+          "physicalCsvRow": 304,
+          "element": "Observation.value[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 8,
+      "label": "Date of Onset of Illness",
+      "similarityScore": 3.18,
+      "similarityPct": 80,
+      "band": "close",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.06,
+        "3": 0.67,
+        "4": 0.26
+      },
+      "confidence": 0.71,
+      "counterpartProbability": 0.95,
+      "counterpartProbabilities": {
+        "true": 0.95,
+        "false": 0.05
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": false,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 227,
+          "element": "Condition.onset[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 9,
+      "label": "Underlying Cause of Death (ICD-10)",
+      "similarityScore": 1.28,
+      "similarityPct": 32,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.66,
+        "2": 0.31,
+        "3": 0.0,
+        "4": 0.0
+      },
+      "confidence": 0.71,
+      "counterpartProbability": 0.4,
+      "counterpartProbabilities": {
+        "true": 0.4,
+        "false": 0.6
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "parent-carrier",
+        "matchedCount": 4,
+        "totalCount": 5,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 21,
+          "element": "Patient.deceased[x]"
+        },
+        {
+          "physicalCsvRow": 299,
+          "element": "Observation.code"
+        },
+        {
+          "physicalCsvRow": 304,
+          "element": "Observation.value[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 10,
+      "label": "Underlying Cause of Death Description",
+      "similarityScore": 1.7,
+      "similarityPct": 42,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.23,
+        "2": 0.72,
+        "3": 0.01,
+        "4": 0.0
+      },
+      "confidence": 0.74,
+      "counterpartProbability": 0.74,
+      "counterpartProbabilities": {
+        "true": 0.74,
+        "false": 0.26
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "partial-gap",
+        "matchedCount": 2,
+        "totalCount": 5,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 304,
+          "element": "Observation.value[x]"
+        },
+        {
+          "physicalCsvRow": 307,
+          "element": "valueString"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 12,
+      "label": "Date of Onset of Illness",
+      "similarityScore": 2.85,
+      "similarityPct": 71,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.02,
+        "2": 0.2,
+        "3": 0.69,
+        "4": 0.09
+      },
+      "confidence": 0.73,
+      "counterpartProbability": 0.92,
+      "counterpartProbabilities": {
+        "true": 0.92,
+        "false": 0.08
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 227,
+          "element": "Condition.onset[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 13,
+      "label": "History of Other Illness",
+      "similarityScore": 1.9,
+      "similarityPct": 48,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.16,
+        "2": 0.66,
+        "3": 0.12,
+        "4": 0.02
+      },
+      "confidence": 0.67,
+      "counterpartProbability": 0.85,
+      "counterpartProbabilities": {
+        "true": 0.85,
+        "false": 0.15
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 4,
+        "totalCount": 4,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 299,
+          "element": "Observation.code"
+        },
+        {
+          "physicalCsvRow": 304,
+          "element": "Observation.value[x]"
+        },
+        {
+          "physicalCsvRow": 547,
+          "element": "QuestionnaireResponse.item.answer.value[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 15,
+      "label": "Date of Complication",
+      "similarityScore": 1.91,
+      "similarityPct": 48,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.12,
+        "2": 0.85,
+        "3": 0.03,
+        "4": 0.0
+      },
+      "confidence": 0.87,
+      "counterpartProbability": 0.69,
+      "counterpartProbabilities": {
+        "true": 0.69,
+        "false": 0.31
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 227,
+          "element": "Condition.onset[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 16,
+      "label": "Time of Complication",
+      "similarityScore": 1.98,
+      "similarityPct": 50,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.11,
+        "2": 0.78,
+        "3": 0.1,
+        "4": 0.0
+      },
+      "confidence": 0.81,
+      "counterpartProbability": 0.67,
+      "counterpartProbabilities": {
+        "true": 0.67,
+        "false": 0.33
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 227,
+          "element": "Condition.onset[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 17,
+      "label": "Complication",
+      "similarityScore": 1.96,
+      "similarityPct": 49,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.1,
+        "2": 0.79,
+        "3": 0.09,
+        "4": 0.0
+      },
+      "confidence": 0.81,
+      "counterpartProbability": 0.77,
+      "counterpartProbabilities": {
+        "true": 0.77,
+        "false": 0.23
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 5,
+        "totalCount": 5,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        },
+        {
+          "physicalCsvRow": 140,
+          "element": "Encounter.diagnosis.condition"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 19,
+      "label": "Date of Complication",
+      "similarityScore": 2.78,
+      "similarityPct": 70,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.01,
+        "2": 0.26,
+        "3": 0.67,
+        "4": 0.06
+      },
+      "confidence": 0.72,
+      "counterpartProbability": 0.93,
+      "counterpartProbabilities": {
+        "true": 0.93,
+        "false": 0.07
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 227,
+          "element": "Condition.onset[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 20,
+      "label": "Time of Complication",
+      "similarityScore": 1.75,
+      "similarityPct": 44,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.23,
+        "2": 0.71,
+        "3": 0.03,
+        "4": 0.0
+      },
+      "confidence": 0.73,
+      "counterpartProbability": 0.47,
+      "counterpartProbabilities": {
+        "true": 0.47,
+        "false": 0.53
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 227,
+          "element": "Condition.onset[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 21,
+      "label": "Complication",
+      "similarityScore": 2.07,
+      "similarityPct": 52,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.1,
+        "2": 0.68,
+        "3": 0.17,
+        "4": 0.03
+      },
+      "confidence": 0.7,
+      "counterpartProbability": 0.84,
+      "counterpartProbabilities": {
+        "true": 0.84,
+        "false": 0.16
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 5,
+        "totalCount": 5,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        },
+        {
+          "physicalCsvRow": 140,
+          "element": "Encounter.diagnosis.condition"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 23,
+      "label": "Date Diagnosed",
+      "similarityScore": 0.84,
+      "similarityPct": 21,
+      "band": "none",
+      "probabilities": {
+        "0": 0.2,
+        "1": 0.76,
+        "2": 0.04,
+        "3": 0.0,
+        "4": 0.0
+      },
+      "confidence": 0.8,
+      "counterpartProbability": 0.09,
+      "counterpartProbabilities": {
+        "true": 0.09,
+        "false": 0.91
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "unsupported-extension/slice",
+        "matchedCount": 0,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 228,
+          "element": "Condition.recordedDate"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 24,
+      "label": "Time Diagnosed",
+      "similarityScore": 0.59,
+      "similarityPct": 15,
+      "band": "none",
+      "probabilities": {
+        "0": 0.44,
+        "1": 0.53,
+        "2": 0.03,
+        "3": 0.0,
+        "4": 0.0
+      },
+      "confidence": 0.61,
+      "counterpartProbability": 0.08,
+      "counterpartProbabilities": {
+        "true": 0.08,
+        "false": 0.92
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "unsupported-extension/slice",
+        "matchedCount": 0,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 228,
+          "element": "Condition.recordedDate"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 25,
+      "label": "Diagnosis Code",
+      "similarityScore": 1.99,
+      "similarityPct": 50,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.31,
+        "2": 0.41,
+        "3": 0.26,
+        "4": 0.02
+      },
+      "confidence": 0.49,
+      "counterpartProbability": 0.91,
+      "counterpartProbabilities": {
+        "true": 0.91,
+        "false": 0.09
+      },
+      "lowConfidence": true,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "parent-carrier",
+        "matchedCount": 4,
+        "totalCount": 6,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 26,
+      "label": "Diagnosis Description",
+      "similarityScore": 1.83,
+      "similarityPct": 46,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.29,
+        "2": 0.59,
+        "3": 0.12,
+        "4": 0.0
+      },
+      "confidence": 0.65,
+      "counterpartProbability": 0.75,
+      "counterpartProbabilities": {
+        "true": 0.75,
+        "false": 0.25
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "parent-carrier",
+        "matchedCount": 2,
+        "totalCount": 3,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 27,
+      "label": "Diagnosis Remarks",
+      "similarityScore": 2.71,
+      "similarityPct": 68,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.06,
+        "2": 0.24,
+        "3": 0.61,
+        "4": 0.09
+      },
+      "confidence": 0.62,
+      "counterpartProbability": 0.91,
+      "counterpartProbabilities": {
+        "true": 0.91,
+        "false": 0.09
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "parent-carrier",
+        "matchedCount": 2,
+        "totalCount": 3,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 232,
+          "element": "Condition.note"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 29,
+      "label": "If Pregnancy - Induced Hypertension (Pre - Eclampsia)",
+      "similarityScore": 2.07,
+      "similarityPct": 52,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.1,
+        "2": 0.64,
+        "3": 0.18,
+        "4": 0.04
+      },
+      "confidence": 0.63,
+      "counterpartProbability": 0.88,
+      "counterpartProbabilities": {
+        "true": 0.88,
+        "false": 0.12
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 4,
+        "totalCount": 4,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 299,
+          "element": "Observation.code"
+        },
+        {
+          "physicalCsvRow": 304,
+          "element": "Observation.value[x]"
+        },
+        {
+          "physicalCsvRow": 547,
+          "element": "QuestionnaireResponse.item.answer.value[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 31,
+      "label": "Disease",
+      "similarityScore": 2.24,
+      "similarityPct": 56,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.75,
+        "3": 0.24,
+        "4": 0.01
+      },
+      "confidence": 0.79,
+      "counterpartProbability": 0.96,
+      "counterpartProbabilities": {
+        "true": 0.96,
+        "false": 0.04
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 32,
+      "label": "Disease Description",
+      "similarityScore": 1.61,
+      "similarityPct": 40,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.44,
+        "2": 0.48,
+        "3": 0.07,
+        "4": 0.0
+      },
+      "confidence": 0.56,
+      "counterpartProbability": 0.5,
+      "counterpartProbabilities": {
+        "true": 0.5,
+        "false": 0.5
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "parent-carrier",
+        "matchedCount": 2,
+        "totalCount": 3,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 33,
+      "label": "Present Illness",
+      "similarityScore": 2.67,
+      "similarityPct": 67,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.02,
+        "2": 0.39,
+        "3": 0.49,
+        "4": 0.1
+      },
+      "confidence": 0.55,
+      "counterpartProbability": 0.94,
+      "counterpartProbabilities": {
+        "true": 0.94,
+        "false": 0.06
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 4,
+        "totalCount": 4,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        },
+        {
+          "physicalCsvRow": 219,
+          "element": "Condition.clinicalStatus"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 34,
+      "label": "Co-morbidities",
+      "similarityScore": 1.85,
+      "similarityPct": 46,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.21,
+        "2": 0.7,
+        "3": 0.06,
+        "4": 0.01
+      },
+      "confidence": 0.72,
+      "counterpartProbability": 0.8,
+      "counterpartProbabilities": {
+        "true": 0.8,
+        "false": 0.2
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 35,
+      "label": "Pertinent Past Medical History",
+      "similarityScore": 1.73,
+      "similarityPct": 43,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.32,
+        "2": 0.62,
+        "3": 0.06,
+        "4": 0.0
+      },
+      "confidence": 0.67,
+      "counterpartProbability": 0.81,
+      "counterpartProbabilities": {
+        "true": 0.81,
+        "false": 0.19
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "parent-carrier",
+        "matchedCount": 2,
+        "totalCount": 3,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 232,
+          "element": "Condition.note"
+        },
+        {
+          "physicalCsvRow": 547,
+          "element": "QuestionnaireResponse.item.answer.value[x]"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 37,
+      "label": "Pertinent Signs and Symptoms on Admission, Others specify",
+      "similarityScore": 2.05,
+      "similarityPct": 51,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.03,
+        "2": 0.89,
+        "3": 0.08,
+        "4": 0.0
+      },
+      "confidence": 0.9,
+      "counterpartProbability": 0.91,
+      "counterpartProbabilities": {
+        "true": 0.91,
+        "false": 0.09
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 4,
+        "totalCount": 4,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 299,
+          "element": "Observation.code"
+        },
+        {
+          "physicalCsvRow": 304,
+          "element": "Observation.value[x]"
+        },
+        {
+          "physicalCsvRow": 307,
+          "element": "valueString"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 39,
+      "label": "Type of Hypertension",
+      "similarityScore": 1.94,
+      "similarityPct": 48,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.22,
+        "2": 0.57,
+        "3": 0.15,
+        "4": 0.03
+      },
+      "confidence": 0.58,
+      "counterpartProbability": 0.69,
+      "counterpartProbabilities": {
+        "true": 0.69,
+        "false": 0.31
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 41,
+      "label": "Type of Stroke",
+      "similarityScore": 1.72,
+      "similarityPct": 43,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.28,
+        "2": 0.59,
+        "3": 0.06,
+        "4": 0.02
+      },
+      "confidence": 0.62,
+      "counterpartProbability": 0.63,
+      "counterpartProbabilities": {
+        "true": 0.63,
+        "false": 0.37
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 43,
+      "label": "Newly or Previously Diagnosed Diabetes",
+      "similarityScore": 1.31,
+      "similarityPct": 33,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.53,
+        "2": 0.39,
+        "3": 0.0,
+        "4": 0.0
+      },
+      "confidence": 0.61,
+      "counterpartProbability": 0.35,
+      "counterpartProbabilities": {
+        "true": 0.35,
+        "false": 0.65
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "unresolved-proposal",
+        "matchedCount": 0,
+        "totalCount": 0,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 227,
+          "element": "Condition.onset[x]"
+        },
+        {
+          "physicalCsvRow": 228,
+          "element": "Condition.recordedDate"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 44,
+      "label": "Type of Diabetes",
+      "similarityScore": 2.52,
+      "similarityPct": 63,
+      "band": "partial",
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.05,
+        "2": 0.41,
+        "3": 0.47,
+        "4": 0.06
+      },
+      "confidence": 0.51,
+      "counterpartProbability": 0.91,
+      "counterpartProbabilities": {
+        "true": 0.91,
+        "false": 0.09
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 2,
+        "totalCount": 2,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 46,
+      "label": "GOLD Classification",
+      "similarityScore": 1.82,
+      "similarityPct": 46,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.02,
+        "1": 0.18,
+        "2": 0.77,
+        "3": 0.03,
+        "4": 0.0
+      },
+      "confidence": 0.78,
+      "counterpartProbability": 0.77,
+      "counterpartProbabilities": {
+        "true": 0.77,
+        "false": 0.23
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 6,
+        "totalCount": 6,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 230,
+          "element": "Condition.stage.summary"
+        },
+        {
+          "physicalCsvRow": 231,
+          "element": "Condition.stage.type"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 47,
+      "label": "COPD Group",
+      "similarityScore": 1.75,
+      "similarityPct": 44,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.03,
+        "1": 0.31,
+        "2": 0.56,
+        "3": 0.07,
+        "4": 0.03
+      },
+      "confidence": 0.59,
+      "counterpartProbability": 0.71,
+      "counterpartProbabilities": {
+        "true": 0.71,
+        "false": 0.29
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "exact",
+        "matchedCount": 6,
+        "totalCount": 6,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 230,
+          "element": "Condition.stage.summary"
+        },
+        {
+          "physicalCsvRow": 231,
+          "element": "Condition.stage.type"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 48,
+      "label": "Pulmonary Tuberculosis",
+      "similarityScore": 1.85,
+      "similarityPct": 46,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.04,
+        "1": 0.21,
+        "2": 0.63,
+        "3": 0.11,
+        "4": 0.01
+      },
+      "confidence": 0.65,
+      "counterpartProbability": 0.84,
+      "counterpartProbabilities": {
+        "true": 0.84,
+        "false": 0.16
+      },
+      "lowConfidence": false,
+      "comparable": true,
+      "humanReview": true,
+      "deterministic": {
+        "status": "choice-base",
+        "matchedCount": 4,
+        "totalCount": 4,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 299,
+          "element": "Observation.code"
+        },
+        {
+          "physicalCsvRow": 304,
+          "element": "Observation.value[x]"
+        },
+        {
+          "physicalCsvRow": 223,
+          "element": "Condition.code"
+        }
+      ],
+      "model": "jev-1.13.0"
+    },
+    {
+      "excel": 49,
+      "label": "Basis for the final diagnosis of Asthma",
+      "similarityScore": 1.11,
+      "similarityPct": 28,
+      "band": "weak",
+      "probabilities": {
+        "0": 0.08,
+        "1": 0.74,
+        "2": 0.18,
+        "3": 0.0,
+        "4": 0.0
+      },
+      "confidence": 0.78,
+      "counterpartProbability": 0.3,
+      "counterpartProbabilities": {
+        "true": 0.3,
+        "false": 0.7
+      },
+      "lowConfidence": false,
+      "comparable": false,
+      "humanReview": true,
+      "deterministic": {
+        "status": "none",
+        "matchedCount": 0,
+        "totalCount": 3,
+        "algorithmVersion": "phcdi-path-structure-1.1.0"
+      },
+      "citedElements": [
+        {
+          "physicalCsvRow": 140,
+          "element": "Encounter.diagnosis.condition"
+        }
+      ],
+      "model": "jev-1.13.0"
+    }
+  ],
+  "usage": {
+    "input_tokens": 36197,
+    "output_tokens": 1292
+  }
+}

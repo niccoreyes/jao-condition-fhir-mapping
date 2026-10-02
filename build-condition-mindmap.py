@@ -9,6 +9,8 @@ import json
 import re
 import uuid
 import subprocess
+import csv
+from compare_phcdi_paths import compare as compare_phcdi_paths
 
 ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'fhir-transactions'
@@ -86,6 +88,7 @@ TERMINOLOGY = {
 NCDA_PWD = 'NCDA Administrative Order No. 001, s. 2021 (PWD ID issuance)'
 NCDA_PWD_URL = 'https://ncda.gov.ph/disability-laws/administrative-orders/ncda-administrative-order-no-001-series-of-2021/'
 PRPWD = 'DOH AO No. 2013-0005 / -A / -B (Philippine Registry for Persons with Disabilities)'
+REGISTRY = 'DOH AO No. 2013-0005 (National Policy on the Unified Registry Systems of the DOH; disease-registry form/version to verify)'
 PRPWD_URL = 'https://ncda.gov.ph/disability-laws/administrative-orders/doh-administrative-order-no-2013-0005-a/'
 PRPWD_B_URL = 'https://ncda.gov.ph/wp-content/uploads/2023/07/ao2013-0005-B.pdf'
 MCCOD = 'DOH Administrative Order No. 2020-0008 (Rules on Medical Certification of Cause of Death)'
@@ -121,26 +124,26 @@ POLICY = {
       'PH Core 0.2.0 Condition.code keeps the inherited example binding with no ICD-10-PH value set.'),
  26: (HIM, None, 'Free-text diagnosis description attached to the coded diagnosis.', None),
  27: (HIM, None, 'Diagnosis remarks as narrative context.', None),
- 29: ('WHO ICD-10, Chapter XV (O10\u2013O16); SNOMED CT 398254007', 'https://icd.who.int/browse10/2019/en#/O10-O16', 'Pregnancy-induced hypertension category (O10\u2013O16); oedema/proteinuria in pregnancy, pre-eclampsia and eclampsia are distinct concepts.',
-      'The workbook\u2019s label pairs PIH with pre-eclampsia. SNOMED CT 398254007 denotes pre-eclampsia only, which is narrower than all PIH.'),
+ 29: ('WHO ICD-10, Chapter XV (O10\u2013O16) — international classification reference; Philippine form policy unverified', 'https://icd.who.int/browse10/2019/en#/O10-O16', 'The workbook says Yes / No/None; WHO distinguishes PIH from pre-eclampsia and eclampsia but does not set this question\u2019s answer list.',
+      'No Philippine policy/form for these answers was verified. SNOMED CT 398254007 is pre-eclampsia only, narrower than all PIH and not a question or answer code.'),
  31: (HIM, None, 'Past disease as represented by a code.', None),
  32: (HIM, None, 'Free-text specific disease description.', None),
  33: (HIM, None, 'Present illness as recorded by the clinician.', None),
  34: (HIM, None, 'Co-morbidities; one Condition per clinically asserted disease.', None),
  35: (HIM, None, 'Pertinent past medical history narrative.', None),
  37: (HIM, None, 'Admission signs and symptoms, including \u201cOthers, specify\u201d; no answer list is published.', None),
- 39: (PRPWD + '; DOH PhilPEN (AO 2012-0029)', PRPWD_URL, 'Hypertension type/subtype; the workbook names ICD-10 I10\u2013I15 as the example range, not a single code.', None),
+ 39: (REGISTRY + '; DOH PhilPEN (AO 2012-0029)', None, 'Hypertension type/subtype; the workbook names ICD-10 I10\u2013I15 as the example range, not a single code.', 'The workbook cites the original registry AO; the disease form and its current answer list have not been verified.'),
  41: ('DOH AO No. 2020-0059 (National Policy Framework on Acute Stroke)', None, 'Stroke type; the workbook names ICD-10 I60\u2013I64 as the example range, not a single code.',
       'No public URL for AO 2020-0059 was verified during this review, so none is linked.'),
- 43: (PRPWD + ' (Diabetes Registry Form)', PRPWD_URL, 'Indicator: newly diagnosed or previously diagnosed diabetes.',
-      'The registry does not define the comparison window, so \u201cnewly\u201d remains ambiguous.'),
- 44: (PRPWD + ' (Diabetes Registry Form)', PRPWD_URL, 'Type of diabetes; the workbook names ICD-10 E10\u2013E14 as the example range, not a single code.', None),
- 46: (PRPWD + ' (COPD Registry Form); GOLD report', PRPWD_URL, 'GOLD spirometric grade; the classification edition must be stated because grades are edition-specific.', None),
- 47: (PRPWD + ' (COPD Registry Form); GOLD report', PRPWD_URL, 'COPD group; GOLD used ABCD before 2023 and ABE from the 2023 report, so the edition must be stated.', None),
+ 43: (REGISTRY + ' (diabetes field)', None, 'The workbook describes an indicator for newly diagnosed or not; the exact registry choices are unverified.',
+      'The form/version and comparison window are unverified, so “newly” remains ambiguous.'),
+ 44: (REGISTRY + ' (diabetes field)', None, 'Type of diabetes; the workbook names ICD-10 E10\u2013E14 as an example range, not a selectable answer list.', 'Verify the disease form and current permitted choices.'),
+ 46: (REGISTRY + '; GOLD report (edition unverified)', None, 'GOLD spirometric grade; do not assert a current form answer list before inspecting the edition and form.', 'The disease form and GOLD edition have not been verified.'),
+ 47: (REGISTRY + '; GOLD report (edition unverified)', None, 'COPD group; GOLD used ABCD before 2023 and ABE from the 2023 report; the source form and edition remain unverified.', 'Do not substitute GOLD report categories for verified national form choices.'),
  48: ('DOH AO No. 2015-0024 (Integrated Tuberculosis Information System); DOH AO No. 2011-0010',
       'https://ntp.doh.gov.ph/download/ao2015-0024/', 'Pulmonary TB question answer; national TB guidance distinguishes bacteriologically confirmed, clinically diagnosed and not a TB case.',
       'DOH AO No. 2011-0010 (field health services reporting) is cited by name; no stable public URL was verified.'),
- 49: (PRPWD, PRPWD_URL, 'Basis for the final diagnosis of asthma, captured as supporting evidence for the asthma problem.', None),
+ 49: (REGISTRY, None, 'The workbook asks for the basis for the final asthma diagnosis; no enumerated answers are verified.', 'The applicable disease form/annex and its answer list are unverified. The PWD amendments do not establish asthma options.'),
 }
 
 # The HIM Manual is published by DOH under the Health Facility Development Bureau; its host
@@ -162,6 +165,83 @@ comparison=json.loads(subprocess.check_output(['node','-e',js],text=True))
 by_excel={r['excel']:r for r in rows}
 assert set(by_excel)==set(MAP)=={r['excel'] for r in crosswalk}
 assert set(map(int,comparison['discussions']))==set(MAP)
+
+# PHCDI is a historical element inventory, not a JAO mapping or clinical authority.
+# Curated row comparisons are checked against the supplied CSV on every rebuild.
+phcdi=json.loads((ROOT/'condition-phcdi-comparison.json').read_text())
+with (ROOT/phcdi['source']).open(encoding='utf-8-sig',newline='') as fh:
+    phcdi_csv=list(csv.reader(fh))
+assert set(map(int,phcdi['rows']))==set(MAP), 'PHCDI comparison must preserve all 34 JAO rows'
+for excel, item in phcdi['rows'].items():
+    assert item['relation'] in {'generic','related','not-listed','meaning-conflict'}
+    assert item['deviation']
+    for csv_row, element in item['references']:
+        assert 5<=csv_row<=len(phcdi_csv) and phcdi_csv[csv_row-1][1]==element, (excel,csv_row,element)
+        assert len(phcdi_csv[csv_row-1]) > 2, (excel,csv_row,'missing CSV column C definition')
+
+# Structured policy options and candidate terminology evidence. Candidate metadata is
+# copied only from terminology-validation.json; options remain policy text, never bindings.
+POLICY_URL_STATUS = {
+  4:'NCDA AO linked; PRPWD v4.0 separately cited in review',
+  29:'WHO classification reference; Philippine policy not verified',
+  41:'Name-only; URL not verified',
+  46:'PRPWD Registry linked; GOLD report URL not verified',
+  47:'PRPWD Registry linked; GOLD report URL not verified',
+  48:'AO 2015-0024 linked; AO 2011-0010 name-only',
+}
+
+POLICY_OPTION_LISTS = {
+  4: ['Deaf/Hard of Hearing','Intellectual Disability','Learning Disability','Mental Disability','Physical Disability (includes orthopedic)','Psychosocial Disability','Speech and Language Impairment','Visual Disability','Cancer (RA 11215)','Rare Disease (RA 10747)','Others, specify'],
+  5: [],
+  7: ['Suspect','Probable','Confirmed','Not a case (explicit negative)'],
+
+
+ 13: [], 17: [], 21: [], 29: [],
+ 37: ['Others, specify'],
+
+
+ 43: [],
+
+
+ 47: [],
+ 48: [],
+ 49: [],
+}
+
+EXISTING_PH_CORE = {
+  4: {'artifact':'ph-core-disability-type-vs','system':'http://fhir.doh.gov.ph/phcore/CodeSystem/ph-core-disability-type-cs',
+      'link':'https://build.fhir.org/ig/UPM-NTHC/ph-core/ValueSet-ph-core-disability-type-vs.html',
+      'codes':[{'code':c,'display':d} for c,d in [('visual','Visual Disability'),('hearing','Hearing Disability'),('speech','Speech Impairment'),('physical','Physical/Orthopedic Disability'),('intellectual','Intellectual Disability'),('learning','Learning Disability'),('psychosocial','Psychosocial Disability'),('visual-low-vision','Low Vision'),('visual-blindness','Blindness')]]}
+}
+
+CANDIDATE_GAPS = {
+  4:'International SNOMED concepts are only broad/administrative comparisons; they do not fill missing national PRPWD categories.',
+  5:'Permanent is a qualifier, not a permanent-disability answer code; no governed permanence element exists.',
+  7:'COVID-19 names disease, not the case-status question or its explicit negative answer.',
+  9:'LOINC choices represent different certificate/coding stages; the workbook does not identify which applies.',
+  29:'Pre-eclampsia is narrower than all PIH and does not encode the Yes/No/None question.',
+  48:'Pulmonary tuberculosis names a disorder, not the question or explicit negative answer.'
+}
+
+CANDIDATE_ROLES = {
+  (4,'105719004'):'finding',(4,'21134002'):'finding',(4,'161048004'):'registration',(4,'161045001'):'finding',
+  (5,'6934004'):'qualifier (not standalone finding)',(7,'840539006'):'diagnosis',(9,'69453-9'):'question (US certificate)',(9,'80359-3'):'question (manual coding)',(9,'80358-5'):'question (automated coding)',
+  (29,'398254007'):'diagnosis',(48,'154283005'):'diagnosis'
+}
+
+def terminology_evidence(excel):
+    checked=json.loads((ROOT/'terminology-validation.json').read_text())
+    result=[]
+    for item in checked['results']:
+        if item.get('excel') != excel or not item.get('ok'): continue
+        code=item['code']; system=item['system']
+        link=f'https://loinc.org/{code}/' if system=='http://loinc.org' else f'https://snomed.info/id/{code}'
+        result.append({'system':system,'code':code,'display':item['display'],
+          'role':CANDIDATE_ROLES[(excel,code)],'classification':'Proposed international candidate','link':link,
+          'validation':{'status':'checked','server':item['server'],'version':item.get('version'),
+                        'checkedAt':checked['checkedAt'],'operation':item['operation']},
+          'note':item['role']})
+    return result
 
 # Stable synthetic UUIDs make each transaction self-contained and reproducible.
 def urn(row,kind):return 'urn:uuid:'+str(uuid.uuid5(uuid.NAMESPACE_URL,f'jao-mindmap/{row}/{kind}'))
@@ -217,6 +297,24 @@ def example(row,kind):
     return {'resourceType':'Bundle','type':'transaction','entry':items}
 
 records=[]
+# Optional Jev semantic comparison is advisory only; deterministic structure is computed below.
+PHCDI_JEV={}; PHCDI_JEV_META=None
+jev_path=ROOT/'phcdi-semantics-jev.json'
+if jev_path.exists():
+    _jev=json.loads(jev_path.read_text())
+    if _jev.get('scored') == len(MAP) and _jev.get('skipped') == 0:
+        PHCDI_JEV={x['excel']:x for x in _jev['results']}
+        PHCDI_JEV_META={'model':_jev.get('model'),'checkedAt':_jev.get('checkedAt')}
+# Optional Jev PHCDI similarity measure (evaluate-phcdi-similarity-jev.py).
+# Advisory only: it never changes the deterministic phcdiPathComparison computed below.
+PHCDI_SIM={}; PHCDI_SIM_META=None
+sim_path=ROOT/'phcdi-similarity-jev.json'
+if sim_path.exists():
+    _sim=json.loads(sim_path.read_text())
+    if (_sim.get('scored') == len(MAP) and _sim.get('skipped') == 0
+            and _sim.get('requested') == len(MAP) and _sim.get('results')):
+        PHCDI_SIM={x['excel']:x for x in _sim['results']}
+        PHCDI_SIM_META={k:_sim.get(k) for k in ('model','endpoint','checkedAt','purpose','measure','levels','bands','thresholds','summary')}
 # Optional Jev quality scores (evaluate-rows-jev.py). Absent scores simply omit the block.
 EVALUATION={};EVAL_META=None
 ev_path=ROOT/'row-evaluation.json'
@@ -228,9 +326,48 @@ for r in crosswalk:
     i=r['excel'];group,path,usecase,kind=MAP[i]; src=by_excel[i]; disc=comparison['discussions'][str(i)]
     obj={'excel':i,'section':src['section'],'label':src['label'],'sourcePath':f"JAOConditionSheet.{src['group']}.{src['name']}",
          'sourceId':'SRC'+src['source_id'],'definition':src['definition'],'profileKey':group,'fhirPath':path,
+         'phcdiComparison':{'sourceFile':phcdi['source'],'relation':phcdi['rows'][str(i)]['relation'],
+                            'references':[{'csvRow':n,'element':element,'definition':phcdi_csv[n-1][2]}
+                                          for n,element in phcdi['rows'][str(i)]['references']],
+                            'deviation':phcdi['rows'][str(i)]['deviation'],
+                            'jaoWorkbookRow':i},
+         'proposalStatus':({'patient':'Existing PH Core Patient artifact; proposed disability extension path',
+                            'question':'Existing PH Core Observation artifact; proposed use-case pattern',
+                            'pwdGap':'Unresolved element/profile decision','recency':'Unresolved element/profile decision'}
+                           .get(group,'Proposed derivative; canonical not published')),
+         'phcdiPathComparison':compare_phcdi_paths(path,[{'csvRow':n,'element':element,'definition':phcdi_csv[n-1][2]} for n,element in phcdi['rows'][str(i)]['references']]),
+         'phcdiSemanticJev':({'choice':PHCDI_JEV[i]['choice'],'probabilities':PHCDI_JEV[i]['probabilities'],
+                              'confidence':PHCDI_JEV[i]['confidence'],'humanReview':PHCDI_JEV[i]['humanReview'],
+                              'model':PHCDI_JEV[i].get('model'),'checkedAt':PHCDI_JEV_META['checkedAt']}
+                             if i in PHCDI_JEV and PHCDI_JEV_META else None),
+         'phcdiSimilarity':({'similarityScore':PHCDI_SIM[i]['similarityScore'],'similarityPct':PHCDI_SIM[i]['similarityPct'],
+                             'band':PHCDI_SIM[i]['band'],'probabilities':PHCDI_SIM[i]['probabilities'],
+                             'confidence':PHCDI_SIM[i]['confidence'],
+                             'counterpartProbability':PHCDI_SIM[i]['counterpartProbability'],
+                             'counterpartProbabilities':PHCDI_SIM[i]['counterpartProbabilities'],
+                             'lowConfidence':PHCDI_SIM[i]['lowConfidence'],'comparable':PHCDI_SIM[i]['comparable'],
+                             'humanReview':PHCDI_SIM[i]['humanReview'],'model':PHCDI_SIM[i].get('model'),
+                             'checkedAt':PHCDI_SIM_META['checkedAt']}
+                            if i in PHCDI_SIM and PHCDI_SIM_META else None),
          'useCase':usecase,'recommendation':disc['recommend'],'humanReview':disc['review'],'comparisons':disc['compare'],
          'state':r['state'],'terminologyNote':TERMINOLOGY.get(i,'No row-specific SNOMED CT/LOINC concept is established from this source alone; use a governed value set when the actual diagnosis, finding or answer is known.'),
          'policyBasis':POLICY[i][0],'policyUrl':POLICY[i][1],'policyOptions':POLICY[i][2],'policyGap':POLICY[i][3],
+         'optionSources':([{'label':'Workbook source definition — Excel row '+str(i),
+                            'url':'condition-logical-model.html#/crosswalk/row/'+str(i),
+                            'urlStatus':'source wording; not a governed binding',
+                            'options':{5:['Yes','No'],29:['Yes','No/None'],43:['Newly diagnosed','Not newly diagnosed (definition wording)']}.get(i,[]),
+                            'absence':None}]
+                          if i in (5,29,43) else []) +
+                         [{'label':POLICY[i][0],'url':POLICY[i][1],
+                           'urlStatus':'human-use-only; HTTP 403' if 'Hospital Health Information' in POLICY[i][0] else ('source/answer list not verified' if i in (39,43,44,46,47,48,49) else POLICY_URL_STATUS.get(i, 'name-only; URL not verified' if POLICY[i][1] is None else 'linked')),
+                           'options':POLICY_OPTION_LISTS.get(i,[]),
+                           'absence':'No policy answer list verified for this row; do not infer an approved value set.' if not POLICY_OPTION_LISTS.get(i) else None}],
+         'existingPhCoreTerminology':EXISTING_PH_CORE.get(i),
+         'candidateTerminology':terminology_evidence(i),
+         'candidateAbsence':'No proposed row-specific code; this does not mean no code exists.' if not terminology_evidence(i) else None,
+         'candidateGap':CANDIDATE_GAPS.get(i),
+         'terminologyValidationNote':'Public terminology lookup only; not a Philippine national terminology validation or binding.',
+         'terminologyRange':{39:'I10–I15',41:'I60–I64',44:'E10–E14',48:'A15–A16',29:'O10–O16'}.get(i),
          'evaluation':({'composite':EVALUATION[i]['composite'],'verdict':EVALUATION[i]['verdict'],
                         'lowConfidenceDimensions':EVALUATION[i]['lowConfidenceDimensions'],
                         'dimensions':{k:{'normalized':v['normalized'],'confidence':v['confidence']}
@@ -256,10 +393,14 @@ if page.exists():
     start='const SOURCES=';end=';\nconst TRANSACTIONS='
     before,rest=html.split(start,1);old,suffix=rest.split(end,1)
     html=before+start+json.dumps(comparison['sources'],ensure_ascii=False,separators=(',',':'))+end+suffix
-    start='const TRANSACTIONS=';end=';\nconst esc='
+    start='const TRANSACTIONS=';end=';\nconst PHCDI_SIMILARITY='
     before,rest=html.split(start,1);old,suffix=rest.split(end,1)
     examples={str(r['excel']):json.loads((OUT/r['example']).read_text()) for r in records if r['example']}
     html=before+start+json.dumps(examples,ensure_ascii=False,separators=(',',':'))+end+suffix
+    # Advisory Jev similarity summary metadata; a generated block like ROWS.
+    start='const PHCDI_SIMILARITY=';end=';\nconst esc='
+    before,rest=html.split(start,1);old,suffix=rest.split(end,1)
+    html=before+start+json.dumps(PHCDI_SIM_META or {},ensure_ascii=False,separators=(',',':'))+end+suffix
     # Keep the distributed HTML offline/self-contained; pinned D3 builds live in
     # vendor/ with their original license notices and are inlined on rebuild.
     begin='<!-- BEGIN PINNED D3 CURVE LIBRARIES -->'
@@ -269,5 +410,5 @@ if page.exists():
     vendor='\n'.join('<script>'+ (ROOT/'vendor'/name).read_text().replace('</script','<\\/script') +'</script>' for name in ('d3-path-3.1.0.min.js','d3-shape-3.2.0.min.js'))
     html=prefix+begin+'\n<!-- BSD-3-Clause D3 builds; source and notices in vendor/. -->\n'+vendor+'\n'+end+suffix
     page.write_text(html)
-(ROOT/'mindmap-index.json').write_text(json.dumps({'rows':records,'profiles':PROFILE,'sources':comparison['sources']},indent=2,ensure_ascii=False)+'\n')
+(ROOT/'mindmap-index.json').write_text(json.dumps({'rows':records,'profiles':PROFILE,'sources':comparison['sources'],'phcdiSimilarity':PHCDI_SIM_META},indent=2,ensure_ascii=False)+'\n')
 print(f'Mapped {len(records)} rows to {len(PROFILE)} destination groups; wrote {sum(bool(r["example"]) for r in records)} synthetic transaction Bundles.')

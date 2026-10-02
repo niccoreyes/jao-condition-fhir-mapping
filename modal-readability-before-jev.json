@@ -1,0 +1,100 @@
+{
+  "purpose": "modal readability/actionability presentation only; not clinical truth, approval or pixel/accessibility certification",
+  "model": "jev-1.13.0",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "checkedAt": "2026-09-27T15:38:21+00:00",
+  "requestCount": 1,
+  "weights": {
+    "scanability": 0.17,
+    "decision_visibility": 0.2,
+    "navigation": 0.16,
+    "source_phcdi_separation": 0.15,
+    "mobile_accessibility": 0.12,
+    "action_clarity": 0.2
+  },
+  "thresholds": {
+    "overall": 0.75,
+    "actionAndNavigation": 0.75
+  },
+  "composite": 0.7,
+  "criticalMinimum": 0.458,
+  "verdict": "review",
+  "dimensions": {
+    "scanability": {
+      "score": 2.94,
+      "normalized": 0.735,
+      "confidence": 0.69,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.02,
+        "2": 0.18,
+        "3": 0.64,
+        "4": 0.16
+      }
+    },
+    "decision_visibility": {
+      "score": 2.54,
+      "normalized": 0.635,
+      "confidence": 0.47,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.07,
+        "2": 0.4,
+        "3": 0.44,
+        "4": 0.09
+      }
+    },
+    "navigation": {
+      "score": 1.83,
+      "normalized": 0.458,
+      "confidence": 0.82,
+      "probabilities": {
+        "0": 0.05,
+        "1": 0.1,
+        "2": 0.83,
+        "3": 0.01,
+        "4": 0.01
+      }
+    },
+    "source_phcdi_separation": {
+      "score": 3.23,
+      "normalized": 0.807,
+      "confidence": 0.61,
+      "probabilities": {
+        "0": 0.01,
+        "1": 0.03,
+        "2": 0.05,
+        "3": 0.5599999999999999,
+        "4": 0.35
+      }
+    },
+    "mobile_accessibility": {
+      "score": 2.17,
+      "normalized": 0.542,
+      "confidence": 0.73,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.07,
+        "2": 0.7,
+        "3": 0.22,
+        "4": 0.01
+      }
+    },
+    "action_clarity": {
+      "score": 3.78,
+      "normalized": 0.945,
+      "confidence": 0.82,
+      "probabilities": {
+        "0": 0.0,
+        "1": 0.0,
+        "2": 0.0,
+        "3": 0.2,
+        "4": 0.8
+      }
+    }
+  },
+  "usage": {
+    "input_tokens": 5965,
+    "output_tokens": 98
+  }
+}

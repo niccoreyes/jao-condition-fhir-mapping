@@ -1,7 +1,7 @@
 {
   "model": "jev-latest",
   "endpoint": "https://api.typesafe.ai/v1/systemone",
-  "checkedAt": "2026-09-27T06:29:11+00:00",
+  "checkedAt": "2026-09-27T11:01:48+00:00",
   "dimensions": {
     "traceability": {
       "weight": 0.25,
@@ -60,45 +60,33 @@
   },
   "scored": 34,
   "errored": 0,
-  "meanComposite": 0.703,
+  "meanComposite": 0.7,
   "results": [
     {
       "excel": 4,
       "label": "Type of Disability",
       "section": "MASTER PERSON DATA",
-      "composite": 0.838,
+      "composite": 0.863,
       "verdict": "pass",
       "lowConfidenceDimensions": [
         "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.94,
-          "normalized": 0.985,
+          "score": 3.95,
+          "normalized": 0.988,
           "confidence": 0.95,
           "probabilities": {
             "0": 0.0,
             "1": 0.01,
             "2": 0.0,
-            "3": 0.02,
-            "4": 0.97
+            "3": 0.03,
+            "4": 0.96
           }
         },
         "policy_link": {
-          "score": 3.9,
-          "normalized": 0.975,
-          "confidence": 0.92,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.0,
-            "2": 0.0,
-            "3": 0.1,
-            "4": 0.9
-          }
-        },
-        "policy_options": {
-          "score": 3.9,
-          "normalized": 0.975,
+          "score": 3.91,
+          "normalized": 0.978,
           "confidence": 0.92,
           "probabilities": {
             "0": 0.0,
@@ -108,34 +96,46 @@
             "4": 0.91
           }
         },
+        "policy_options": {
+          "score": 3.97,
+          "normalized": 0.993,
+          "confidence": 0.97,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.0,
+            "2": 0.0,
+            "3": 0.02,
+            "4": 0.98
+          }
+        },
         "meaning": {
-          "score": 2.67,
-          "normalized": 0.667,
-          "confidence": 0.58,
+          "score": 2.76,
+          "normalized": 0.69,
+          "confidence": 0.64,
           "probabilities": {
             "0": 0.01,
-            "1": 0.05,
-            "2": 0.29,
-            "3": 0.57,
-            "4": 0.08
+            "1": 0.04,
+            "2": 0.23,
+            "3": 0.62,
+            "4": 0.1
           }
         },
         "terminology": {
-          "score": 2.64,
-          "normalized": 0.66,
-          "confidence": 0.0,
+          "score": 2.96,
+          "normalized": 0.74,
+          "confidence": 0.13,
           "probabilities": {
-            "0": 0.11,
-            "1": 0.1,
-            "2": 0.18,
-            "3": 0.28,
-            "4": 0.33
+            "0": 0.09,
+            "1": 0.03,
+            "2": 0.12,
+            "3": 0.37,
+            "4": 0.39
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1854,
+        "input_tokens": 1983,
         "output_tokens": 76
       }
     },
@@ -143,76 +143,76 @@
       "excel": 5,
       "label": "With Permanent Disability",
       "section": "MASTER PERSON DATA",
-      "composite": 0.775,
+      "composite": 0.796,
       "verdict": "pass",
       "lowConfidenceDimensions": [
         "meaning"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.78,
-          "normalized": 0.945,
-          "confidence": 0.81,
+          "score": 3.82,
+          "normalized": 0.955,
+          "confidence": 0.85,
           "probabilities": {
             "0": 0.0,
             "1": 0.03,
             "2": 0.01,
-            "3": 0.09,
-            "4": 0.87
+            "3": 0.06,
+            "4": 0.9
           }
         },
         "policy_link": {
-          "score": 3.48,
-          "normalized": 0.87,
-          "confidence": 0.6,
+          "score": 3.35,
+          "normalized": 0.838,
+          "confidence": 0.7,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.0,
-            "3": 0.52,
-            "4": 0.48
+            "3": 0.65,
+            "4": 0.35
           }
         },
         "policy_options": {
-          "score": 3.79,
-          "normalized": 0.948,
-          "confidence": 0.83,
+          "score": 3.96,
+          "normalized": 0.99,
+          "confidence": 0.97,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.0,
-            "3": 0.2,
-            "4": 0.8
+            "3": 0.03,
+            "4": 0.97
           }
         },
         "meaning": {
-          "score": 1.47,
-          "normalized": 0.367,
-          "confidence": 0.41,
+          "score": 1.56,
+          "normalized": 0.39,
+          "confidence": 0.38,
           "probabilities": {
-            "0": 0.12,
-            "1": 0.49,
-            "2": 0.25,
+            "0": 0.09,
+            "1": 0.47,
+            "2": 0.29,
             "3": 0.07,
-            "4": 0.07
+            "4": 0.08
           }
         },
         "terminology": {
-          "score": 3.49,
-          "normalized": 0.873,
-          "confidence": 0.57,
+          "score": 3.72,
+          "normalized": 0.93,
+          "confidence": 0.77,
           "probabilities": {
-            "0": 0.02,
+            "0": 0.01,
             "1": 0.01,
-            "2": 0.05,
-            "3": 0.29,
-            "4": 0.63
+            "2": 0.01,
+            "3": 0.2,
+            "4": 0.77
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1512,
+        "input_tokens": 1632,
         "output_tokens": 76
       }
     },
@@ -223,67 +223,68 @@
       "composite": 0.798,
       "verdict": "pass",
       "lowConfidenceDimensions": [
-        "meaning"
+        "meaning",
+        "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.42,
-          "normalized": 0.855,
-          "confidence": 0.52,
+          "score": 3.52,
+          "normalized": 0.88,
+          "confidence": 0.6,
           "probabilities": {
             "0": 0.01,
-            "1": 0.12,
+            "1": 0.1,
             "2": 0.02,
-            "3": 0.14,
-            "4": 0.71
+            "3": 0.13,
+            "4": 0.74
           }
         },
         "policy_link": {
           "score": 3.42,
           "normalized": 0.855,
-          "confidence": 0.52,
+          "confidence": 0.58,
           "probabilities": {
             "0": 0.0,
-            "1": 0.03,
-            "2": 0.01,
-            "3": 0.47,
-            "4": 0.49
+            "1": 0.02,
+            "2": 0.0,
+            "3": 0.52,
+            "4": 0.46
           }
         },
         "policy_options": {
           "score": 3.92,
           "normalized": 0.98,
-          "confidence": 0.93,
+          "confidence": 0.94,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.01,
             "3": 0.05,
-            "4": 0.93
+            "4": 0.94
           }
         },
         "meaning": {
-          "score": 2.19,
-          "normalized": 0.547,
-          "confidence": 0.45,
+          "score": 2.2,
+          "normalized": 0.55,
+          "confidence": 0.43,
           "probabilities": {
             "0": 0.08,
-            "1": 0.09,
+            "1": 0.08,
             "2": 0.47,
             "3": 0.3,
-            "4": 0.06
+            "4": 0.07
           }
         },
         "terminology": {
-          "score": 3.45,
-          "normalized": 0.863,
-          "confidence": 0.54,
+          "score": 3.31,
+          "normalized": 0.828,
+          "confidence": 0.43,
           "probabilities": {
-            "0": 0.03,
-            "1": 0.1,
+            "0": 0.04,
+            "1": 0.14,
             "2": 0.02,
-            "3": 0.08,
-            "4": 0.77
+            "3": 0.09,
+            "4": 0.71
           }
         }
       },
@@ -297,25 +298,25 @@
       "excel": 8,
       "label": "Date of Onset of Illness",
       "section": "ENCOUNTER LOG",
-      "composite": 0.805,
+      "composite": 0.809,
       "verdict": "pass",
       "lowConfidenceDimensions": [],
       "dimensions": {
         "traceability": {
-          "score": 3.97,
-          "normalized": 0.993,
+          "score": 3.96,
+          "normalized": 0.99,
           "confidence": 0.97,
           "probabilities": {
             "0": 0.0,
-            "1": 0.0,
+            "1": 0.01,
             "2": 0.0,
-            "3": 0.01,
-            "4": 0.99
+            "3": 0.02,
+            "4": 0.97
           }
         },
         "policy_link": {
-          "score": 3.3,
-          "normalized": 0.825,
+          "score": 3.29,
+          "normalized": 0.823,
           "confidence": 0.71,
           "probabilities": {
             "0": 0.0,
@@ -326,39 +327,39 @@
           }
         },
         "policy_options": {
-          "score": 3.54,
-          "normalized": 0.885,
-          "confidence": 0.62,
+          "score": 3.5,
+          "normalized": 0.875,
+          "confidence": 0.58,
           "probabilities": {
-            "0": 0.0,
+            "0": 0.01,
             "1": 0.0,
             "2": 0.01,
-            "3": 0.42,
-            "4": 0.57
+            "3": 0.44,
+            "4": 0.54
           }
         },
         "meaning": {
-          "score": 2.93,
-          "normalized": 0.733,
-          "confidence": 0.62,
+          "score": 2.96,
+          "normalized": 0.74,
+          "confidence": 0.63,
           "probabilities": {
             "0": 0.0,
-            "1": 0.05,
-            "2": 0.16,
-            "3": 0.6,
-            "4": 0.19
+            "1": 0.04,
+            "2": 0.15,
+            "3": 0.61,
+            "4": 0.2
           }
         },
         "terminology": {
-          "score": 2.34,
-          "normalized": 0.585,
-          "confidence": 0.55,
+          "score": 2.43,
+          "normalized": 0.608,
+          "confidence": 0.51,
           "probabilities": {
-            "0": 0.05,
+            "0": 0.04,
             "1": 0.0,
-            "2": 0.53,
-            "3": 0.4,
-            "4": 0.02
+            "2": 0.48,
+            "3": 0.45,
+            "4": 0.03
           }
         }
       },
@@ -372,7 +373,7 @@
       "excel": 9,
       "label": "Underlying Cause of Death (ICD-10)",
       "section": "ENCOUNTER LOG",
-      "composite": 0.733,
+      "composite": 0.728,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "traceability",
@@ -380,63 +381,63 @@
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.06,
-          "normalized": 0.765,
-          "confidence": 0.21,
+          "score": 3.1,
+          "normalized": 0.775,
+          "confidence": 0.25,
           "probabilities": {
             "0": 0.0,
-            "1": 0.24,
-            "2": 0.03,
+            "1": 0.22,
+            "2": 0.02,
             "3": 0.17,
-            "4": 0.56
+            "4": 0.59
           }
         },
         "policy_link": {
-          "score": 3.73,
-          "normalized": 0.932,
-          "confidence": 0.77,
+          "score": 3.68,
+          "normalized": 0.92,
+          "confidence": 0.73,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.0,
-            "3": 0.27,
-            "4": 0.73
+            "3": 0.32,
+            "4": 0.68
           }
         },
         "policy_options": {
-          "score": 3.48,
-          "normalized": 0.87,
-          "confidence": 0.57,
+          "score": 3.43,
+          "normalized": 0.858,
+          "confidence": 0.53,
           "probabilities": {
             "0": 0.0,
-            "1": 0.0,
-            "2": 0.04,
-            "3": 0.43,
-            "4": 0.53
+            "1": 0.01,
+            "2": 0.05,
+            "3": 0.45,
+            "4": 0.49
           }
         },
         "meaning": {
-          "score": 1.88,
-          "normalized": 0.47,
+          "score": 1.86,
+          "normalized": 0.465,
           "confidence": 0.6,
           "probabilities": {
-            "0": 0.01,
-            "1": 0.27,
+            "0": 0.02,
+            "1": 0.28,
             "2": 0.55,
-            "3": 0.14,
+            "3": 0.13,
             "4": 0.02
           }
         },
         "terminology": {
-          "score": 3.07,
-          "normalized": 0.767,
-          "confidence": 0.23,
+          "score": 3.02,
+          "normalized": 0.755,
+          "confidence": 0.18,
           "probabilities": {
             "0": 0.04,
             "1": 0.01,
-            "2": 0.19,
-            "3": 0.37,
-            "4": 0.39
+            "2": 0.21,
+            "3": 0.36,
+            "4": 0.38
           }
         }
       },
@@ -450,7 +451,7 @@
       "excel": 10,
       "label": "Underlying Cause of Death Description",
       "section": "ENCOUNTER LOG",
-      "composite": 0.662,
+      "composite": 0.694,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "traceability",
@@ -458,62 +459,62 @@
       ],
       "dimensions": {
         "traceability": {
-          "score": 2.89,
-          "normalized": 0.723,
-          "confidence": 0.08,
+          "score": 3.34,
+          "normalized": 0.835,
+          "confidence": 0.45,
           "probabilities": {
             "0": 0.0,
-            "1": 0.24,
-            "2": 0.04,
-            "3": 0.29,
-            "4": 0.43
+            "1": 0.13,
+            "2": 0.03,
+            "3": 0.19,
+            "4": 0.65
           }
         },
         "policy_link": {
-          "score": 3.36,
-          "normalized": 0.84,
-          "confidence": 0.55,
+          "score": 3.4,
+          "normalized": 0.85,
+          "confidence": 0.59,
           "probabilities": {
             "0": 0.0,
-            "1": 0.04,
+            "1": 0.02,
             "2": 0.0,
-            "3": 0.51,
+            "3": 0.53,
             "4": 0.45
           }
         },
         "policy_options": {
-          "score": 3.39,
-          "normalized": 0.848,
-          "confidence": 0.58,
+          "score": 3.33,
+          "normalized": 0.833,
+          "confidence": 0.61,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
-            "2": 0.04,
-            "3": 0.51,
-            "4": 0.45
+            "2": 0.05,
+            "3": 0.55,
+            "4": 0.4
           }
         },
         "meaning": {
-          "score": 2.12,
-          "normalized": 0.53,
-          "confidence": 0.59,
+          "score": 2.15,
+          "normalized": 0.537,
+          "confidence": 0.57,
           "probabilities": {
             "0": 0.03,
-            "1": 0.14,
-            "2": 0.55,
-            "3": 0.25,
-            "4": 0.03
+            "1": 0.13,
+            "2": 0.54,
+            "3": 0.26,
+            "4": 0.04
           }
         },
         "terminology": {
-          "score": 1.92,
-          "normalized": 0.48,
-          "confidence": 0.31,
+          "score": 1.96,
+          "normalized": 0.49,
+          "confidence": 0.3,
           "probabilities": {
-            "0": 0.18,
-            "1": 0.09,
-            "2": 0.39,
-            "3": 0.31,
+            "0": 0.17,
+            "1": 0.11,
+            "2": 0.36,
+            "3": 0.33,
             "4": 0.03
           }
         }
@@ -528,7 +529,7 @@
       "excel": 12,
       "label": "Date of Onset of Illness",
       "section": "COVID-19",
-      "composite": 0.739,
+      "composite": 0.742,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "policy_options",
@@ -543,55 +544,55 @@
             "0": 0.0,
             "1": 0.0,
             "2": 0.0,
-            "3": 0.02,
-            "4": 0.98
+            "3": 0.03,
+            "4": 0.97
           }
         },
         "policy_link": {
-          "score": 3.17,
-          "normalized": 0.792,
-          "confidence": 0.75,
+          "score": 3.2,
+          "normalized": 0.8,
+          "confidence": 0.71,
           "probabilities": {
             "0": 0.0,
-            "1": 0.03,
+            "1": 0.04,
             "2": 0.0,
-            "3": 0.73,
-            "4": 0.24
+            "3": 0.6799999999999999,
+            "4": 0.28
           }
         },
         "policy_options": {
-          "score": 2.92,
-          "normalized": 0.73,
-          "confidence": 0.49,
+          "score": 2.97,
+          "normalized": 0.743,
+          "confidence": 0.47,
           "probabilities": {
-            "0": 0.09,
-            "1": 0.02,
+            "0": 0.08,
+            "1": 0.01,
             "2": 0.05,
-            "3": 0.58,
-            "4": 0.26
+            "3": 0.56,
+            "4": 0.3
           }
         },
         "meaning": {
-          "score": 2.38,
-          "normalized": 0.595,
-          "confidence": 0.29,
+          "score": 2.36,
+          "normalized": 0.59,
+          "confidence": 0.26,
           "probabilities": {
             "0": 0.01,
-            "1": 0.25,
-            "2": 0.2,
-            "3": 0.42,
+            "1": 0.27,
+            "2": 0.19,
+            "3": 0.41,
             "4": 0.12
           }
         },
         "terminology": {
-          "score": 2.29,
-          "normalized": 0.573,
-          "confidence": 0.54,
+          "score": 2.32,
+          "normalized": 0.58,
+          "confidence": 0.51,
           "probabilities": {
-            "0": 0.06,
+            "0": 0.07,
             "1": 0.0,
-            "2": 0.55,
-            "3": 0.36,
+            "2": 0.5,
+            "3": 0.4,
             "4": 0.03
           }
         }
@@ -606,70 +607,70 @@
       "excel": 13,
       "label": "History of Other Illness",
       "section": "COVID-19",
-      "composite": 0.679,
+      "composite": 0.693,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.55,
-          "normalized": 0.887,
-          "confidence": 0.63,
+          "score": 3.54,
+          "normalized": 0.885,
+          "confidence": 0.62,
           "probabilities": {
             "0": 0.0,
             "1": 0.09,
             "2": 0.01,
-            "3": 0.14,
-            "4": 0.76
+            "3": 0.15,
+            "4": 0.75
           }
         },
         "policy_link": {
-          "score": 3.01,
-          "normalized": 0.752,
-          "confidence": 0.87,
+          "score": 3.03,
+          "normalized": 0.757,
+          "confidence": 0.86,
           "probabilities": {
             "0": 0.0,
             "1": 0.04,
             "2": 0.0,
-            "3": 0.88,
-            "4": 0.08
+            "3": 0.86,
+            "4": 0.1
           }
         },
         "policy_options": {
-          "score": 3.56,
-          "normalized": 0.89,
-          "confidence": 0.63,
+          "score": 3.53,
+          "normalized": 0.882,
+          "confidence": 0.61,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.0,
-            "3": 0.42,
-            "4": 0.58
+            "3": 0.45,
+            "4": 0.55
           }
         },
         "meaning": {
-          "score": 1.8,
-          "normalized": 0.45,
-          "confidence": 0.52,
+          "score": 1.97,
+          "normalized": 0.492,
+          "confidence": 0.59,
           "probabilities": {
-            "0": 0.15,
-            "1": 0.08,
-            "2": 0.6,
-            "3": 0.14,
+            "0": 0.1,
+            "1": 0.07,
+            "2": 0.64,
+            "3": 0.16,
             "4": 0.03
           }
         },
         "terminology": {
-          "score": 1.97,
-          "normalized": 0.492,
-          "confidence": 0.43,
+          "score": 2.05,
+          "normalized": 0.512,
+          "confidence": 0.36,
           "probabilities": {
             "0": 0.17,
             "1": 0.02,
-            "2": 0.53,
-            "3": 0.24,
-            "4": 0.04
+            "2": 0.48,
+            "3": 0.26,
+            "4": 0.07
           }
         }
       },
@@ -683,7 +684,7 @@
       "excel": 15,
       "label": "Date of Complication",
       "section": "DETECTED ISSUE",
-      "composite": 0.686,
+      "composite": 0.685,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "traceability",
@@ -691,62 +692,62 @@
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.01,
-          "normalized": 0.752,
-          "confidence": 0.36,
+          "score": 3.05,
+          "normalized": 0.762,
+          "confidence": 0.21,
           "probabilities": {
             "0": 0.0,
-            "1": 0.16,
-            "2": 0.06,
-            "3": 0.39,
-            "4": 0.39
+            "1": 0.15,
+            "2": 0.05,
+            "3": 0.4,
+            "4": 0.39999999999999997
           }
         },
         "policy_link": {
-          "score": 3.25,
-          "normalized": 0.812,
-          "confidence": 0.75,
+          "score": 3.27,
+          "normalized": 0.818,
+          "confidence": 0.74,
           "probabilities": {
             "0": 0.0,
             "1": 0.01,
             "2": 0.0,
-            "3": 0.72,
-            "4": 0.27
+            "3": 0.7,
+            "4": 0.29
           }
         },
         "policy_options": {
-          "score": 3.24,
-          "normalized": 0.81,
-          "confidence": 0.61,
+          "score": 3.22,
+          "normalized": 0.805,
+          "confidence": 0.63,
           "probabilities": {
             "0": 0.02,
             "1": 0.01,
             "2": 0.04,
-            "3": 0.58,
-            "4": 0.35
+            "3": 0.6,
+            "4": 0.33
           }
         },
         "meaning": {
-          "score": 2.37,
-          "normalized": 0.593,
-          "confidence": 0.4,
+          "score": 2.35,
+          "normalized": 0.588,
+          "confidence": 0.38,
           "probabilities": {
             "0": 0.02,
-            "1": 0.2,
-            "2": 0.22,
+            "1": 0.21,
+            "2": 0.2,
             "3": 0.52,
-            "4": 0.04
+            "4": 0.05
           }
         },
         "terminology": {
-          "score": 2.12,
-          "normalized": 0.53,
-          "confidence": 0.51,
+          "score": 2.09,
+          "normalized": 0.522,
+          "confidence": 0.52,
           "probabilities": {
-            "0": 0.11,
+            "0": 0.12,
             "1": 0.01,
-            "2": 0.54,
-            "3": 0.32,
+            "2": 0.55,
+            "3": 0.3,
             "4": 0.02
           }
         }
@@ -761,7 +762,7 @@
       "excel": 16,
       "label": "Time of Complication",
       "section": "DETECTED ISSUE",
-      "composite": 0.713,
+      "composite": 0.685,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "meaning",
@@ -769,329 +770,15 @@
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.42,
-          "normalized": 0.855,
-          "confidence": 0.52,
+          "score": 3.4,
+          "normalized": 0.85,
+          "confidence": 0.5,
           "probabilities": {
-            "0": 0.0,
+            "0": 0.01,
             "1": 0.09,
             "2": 0.02,
             "3": 0.27,
-            "4": 0.62
-          }
-        },
-        "policy_link": {
-          "score": 3.23,
-          "normalized": 0.807,
-          "confidence": 0.76,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.01,
-            "2": 0.0,
-            "3": 0.73,
-            "4": 0.26
-          }
-        },
-        "policy_options": {
-          "score": 3.23,
-          "normalized": 0.807,
-          "confidence": 0.56,
-          "probabilities": {
-            "0": 0.04,
-            "1": 0.01,
-            "2": 0.02,
-            "3": 0.55,
-            "4": 0.38
-          }
-        },
-        "meaning": {
-          "score": 2.25,
-          "normalized": 0.562,
-          "confidence": 0.25,
-          "probabilities": {
-            "0": 0.02,
-            "1": 0.32,
-            "2": 0.13,
-            "3": 0.45,
-            "4": 0.08
-          }
-        },
-        "terminology": {
-          "score": 2.33,
-          "normalized": 0.583,
-          "confidence": 0.4,
-          "probabilities": {
-            "0": 0.08,
-            "1": 0.01,
-            "2": 0.43,
-            "3": 0.46,
-            "4": 0.02
-          }
-        }
-      },
-      "model": "jev-1.13.0",
-      "usage": {
-        "input_tokens": 1420,
-        "output_tokens": 76
-      }
-    },
-    {
-      "excel": 17,
-      "label": "Complication",
-      "section": "DETECTED ISSUE",
-      "composite": 0.633,
-      "verdict": "review",
-      "lowConfidenceDimensions": [
-        "traceability",
-        "terminology"
-      ],
-      "dimensions": {
-        "traceability": {
-          "score": 2.89,
-          "normalized": 0.723,
-          "confidence": 0.08,
-          "probabilities": {
-            "0": 0.02,
-            "1": 0.25,
-            "2": 0.03,
-            "3": 0.22,
-            "4": 0.48
-          }
-        },
-        "policy_link": {
-          "score": 3.05,
-          "normalized": 0.762,
-          "confidence": 0.89,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.02,
-            "2": 0.0,
-            "3": 0.89,
-            "4": 0.09
-          }
-        },
-        "policy_options": {
-          "score": 3.54,
-          "normalized": 0.885,
-          "confidence": 0.62,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.0,
-            "2": 0.01,
-            "3": 0.41,
-            "4": 0.58
-          }
-        },
-        "meaning": {
-          "score": 1.98,
-          "normalized": 0.495,
-          "confidence": 0.66,
-          "probabilities": {
-            "0": 0.04,
-            "1": 0.13,
-            "2": 0.64,
-            "3": 0.18,
-            "4": 0.01
-          }
-        },
-        "terminology": {
-          "score": 1.64,
-          "normalized": 0.41,
-          "confidence": 0.28,
-          "probabilities": {
-            "0": 0.3,
-            "1": 0.01,
-            "2": 0.44,
-            "3": 0.24,
-            "4": 0.01
-          }
-        }
-      },
-      "model": "jev-1.13.0",
-      "usage": {
-        "input_tokens": 1441,
-        "output_tokens": 76
-      }
-    },
-    {
-      "excel": 19,
-      "label": "Date of Complication",
-      "section": "COMPLICATIONS",
-      "composite": 0.719,
-      "verdict": "review",
-      "lowConfidenceDimensions": [
-        "traceability",
-        "meaning",
-        "terminology"
-      ],
-      "dimensions": {
-        "traceability": {
-          "score": 3.22,
-          "normalized": 0.805,
-          "confidence": 0.35,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.14,
-            "2": 0.02,
-            "3": 0.33,
-            "4": 0.51
-          }
-        },
-        "policy_link": {
-          "score": 3.29,
-          "normalized": 0.823,
-          "confidence": 0.72,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.01,
-            "2": 0.0,
-            "3": 0.68,
-            "4": 0.31
-          }
-        },
-        "policy_options": {
-          "score": 3.27,
-          "normalized": 0.818,
-          "confidence": 0.58,
-          "probabilities": {
-            "0": 0.03,
-            "1": 0.01,
-            "2": 0.01,
-            "3": 0.56,
-            "4": 0.39
-          }
-        },
-        "meaning": {
-          "score": 2.44,
-          "normalized": 0.61,
-          "confidence": 0.35,
-          "probabilities": {
-            "0": 0.03,
-            "1": 0.21,
-            "2": 0.17,
-            "3": 0.48,
-            "4": 0.11
-          }
-        },
-        "terminology": {
-          "score": 2.38,
-          "normalized": 0.595,
-          "confidence": 0.45,
-          "probabilities": {
-            "0": 0.07,
-            "1": 0.01,
-            "2": 0.44,
-            "3": 0.44,
-            "4": 0.04
-          }
-        }
-      },
-      "model": "jev-1.13.0",
-      "usage": {
-        "input_tokens": 1435,
-        "output_tokens": 76
-      }
-    },
-    {
-      "excel": 20,
-      "label": "Time of Complication",
-      "section": "COMPLICATIONS",
-      "composite": 0.737,
-      "verdict": "review",
-      "lowConfidenceDimensions": [
-        "policy_options",
-        "meaning",
-        "terminology"
-      ],
-      "dimensions": {
-        "traceability": {
-          "score": 3.51,
-          "normalized": 0.877,
-          "confidence": 0.59,
-          "probabilities": {
-            "0": 0.01,
-            "1": 0.09,
-            "2": 0.02,
-            "3": 0.18,
-            "4": 0.7
-          }
-        },
-        "policy_link": {
-          "score": 3.42,
-          "normalized": 0.855,
-          "confidence": 0.62,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.01,
-            "2": 0.0,
-            "3": 0.55,
-            "4": 0.44
-          }
-        },
-        "policy_options": {
-          "score": 2.93,
-          "normalized": 0.733,
-          "confidence": 0.47,
-          "probabilities": {
-            "0": 0.1,
-            "1": 0.02,
-            "2": 0.02,
-            "3": 0.58,
-            "4": 0.28
-          }
-        },
-        "meaning": {
-          "score": 2.55,
-          "normalized": 0.637,
-          "confidence": 0.28,
-          "probabilities": {
-            "0": 0.02,
-            "1": 0.23,
-            "2": 0.13,
-            "3": 0.41,
-            "4": 0.21
-          }
-        },
-        "terminology": {
-          "score": 2.4,
-          "normalized": 0.6,
-          "confidence": 0.45,
-          "probabilities": {
-            "0": 0.07,
-            "1": 0.0,
-            "2": 0.42,
-            "3": 0.48,
-            "4": 0.03
-          }
-        }
-      },
-      "model": "jev-1.13.0",
-      "usage": {
-        "input_tokens": 1413,
-        "output_tokens": 76
-      }
-    },
-    {
-      "excel": 21,
-      "label": "Complication",
-      "section": "COMPLICATIONS",
-      "composite": 0.635,
-      "verdict": "review",
-      "lowConfidenceDimensions": [
-        "traceability",
-        "terminology"
-      ],
-      "dimensions": {
-        "traceability": {
-          "score": 2.64,
-          "normalized": 0.66,
-          "confidence": 0.0,
-          "probabilities": {
-            "0": 0.01,
-            "1": 0.32,
-            "2": 0.02,
-            "3": 0.31,
-            "4": 0.34
+            "4": 0.61
           }
         },
         "policy_link": {
@@ -1107,38 +794,350 @@
           }
         },
         "policy_options": {
-          "score": 3.37,
-          "normalized": 0.843,
+          "score": 3.11,
+          "normalized": 0.777,
+          "confidence": 0.58,
+          "probabilities": {
+            "0": 0.05,
+            "1": 0.01,
+            "2": 0.02,
+            "3": 0.61,
+            "4": 0.31
+          }
+        },
+        "meaning": {
+          "score": 1.99,
+          "normalized": 0.497,
+          "confidence": 0.14,
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.45,
+            "2": 0.11,
+            "3": 0.36,
+            "4": 0.06
+          }
+        },
+        "terminology": {
+          "score": 2.22,
+          "normalized": 0.555,
+          "confidence": 0.45,
+          "probabilities": {
+            "0": 0.1,
+            "1": 0.01,
+            "2": 0.48,
+            "3": 0.38,
+            "4": 0.03
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1420,
+        "output_tokens": 76
+      }
+    },
+    {
+      "excel": 17,
+      "label": "Complication",
+      "section": "DETECTED ISSUE",
+      "composite": 0.631,
+      "verdict": "review",
+      "lowConfidenceDimensions": [
+        "traceability",
+        "terminology"
+      ],
+      "dimensions": {
+        "traceability": {
+          "score": 2.84,
+          "normalized": 0.71,
+          "confidence": 0.04,
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.26,
+            "2": 0.03,
+            "3": 0.23,
+            "4": 0.46
+          }
+        },
+        "policy_link": {
+          "score": 3.04,
+          "normalized": 0.76,
+          "confidence": 0.9,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.02,
+            "2": 0.0,
+            "3": 0.9,
+            "4": 0.08
+          }
+        },
+        "policy_options": {
+          "score": 3.55,
+          "normalized": 0.887,
           "confidence": 0.62,
           "probabilities": {
-            "0": 0.01,
+            "0": 0.0,
             "1": 0.0,
             "2": 0.01,
-            "3": 0.5700000000000001,
-            "4": 0.41
+            "3": 0.42,
+            "4": 0.57
           }
         },
         "meaning": {
           "score": 1.96,
           "normalized": 0.49,
-          "confidence": 0.68,
+          "confidence": 0.66,
           "probabilities": {
             "0": 0.04,
-            "1": 0.13,
-            "2": 0.66,
-            "3": 0.16,
+            "1": 0.14,
+            "2": 0.64,
+            "3": 0.17,
             "4": 0.01
           }
         },
         "terminology": {
-          "score": 2.01,
-          "normalized": 0.502,
-          "confidence": 0.45,
+          "score": 1.68,
+          "normalized": 0.42,
+          "confidence": 0.3,
           "probabilities": {
-            "0": 0.15,
+            "0": 0.28,
+            "1": 0.01,
+            "2": 0.46,
+            "3": 0.24,
+            "4": 0.01
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1441,
+        "output_tokens": 76
+      }
+    },
+    {
+      "excel": 19,
+      "label": "Date of Complication",
+      "section": "COMPLICATIONS",
+      "composite": 0.74,
+      "verdict": "review",
+      "lowConfidenceDimensions": [
+        "meaning",
+        "terminology"
+      ],
+      "dimensions": {
+        "traceability": {
+          "score": 3.39,
+          "normalized": 0.848,
+          "confidence": 0.5,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.1,
+            "2": 0.01,
+            "3": 0.26,
+            "4": 0.63
+          }
+        },
+        "policy_link": {
+          "score": 3.4,
+          "normalized": 0.85,
+          "confidence": 0.64,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.01,
+            "2": 0.0,
+            "3": 0.57,
+            "4": 0.42
+          }
+        },
+        "policy_options": {
+          "score": 3.27,
+          "normalized": 0.818,
+          "confidence": 0.58,
+          "probabilities": {
+            "0": 0.03,
+            "1": 0.01,
+            "2": 0.01,
+            "3": 0.56,
+            "4": 0.39
+          }
+        },
+        "meaning": {
+          "score": 2.56,
+          "normalized": 0.64,
+          "confidence": 0.41,
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.17,
+            "2": 0.17,
+            "3": 0.5,
+            "4": 0.14
+          }
+        },
+        "terminology": {
+          "score": 2.36,
+          "normalized": 0.59,
+          "confidence": 0.47,
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.0,
+            "2": 0.46,
+            "3": 0.43,
+            "4": 0.04
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1435,
+        "output_tokens": 76
+      }
+    },
+    {
+      "excel": 20,
+      "label": "Time of Complication",
+      "section": "COMPLICATIONS",
+      "composite": 0.763,
+      "verdict": "pass",
+      "lowConfidenceDimensions": [
+        "meaning",
+        "terminology"
+      ],
+      "dimensions": {
+        "traceability": {
+          "score": 3.61,
+          "normalized": 0.902,
+          "confidence": 0.68,
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.06,
+            "2": 0.01,
+            "3": 0.15,
+            "4": 0.77
+          }
+        },
+        "policy_link": {
+          "score": 3.4,
+          "normalized": 0.85,
+          "confidence": 0.63,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.01,
+            "2": 0.0,
+            "3": 0.57,
+            "4": 0.42
+          }
+        },
+        "policy_options": {
+          "score": 3.03,
+          "normalized": 0.757,
+          "confidence": 0.52,
+          "probabilities": {
+            "0": 0.07,
             "1": 0.02,
-            "2": 0.52,
+            "2": 0.02,
+            "3": 0.59,
+            "4": 0.3
+          }
+        },
+        "meaning": {
+          "score": 2.79,
+          "normalized": 0.698,
+          "confidence": 0.4,
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.16,
+            "2": 0.09,
+            "3": 0.47,
+            "4": 0.26
+          }
+        },
+        "terminology": {
+          "score": 2.44,
+          "normalized": 0.61,
+          "confidence": 0.49,
+          "probabilities": {
+            "0": 0.07,
+            "1": 0.0,
+            "2": 0.38,
+            "3": 0.52,
+            "4": 0.03
+          }
+        }
+      },
+      "model": "jev-1.13.0",
+      "usage": {
+        "input_tokens": 1413,
+        "output_tokens": 76
+      }
+    },
+    {
+      "excel": 21,
+      "label": "Complication",
+      "section": "COMPLICATIONS",
+      "composite": 0.616,
+      "verdict": "review",
+      "lowConfidenceDimensions": [
+        "traceability",
+        "terminology"
+      ],
+      "dimensions": {
+        "traceability": {
+          "score": 2.54,
+          "normalized": 0.635,
+          "confidence": 0.0,
+          "probabilities": {
+            "0": 0.02,
+            "1": 0.33999999999999997,
+            "2": 0.03,
             "3": 0.29,
+            "4": 0.32
+          }
+        },
+        "policy_link": {
+          "score": 3.23,
+          "normalized": 0.807,
+          "confidence": 0.75,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.02,
+            "2": 0.0,
+            "3": 0.72,
+            "4": 0.26
+          }
+        },
+        "policy_options": {
+          "score": 3.27,
+          "normalized": 0.818,
+          "confidence": 0.65,
+          "probabilities": {
+            "0": 0.01,
+            "1": 0.01,
+            "2": 0.03,
+            "3": 0.6,
+            "4": 0.35
+          }
+        },
+        "meaning": {
+          "score": 1.85,
+          "normalized": 0.463,
+          "confidence": 0.63,
+          "probabilities": {
+            "0": 0.06,
+            "1": 0.18,
+            "2": 0.62,
+            "3": 0.13,
+            "4": 0.01
+          }
+        },
+        "terminology": {
+          "score": 1.95,
+          "normalized": 0.487,
+          "confidence": 0.48,
+          "probabilities": {
+            "0": 0.16,
+            "1": 0.02,
+            "2": 0.56,
+            "3": 0.24,
             "4": 0.02
           }
         }
@@ -1153,72 +1152,72 @@
       "excel": 23,
       "label": "Date Diagnosed",
       "section": "DIAGNOSIS",
-      "composite": 0.636,
+      "composite": 0.668,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "traceability",
-        "policy_options",
-        "meaning"
+        "meaning",
+        "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 2.6,
-          "normalized": 0.65,
-          "confidence": 0.0,
+          "score": 2.91,
+          "normalized": 0.728,
+          "confidence": 0.09,
           "probabilities": {
             "0": 0.01,
-            "1": 0.37,
-            "2": 0.03,
-            "3": 0.2,
-            "4": 0.39
+            "1": 0.27,
+            "2": 0.02,
+            "3": 0.18,
+            "4": 0.52
           }
         },
         "policy_link": {
-          "score": 3.21,
-          "normalized": 0.802,
-          "confidence": 0.76,
+          "score": 3.25,
+          "normalized": 0.812,
+          "confidence": 0.74,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
             "2": 0.0,
-            "3": 0.73,
-            "4": 0.25
+            "3": 0.7,
+            "4": 0.28
           }
         },
         "policy_options": {
-          "score": 3.06,
-          "normalized": 0.765,
-          "confidence": 0.47,
+          "score": 3.09,
+          "normalized": 0.772,
+          "confidence": 0.52,
           "probabilities": {
-            "0": 0.07,
+            "0": 0.05,
             "1": 0.03,
             "2": 0.04,
-            "3": 0.51,
-            "4": 0.35
+            "3": 0.55,
+            "4": 0.33
           }
         },
         "meaning": {
-          "score": 1.97,
-          "normalized": 0.492,
-          "confidence": 0.16,
+          "score": 2.06,
+          "normalized": 0.515,
+          "confidence": 0.08,
           "probabilities": {
             "0": 0.02,
-            "1": 0.39,
-            "2": 0.24,
-            "3": 0.31,
-            "4": 0.04
+            "1": 0.35,
+            "2": 0.23,
+            "3": 0.35,
+            "4": 0.05
           }
         },
         "terminology": {
-          "score": 2.3,
-          "normalized": 0.575,
-          "confidence": 0.5,
+          "score": 2.4,
+          "normalized": 0.6,
+          "confidence": 0.47,
           "probabilities": {
-            "0": 0.07,
+            "0": 0.06,
             "1": 0.0,
-            "2": 0.5,
-            "3": 0.4,
-            "4": 0.03
+            "2": 0.46,
+            "3": 0.44,
+            "4": 0.04
           }
         }
       },
@@ -1232,7 +1231,7 @@
       "excel": 24,
       "label": "Time Diagnosed",
       "section": "DIAGNOSIS",
-      "composite": 0.669,
+      "composite": 0.691,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "traceability",
@@ -1242,15 +1241,15 @@
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.12,
-          "normalized": 0.78,
-          "confidence": 0.27,
+          "score": 3.36,
+          "normalized": 0.84,
+          "confidence": 0.46,
           "probabilities": {
             "0": 0.01,
-            "1": 0.18,
-            "2": 0.04,
-            "3": 0.22,
-            "4": 0.55
+            "1": 0.13,
+            "2": 0.02,
+            "3": 0.18,
+            "4": 0.66
           }
         },
         "policy_link": {
@@ -1261,44 +1260,44 @@
             "0": 0.0,
             "1": 0.04,
             "2": 0.0,
-            "3": 0.78,
-            "4": 0.18
+            "3": 0.77,
+            "4": 0.19
           }
         },
         "policy_options": {
-          "score": 2.95,
-          "normalized": 0.738,
-          "confidence": 0.46,
+          "score": 3.0,
+          "normalized": 0.75,
+          "confidence": 0.45,
           "probabilities": {
-            "0": 0.1,
+            "0": 0.09,
             "1": 0.01,
-            "2": 0.02,
-            "3": 0.57,
-            "4": 0.3
+            "2": 0.03,
+            "3": 0.54,
+            "4": 0.33
           }
         },
         "meaning": {
-          "score": 2.08,
-          "normalized": 0.52,
-          "confidence": 0.06,
+          "score": 2.13,
+          "normalized": 0.532,
+          "confidence": 0.02,
           "probabilities": {
-            "0": 0.03,
-            "1": 0.39,
-            "2": 0.16,
-            "3": 0.32,
-            "4": 0.1
+            "0": 0.02,
+            "1": 0.37,
+            "2": 0.15,
+            "3": 0.37,
+            "4": 0.09
           }
         },
         "terminology": {
-          "score": 2.34,
-          "normalized": 0.585,
-          "confidence": 0.48,
+          "score": 2.39,
+          "normalized": 0.598,
+          "confidence": 0.46,
           "probabilities": {
             "0": 0.07,
             "1": 0.0,
-            "2": 0.46,
-            "3": 0.45,
-            "4": 0.02
+            "2": 0.41,
+            "3": 0.51,
+            "4": 0.01
           }
         }
       },
@@ -1312,7 +1311,7 @@
       "excel": 25,
       "label": "Diagnosis Code",
       "section": "DIAGNOSIS",
-      "composite": 0.618,
+      "composite": 0.62,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "traceability",
@@ -1320,62 +1319,62 @@
       ],
       "dimensions": {
         "traceability": {
-          "score": 2.83,
-          "normalized": 0.708,
-          "confidence": 0.03,
+          "score": 2.8,
+          "normalized": 0.7,
+          "confidence": 0.0,
           "probabilities": {
             "0": 0.01,
-            "1": 0.26,
+            "1": 0.28,
             "2": 0.04,
-            "3": 0.28,
+            "3": 0.26,
             "4": 0.41
           }
         },
         "policy_link": {
-          "score": 2.3,
-          "normalized": 0.575,
-          "confidence": 0.37,
+          "score": 2.45,
+          "normalized": 0.613,
+          "confidence": 0.47,
           "probabilities": {
             "0": 0.0,
-            "1": 0.36,
+            "1": 0.29,
             "2": 0.0,
-            "3": 0.61,
-            "4": 0.03
+            "3": 0.67,
+            "4": 0.04
           }
         },
         "policy_options": {
-          "score": 3.16,
-          "normalized": 0.79,
-          "confidence": 0.58,
+          "score": 3.17,
+          "normalized": 0.792,
+          "confidence": 0.55,
           "probabilities": {
             "0": 0.0,
             "1": 0.01,
-            "2": 0.13,
-            "3": 0.53,
-            "4": 0.33
+            "2": 0.15,
+            "3": 0.49,
+            "4": 0.35
           }
         },
         "meaning": {
-          "score": 2.33,
-          "normalized": 0.583,
+          "score": 2.26,
+          "normalized": 0.565,
           "confidence": 0.5,
           "probabilities": {
-            "0": 0.01,
-            "1": 0.12,
+            "0": 0.02,
+            "1": 0.14,
             "2": 0.43,
-            "3": 0.42,
+            "3": 0.39,
             "4": 0.02
           }
         },
         "terminology": {
-          "score": 1.82,
-          "normalized": 0.455,
-          "confidence": 0.55,
+          "score": 1.86,
+          "normalized": 0.465,
+          "confidence": 0.52,
           "probabilities": {
             "0": 0.18,
             "1": 0.0,
-            "2": 0.64,
-            "3": 0.17,
+            "2": 0.61,
+            "3": 0.2,
             "4": 0.01
           }
         }
@@ -1390,7 +1389,7 @@
       "excel": 26,
       "label": "Diagnosis Description",
       "section": "DIAGNOSIS",
-      "composite": 0.759,
+      "composite": 0.754,
       "verdict": "pass",
       "lowConfidenceDimensions": [
         "terminology"
@@ -1409,50 +1408,50 @@
           }
         },
         "policy_link": {
-          "score": 3.19,
-          "normalized": 0.797,
-          "confidence": 0.78,
+          "score": 3.18,
+          "normalized": 0.795,
+          "confidence": 0.77,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
             "2": 0.0,
-            "3": 0.75,
-            "4": 0.23
+            "3": 0.76,
+            "4": 0.22
           }
         },
         "policy_options": {
-          "score": 3.41,
-          "normalized": 0.853,
-          "confidence": 0.61,
+          "score": 3.33,
+          "normalized": 0.833,
+          "confidence": 0.69,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.01,
-            "3": 0.55,
-            "4": 0.44
+            "3": 0.64,
+            "4": 0.35
           }
         },
         "meaning": {
-          "score": 2.51,
-          "normalized": 0.627,
+          "score": 2.52,
+          "normalized": 0.63,
           "confidence": 0.55,
           "probabilities": {
-            "0": 0.01,
+            "0": 0.0,
             "1": 0.12,
-            "2": 0.25,
+            "2": 0.26,
             "3": 0.59,
             "4": 0.03
           }
         },
         "terminology": {
-          "score": 2.18,
-          "normalized": 0.545,
-          "confidence": 0.48,
+          "score": 2.13,
+          "normalized": 0.532,
+          "confidence": 0.47,
           "probabilities": {
-            "0": 0.11,
+            "0": 0.12,
             "1": 0.01,
-            "2": 0.48,
-            "3": 0.39,
+            "2": 0.49,
+            "3": 0.37,
             "4": 0.01
           }
         }
@@ -1467,34 +1466,34 @@
       "excel": 27,
       "label": "Diagnosis Remarks",
       "section": "DIAGNOSIS",
-      "composite": 0.799,
+      "composite": 0.797,
       "verdict": "pass",
       "lowConfidenceDimensions": [
         "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.91,
-          "normalized": 0.978,
-          "confidence": 0.93,
+          "score": 3.94,
+          "normalized": 0.985,
+          "confidence": 0.95,
           "probabilities": {
             "0": 0.0,
             "1": 0.01,
             "2": 0.0,
-            "3": 0.05,
-            "4": 0.94
+            "3": 0.03,
+            "4": 0.96
           }
         },
         "policy_link": {
-          "score": 3.11,
-          "normalized": 0.777,
+          "score": 3.1,
+          "normalized": 0.775,
           "confidence": 0.85,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
             "2": 0.0,
-            "3": 0.83,
-            "4": 0.15
+            "3": 0.84,
+            "4": 0.14
           }
         },
         "policy_options": {
@@ -1504,32 +1503,32 @@
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
-            "2": 0.03,
-            "3": 0.62,
+            "2": 0.04,
+            "3": 0.61,
             "4": 0.35
           }
         },
         "meaning": {
-          "score": 3.1,
-          "normalized": 0.775,
+          "score": 3.09,
+          "normalized": 0.772,
           "confidence": 0.65,
           "probabilities": {
             "0": 0.01,
-            "1": 0.02,
+            "1": 0.03,
             "2": 0.1,
             "3": 0.61,
-            "4": 0.26
+            "4": 0.25
           }
         },
         "terminology": {
-          "score": 2.41,
-          "normalized": 0.603,
-          "confidence": 0.44,
+          "score": 2.36,
+          "normalized": 0.59,
+          "confidence": 0.47,
           "probabilities": {
-            "0": 0.06,
+            "0": 0.07,
             "1": 0.0,
-            "2": 0.47000000000000003,
-            "3": 0.4,
+            "2": 0.5,
+            "3": 0.36,
             "4": 0.07
           }
         }
@@ -1544,77 +1543,76 @@
       "excel": 29,
       "label": "If Pregnancy - Induced Hypertension (Pre - Eclampsia)",
       "section": "PREGNANCY",
-      "composite": 0.686,
-      "verdict": "review",
+      "composite": 0.792,
+      "verdict": "pass",
       "lowConfidenceDimensions": [
-        "policy_link",
-        "policy_options"
+        "policy_link"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.58,
-          "normalized": 0.895,
-          "confidence": 0.65,
+          "score": 3.67,
+          "normalized": 0.917,
+          "confidence": 0.72,
           "probabilities": {
-            "0": 0.01,
-            "1": 0.08,
+            "0": 0.0,
+            "1": 0.06,
             "2": 0.01,
             "3": 0.12,
-            "4": 0.78
+            "4": 0.81
           }
         },
         "policy_link": {
-          "score": 1.34,
-          "normalized": 0.335,
-          "confidence": 0.14,
+          "score": 2.31,
+          "normalized": 0.578,
+          "confidence": 0.42,
           "probabilities": {
-            "0": 0.34,
-            "1": 0.36,
-            "2": 0.01,
-            "3": 0.2,
-            "4": 0.09
+            "0": 0.19,
+            "1": 0.07,
+            "2": 0.0,
+            "3": 0.74,
+            "4": 0.0
           }
         },
         "policy_options": {
-          "score": 2.54,
-          "normalized": 0.635,
-          "confidence": 0.39,
+          "score": 3.88,
+          "normalized": 0.97,
+          "confidence": 0.9,
           "probabilities": {
-            "0": 0.04,
+            "0": 0.0,
             "1": 0.01,
-            "2": 0.54,
-            "3": 0.19,
-            "4": 0.22
+            "2": 0.02,
+            "3": 0.06,
+            "4": 0.91
           }
         },
         "meaning": {
-          "score": 2.28,
-          "normalized": 0.57,
-          "confidence": 0.65,
+          "score": 2.4,
+          "normalized": 0.6,
+          "confidence": 0.55,
           "probabilities": {
-            "0": 0.02,
+            "0": 0.01,
             "1": 0.04,
-            "2": 0.62,
-            "3": 0.28,
-            "4": 0.04
+            "2": 0.54,
+            "3": 0.35,
+            "4": 0.06
           }
         },
         "terminology": {
-          "score": 3.48,
-          "normalized": 0.87,
-          "confidence": 0.57,
+          "score": 3.6,
+          "normalized": 0.9,
+          "confidence": 0.67,
           "probabilities": {
             "0": 0.03,
-            "1": 0.11,
-            "2": 0.01,
+            "1": 0.06,
+            "2": 0.02,
             "3": 0.07,
-            "4": 0.78
+            "4": 0.82
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1612,
+        "input_tokens": 1610,
         "output_tokens": 76
       }
     },
@@ -1622,13 +1620,13 @@
       "excel": 31,
       "label": "Disease",
       "section": "PAST MEDICAL HISTORY",
-      "composite": 0.763,
+      "composite": 0.76,
       "verdict": "pass",
       "lowConfidenceDimensions": [],
       "dimensions": {
         "traceability": {
-          "score": 3.92,
-          "normalized": 0.98,
+          "score": 3.91,
+          "normalized": 0.978,
           "confidence": 0.93,
           "probabilities": {
             "0": 0.0,
@@ -1639,50 +1637,50 @@
           }
         },
         "policy_link": {
-          "score": 3.17,
-          "normalized": 0.792,
-          "confidence": 0.78,
+          "score": 3.2,
+          "normalized": 0.8,
+          "confidence": 0.75,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
             "2": 0.0,
-            "3": 0.76,
-            "4": 0.22
+            "3": 0.73,
+            "4": 0.25
           }
         },
         "policy_options": {
           "score": 3.17,
           "normalized": 0.792,
-          "confidence": 0.53,
+          "confidence": 0.57,
           "probabilities": {
             "0": 0.03,
             "1": 0.01,
-            "2": 0.08,
-            "3": 0.51,
-            "4": 0.37
+            "2": 0.07,
+            "3": 0.55,
+            "4": 0.34
           }
         },
         "meaning": {
-          "score": 3.02,
-          "normalized": 0.755,
-          "confidence": 0.53,
+          "score": 2.99,
+          "normalized": 0.748,
+          "confidence": 0.51,
           "probabilities": {
             "0": 0.01,
-            "1": 0.04,
-            "2": 0.17,
-            "3": 0.49,
+            "1": 0.05,
+            "2": 0.18,
+            "3": 0.47,
             "4": 0.29
           }
         },
         "terminology": {
-          "score": 1.84,
-          "normalized": 0.46,
-          "confidence": 0.55,
+          "score": 1.8,
+          "normalized": 0.45,
+          "confidence": 0.56,
           "probabilities": {
-            "0": 0.17,
+            "0": 0.18,
             "1": 0.01,
-            "2": 0.64,
-            "3": 0.17,
+            "2": 0.65,
+            "3": 0.15,
             "4": 0.01
           }
         }
@@ -1697,7 +1695,7 @@
       "excel": 32,
       "label": "Disease Description",
       "section": "PAST MEDICAL HISTORY",
-      "composite": 0.758,
+      "composite": 0.754,
       "verdict": "pass",
       "lowConfidenceDimensions": [
         "terminology"
@@ -1716,51 +1714,51 @@
           }
         },
         "policy_link": {
-          "score": 3.11,
-          "normalized": 0.777,
-          "confidence": 0.84,
+          "score": 3.15,
+          "normalized": 0.787,
+          "confidence": 0.81,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
             "2": 0.0,
-            "3": 0.83,
-            "4": 0.15
+            "3": 0.79,
+            "4": 0.19
           }
         },
         "policy_options": {
-          "score": 3.5,
-          "normalized": 0.875,
-          "confidence": 0.59,
+          "score": 3.48,
+          "normalized": 0.87,
+          "confidence": 0.57,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.01,
-            "3": 0.45,
-            "4": 0.54
+            "3": 0.47,
+            "4": 0.52
           }
         },
         "meaning": {
-          "score": 2.53,
-          "normalized": 0.632,
-          "confidence": 0.53,
+          "score": 2.49,
+          "normalized": 0.623,
+          "confidence": 0.51,
           "probabilities": {
             "0": 0.01,
-            "1": 0.14,
-            "2": 0.21,
-            "3": 0.59,
-            "4": 0.05
+            "1": 0.15,
+            "2": 0.23,
+            "3": 0.57,
+            "4": 0.04
           }
         },
         "terminology": {
-          "score": 2.13,
-          "normalized": 0.532,
-          "confidence": 0.46,
+          "score": 2.09,
+          "normalized": 0.522,
+          "confidence": 0.48,
           "probabilities": {
-            "0": 0.12,
-            "1": 0.01,
+            "0": 0.13,
+            "1": 0.02,
             "2": 0.52,
             "3": 0.3,
-            "4": 0.05
+            "4": 0.03
           }
         }
       },
@@ -1774,70 +1772,71 @@
       "excel": 33,
       "label": "Present Illness",
       "section": "PAST MEDICAL HISTORY",
-      "composite": 0.712,
+      "composite": 0.698,
       "verdict": "review",
       "lowConfidenceDimensions": [
+        "policy_options",
         "meaning",
         "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.53,
-          "normalized": 0.882,
-          "confidence": 0.61,
+          "score": 3.4,
+          "normalized": 0.85,
+          "confidence": 0.5,
           "probabilities": {
             "0": 0.01,
-            "1": 0.1,
+            "1": 0.14,
             "2": 0.01,
-            "3": 0.1,
-            "4": 0.78
+            "3": 0.12,
+            "4": 0.72
           }
         },
         "policy_link": {
           "score": 3.07,
           "normalized": 0.767,
-          "confidence": 0.84,
+          "confidence": 0.83,
           "probabilities": {
             "0": 0.0,
             "1": 0.03,
             "2": 0.0,
-            "3": 0.84,
-            "4": 0.13
+            "3": 0.83,
+            "4": 0.14
           }
         },
         "policy_options": {
-          "score": 2.94,
-          "normalized": 0.735,
-          "confidence": 0.54,
+          "score": 2.81,
+          "normalized": 0.703,
+          "confidence": 0.48,
           "probabilities": {
-            "0": 0.05,
-            "1": 0.02,
-            "2": 0.1,
-            "3": 0.58,
-            "4": 0.25
+            "0": 0.07,
+            "1": 0.03,
+            "2": 0.13,
+            "3": 0.56,
+            "4": 0.21
           }
         },
         "meaning": {
-          "score": 2.59,
-          "normalized": 0.647,
+          "score": 2.6,
+          "normalized": 0.65,
           "confidence": 0.26,
           "probabilities": {
             "0": 0.02,
             "1": 0.18,
-            "2": 0.24,
-            "3": 0.33,
-            "4": 0.23
+            "2": 0.25,
+            "3": 0.31,
+            "4": 0.24
           }
         },
         "terminology": {
-          "score": 2.09,
-          "normalized": 0.522,
-          "confidence": 0.45,
+          "score": 2.05,
+          "normalized": 0.512,
+          "confidence": 0.46,
           "probabilities": {
             "0": 0.14,
             "1": 0.01,
-            "2": 0.49,
-            "3": 0.34,
+            "2": 0.51,
+            "3": 0.32,
             "4": 0.02
           }
         }
@@ -1852,7 +1851,7 @@
       "excel": 34,
       "label": "Co-morbidities",
       "section": "PAST MEDICAL HISTORY",
-      "composite": 0.709,
+      "composite": 0.702,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "meaning"
@@ -1861,7 +1860,7 @@
         "traceability": {
           "score": 3.85,
           "normalized": 0.963,
-          "confidence": 0.88,
+          "confidence": 0.87,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
@@ -1871,50 +1870,50 @@
           }
         },
         "policy_link": {
-          "score": 3.27,
-          "normalized": 0.818,
-          "confidence": 0.69,
+          "score": 3.3,
+          "normalized": 0.825,
+          "confidence": 0.68,
           "probabilities": {
             "0": 0.0,
-            "1": 0.03,
+            "1": 0.02,
             "2": 0.0,
-            "3": 0.65,
-            "4": 0.32
+            "3": 0.63,
+            "4": 0.35
           }
         },
         "policy_options": {
-          "score": 3.49,
-          "normalized": 0.873,
-          "confidence": 0.58,
+          "score": 3.47,
+          "normalized": 0.868,
+          "confidence": 0.56,
           "probabilities": {
-            "0": 0.01,
+            "0": 0.0,
             "1": 0.0,
-            "2": 0.04,
-            "3": 0.39,
-            "4": 0.56
+            "2": 0.03,
+            "3": 0.44,
+            "4": 0.53
           }
         },
         "meaning": {
-          "score": 1.78,
-          "normalized": 0.445,
-          "confidence": 0.43,
+          "score": 1.7,
+          "normalized": 0.425,
+          "confidence": 0.44,
           "probabilities": {
             "0": 0.1,
-            "1": 0.26,
-            "2": 0.42,
-            "3": 0.2,
+            "1": 0.28,
+            "2": 0.45,
+            "3": 0.15,
             "4": 0.02
           }
         },
         "terminology": {
-          "score": 2.08,
-          "normalized": 0.52,
-          "confidence": 0.58,
+          "score": 2.03,
+          "normalized": 0.507,
+          "confidence": 0.6,
           "probabilities": {
-            "0": 0.1,
+            "0": 0.11,
             "1": 0.01,
-            "2": 0.62,
-            "3": 0.26,
+            "2": 0.64,
+            "3": 0.23,
             "4": 0.01
           }
         }
@@ -1929,70 +1928,69 @@
       "excel": 35,
       "label": "Pertinent Past Medical History",
       "section": "PAST MEDICAL HISTORY",
-      "composite": 0.717,
+      "composite": 0.709,
       "verdict": "review",
       "lowConfidenceDimensions": [
-        "meaning",
-        "terminology"
+        "meaning"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.74,
-          "normalized": 0.935,
+          "score": 3.75,
+          "normalized": 0.938,
           "confidence": 0.79,
           "probabilities": {
-            "0": 0.0,
+            "0": 0.01,
             "1": 0.04,
             "2": 0.01,
-            "3": 0.1,
+            "3": 0.09,
             "4": 0.85
           }
         },
         "policy_link": {
-          "score": 3.19,
-          "normalized": 0.797,
-          "confidence": 0.79,
+          "score": 3.17,
+          "normalized": 0.792,
+          "confidence": 0.78,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
             "2": 0.0,
-            "3": 0.76,
-            "4": 0.22
+            "3": 0.77,
+            "4": 0.21
           }
         },
         "policy_options": {
-          "score": 3.39,
-          "normalized": 0.848,
-          "confidence": 0.55,
+          "score": 3.29,
+          "normalized": 0.823,
+          "confidence": 0.59,
           "probabilities": {
             "0": 0.01,
             "1": 0.01,
-            "2": 0.03,
-            "3": 0.49,
-            "4": 0.46
+            "2": 0.04,
+            "3": 0.54,
+            "4": 0.39
           }
         },
         "meaning": {
-          "score": 1.99,
-          "normalized": 0.497,
-          "confidence": 0.1,
+          "score": 1.96,
+          "normalized": 0.49,
+          "confidence": 0.14,
           "probabilities": {
             "0": 0.04,
-            "1": 0.36,
-            "2": 0.2,
-            "3": 0.36,
-            "4": 0.04
+            "1": 0.39,
+            "2": 0.19,
+            "3": 0.35,
+            "4": 0.03
           }
         },
         "terminology": {
-          "score": 2.24,
-          "normalized": 0.56,
-          "confidence": 0.49,
+          "score": 2.2,
+          "normalized": 0.55,
+          "confidence": 0.51,
           "probabilities": {
-            "0": 0.09,
+            "0": 0.1,
             "1": 0.01,
-            "2": 0.5,
-            "3": 0.39,
+            "2": 0.51,
+            "3": 0.37,
             "4": 0.01
           }
         }
@@ -2014,62 +2012,62 @@
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.74,
-          "normalized": 0.935,
-          "confidence": 0.78,
+          "score": 3.75,
+          "normalized": 0.938,
+          "confidence": 0.79,
           "probabilities": {
             "0": 0.0,
             "1": 0.04,
             "2": 0.01,
-            "3": 0.1,
-            "4": 0.85
+            "3": 0.09,
+            "4": 0.86
           }
         },
         "policy_link": {
-          "score": 3.28,
-          "normalized": 0.82,
-          "confidence": 0.73,
+          "score": 3.22,
+          "normalized": 0.805,
+          "confidence": 0.77,
           "probabilities": {
             "0": 0.0,
-            "1": 0.01,
+            "1": 0.02,
             "2": 0.0,
-            "3": 0.68,
-            "4": 0.31
+            "3": 0.73,
+            "4": 0.25
           }
         },
         "policy_options": {
-          "score": 3.39,
-          "normalized": 0.848,
+          "score": 3.32,
+          "normalized": 0.83,
           "confidence": 0.56,
           "probabilities": {
-            "0": 0.0,
+            "0": 0.01,
             "1": 0.0,
-            "2": 0.05,
-            "3": 0.49,
-            "4": 0.46
+            "2": 0.08,
+            "3": 0.48,
+            "4": 0.43
           }
         },
         "meaning": {
-          "score": 2.06,
-          "normalized": 0.515,
-          "confidence": 0.62,
+          "score": 2.02,
+          "normalized": 0.505,
+          "confidence": 0.59,
           "probabilities": {
-            "0": 0.01,
-            "1": 0.19,
-            "2": 0.5599999999999999,
-            "3": 0.22,
-            "4": 0.02
+            "0": 0.0,
+            "1": 0.23,
+            "2": 0.53,
+            "3": 0.23,
+            "4": 0.01
           }
         },
         "terminology": {
-          "score": 1.56,
-          "normalized": 0.39,
-          "confidence": 0.32,
+          "score": 1.7,
+          "normalized": 0.425,
+          "confidence": 0.41,
           "probabilities": {
-            "0": 0.31,
-            "1": 0.01,
-            "2": 0.5,
-            "3": 0.17,
+            "0": 0.25,
+            "1": 0.02,
+            "2": 0.53,
+            "3": 0.19,
             "4": 0.01
           }
         }
@@ -2084,78 +2082,77 @@
       "excel": 39,
       "label": "Type of Hypertension",
       "section": "DISEASE REGISTRY - HYPERTENSION",
-      "composite": 0.689,
+      "composite": 0.647,
       "verdict": "review",
       "lowConfidenceDimensions": [
-        "policy_link",
         "policy_options",
         "meaning"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.8,
-          "normalized": 0.95,
-          "confidence": 0.83,
+          "score": 3.82,
+          "normalized": 0.955,
+          "confidence": 0.85,
           "probabilities": {
             "0": 0.0,
             "1": 0.03,
             "2": 0.01,
-            "3": 0.07,
-            "4": 0.89
+            "3": 0.08,
+            "4": 0.88
           }
         },
         "policy_link": {
-          "score": 2.58,
-          "normalized": 0.645,
-          "confidence": 0.42,
+          "score": 1.94,
+          "normalized": 0.485,
+          "confidence": 0.85,
           "probabilities": {
             "0": 0.0,
-            "1": 0.28,
-            "2": 0.0,
-            "3": 0.58,
-            "4": 0.14
+            "1": 0.12,
+            "2": 0.82,
+            "3": 0.06,
+            "4": 0.0
           }
         },
         "policy_options": {
-          "score": 3.04,
-          "normalized": 0.76,
-          "confidence": 0.2,
+          "score": 2.81,
+          "normalized": 0.703,
+          "confidence": 0.3,
           "probabilities": {
             "0": 0.0,
             "1": 0.01,
-            "2": 0.33,
-            "3": 0.24,
-            "4": 0.42
+            "2": 0.42,
+            "3": 0.32,
+            "4": 0.25
           }
         },
         "meaning": {
-          "score": 2.19,
-          "normalized": 0.547,
-          "confidence": 0.28,
+          "score": 2.11,
+          "normalized": 0.527,
+          "confidence": 0.48,
           "probabilities": {
-            "0": 0.03,
-            "1": 0.19,
-            "2": 0.36,
-            "3": 0.39,
-            "4": 0.03
+            "0": 0.05,
+            "1": 0.17,
+            "2": 0.43,
+            "3": 0.33,
+            "4": 0.02
           }
         },
         "terminology": {
-          "score": 2.07,
-          "normalized": 0.517,
-          "confidence": 0.6,
+          "score": 1.97,
+          "normalized": 0.492,
+          "confidence": 0.67,
           "probabilities": {
-            "0": 0.06,
-            "1": 0.08,
-            "2": 0.59,
-            "3": 0.26,
+            "0": 0.07,
+            "1": 0.07,
+            "2": 0.68,
+            "3": 0.17,
             "4": 0.01
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1469,
+        "input_tokens": 1459,
         "output_tokens": 76
       }
     },
@@ -2163,68 +2160,66 @@
       "excel": 41,
       "label": "Type of Stroke",
       "section": "DISEASE REGISTRY - STROKE",
-      "composite": 0.706,
+      "composite": 0.708,
       "verdict": "review",
-      "lowConfidenceDimensions": [
-        "policy_options"
-      ],
+      "lowConfidenceDimensions": [],
       "dimensions": {
         "traceability": {
-          "score": 3.84,
-          "normalized": 0.96,
-          "confidence": 0.87,
+          "score": 3.89,
+          "normalized": 0.973,
+          "confidence": 0.91,
           "probabilities": {
             "0": 0.0,
             "1": 0.02,
-            "2": 0.01,
-            "3": 0.06,
-            "4": 0.91
+            "2": 0.0,
+            "3": 0.04,
+            "4": 0.93
           }
         },
         "policy_link": {
-          "score": 2.92,
-          "normalized": 0.73,
-          "confidence": 0.93,
+          "score": 2.91,
+          "normalized": 0.728,
+          "confidence": 0.92,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
-            "2": 0.08,
-            "3": 0.92,
+            "2": 0.09,
+            "3": 0.91,
             "4": 0.0
           }
         },
         "policy_options": {
-          "score": 2.77,
-          "normalized": 0.693,
-          "confidence": 0.34,
+          "score": 2.72,
+          "normalized": 0.68,
+          "confidence": 0.51,
           "probabilities": {
             "0": 0.0,
             "1": 0.01,
             "2": 0.41,
-            "3": 0.38,
-            "4": 0.2
+            "3": 0.43,
+            "4": 0.15
           }
         },
         "meaning": {
-          "score": 2.49,
-          "normalized": 0.623,
-          "confidence": 0.5,
+          "score": 2.52,
+          "normalized": 0.63,
+          "confidence": 0.52,
           "probabilities": {
             "0": 0.01,
             "1": 0.08,
-            "2": 0.35,
-            "3": 0.51,
+            "2": 0.32,
+            "3": 0.54,
             "4": 0.05
           }
         },
         "terminology": {
-          "score": 1.94,
-          "normalized": 0.485,
-          "confidence": 0.62,
+          "score": 1.93,
+          "normalized": 0.482,
+          "confidence": 0.6,
           "probabilities": {
-            "0": 0.1,
+            "0": 0.11,
             "1": 0.06,
-            "2": 0.64,
+            "2": 0.63,
             "3": 0.2,
             "4": 0.0
           }
@@ -2240,76 +2235,76 @@
       "excel": 43,
       "label": "Newly or Previously Diagnosed Diabetes",
       "section": "DISEASE REGISTRY - DIABETES MELLITUS",
-      "composite": 0.514,
+      "composite": 0.393,
       "verdict": "fail",
       "lowConfidenceDimensions": [
-        "terminology"
+        "policy_options"
       ],
       "dimensions": {
         "traceability": {
-          "score": 1.27,
-          "normalized": 0.318,
-          "confidence": 0.74,
+          "score": 1.2,
+          "normalized": 0.3,
+          "confidence": 0.82,
           "probabilities": {
-            "0": 0.02,
-            "1": 0.85,
+            "0": 0.01,
+            "1": 0.89,
             "2": 0.02,
             "3": 0.05,
-            "4": 0.06
+            "4": 0.03
           }
         },
         "policy_link": {
-          "score": 3.09,
-          "normalized": 0.772,
-          "confidence": 0.65,
+          "score": 1.99,
+          "normalized": 0.497,
+          "confidence": 0.87,
           "probabilities": {
             "0": 0.0,
             "1": 0.08,
-            "2": 0.0,
-            "3": 0.66,
-            "4": 0.26
+            "2": 0.85,
+            "3": 0.07,
+            "4": 0.0
           }
         },
         "policy_options": {
-          "score": 3.72,
-          "normalized": 0.93,
-          "confidence": 0.77,
+          "score": 1.88,
+          "normalized": 0.47,
+          "confidence": 0.0,
           "probabilities": {
-            "0": 0.0,
-            "1": 0.0,
-            "2": 0.0,
-            "3": 0.27,
-            "4": 0.73
+            "0": 0.16,
+            "1": 0.34,
+            "2": 0.01,
+            "3": 0.44,
+            "4": 0.05
           }
         },
         "meaning": {
-          "score": 1.06,
-          "normalized": 0.265,
-          "confidence": 0.8,
+          "score": 1.08,
+          "normalized": 0.27,
+          "confidence": 0.78,
           "probabilities": {
             "0": 0.09,
-            "1": 0.82,
+            "1": 0.81,
             "2": 0.06,
             "3": 0.01,
-            "4": 0.02
+            "4": 0.03
           }
         },
         "terminology": {
-          "score": 2.26,
-          "normalized": 0.565,
-          "confidence": 0.42,
+          "score": 2.1,
+          "normalized": 0.525,
+          "confidence": 0.61,
           "probabilities": {
-            "0": 0.11,
+            "0": 0.09,
             "1": 0.0,
-            "2": 0.44,
-            "3": 0.43,
-            "4": 0.02
+            "2": 0.66,
+            "3": 0.22,
+            "4": 0.03
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1443,
+        "input_tokens": 1423,
         "output_tokens": 76
       }
     },
@@ -2317,77 +2312,77 @@
       "excel": 44,
       "label": "Type of Diabetes",
       "section": "DISEASE REGISTRY - DIABETES MELLITUS",
-      "composite": 0.672,
+      "composite": 0.68,
       "verdict": "review",
       "lowConfidenceDimensions": [
-        "meaning",
-        "terminology"
+        "policy_options",
+        "meaning"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.81,
-          "normalized": 0.953,
-          "confidence": 0.84,
+          "score": 3.88,
+          "normalized": 0.97,
+          "confidence": 0.9,
           "probabilities": {
-            "0": 0.01,
-            "1": 0.03,
-            "2": 0.01,
-            "3": 0.07,
-            "4": 0.88
+            "0": 0.0,
+            "1": 0.02,
+            "2": 0.0,
+            "3": 0.05,
+            "4": 0.93
           }
         },
         "policy_link": {
-          "score": 3.08,
-          "normalized": 0.77,
-          "confidence": 0.63,
+          "score": 1.99,
+          "normalized": 0.497,
+          "confidence": 0.94,
           "probabilities": {
             "0": 0.0,
-            "1": 0.09,
-            "2": 0.0,
-            "3": 0.65,
-            "4": 0.26
+            "1": 0.04,
+            "2": 0.93,
+            "3": 0.03,
+            "4": 0.0
           }
         },
         "policy_options": {
-          "score": 2.38,
-          "normalized": 0.595,
-          "confidence": 0.59,
+          "score": 3.13,
+          "normalized": 0.782,
+          "confidence": 0.28,
           "probabilities": {
-            "0": 0.02,
-            "1": 0.02,
-            "2": 0.64,
-            "3": 0.21,
-            "4": 0.11
+            "0": 0.01,
+            "1": 0.04,
+            "2": 0.21,
+            "3": 0.3,
+            "4": 0.44
           }
         },
         "meaning": {
-          "score": 2.42,
-          "normalized": 0.605,
-          "confidence": 0.45,
+          "score": 2.44,
+          "normalized": 0.61,
+          "confidence": 0.48,
           "probabilities": {
-            "0": 0.02,
-            "1": 0.13,
-            "2": 0.31,
+            "0": 0.01,
+            "1": 0.1,
+            "2": 0.36,
             "3": 0.5,
-            "4": 0.04
+            "4": 0.03
           }
         },
         "terminology": {
-          "score": 1.56,
-          "normalized": 0.39,
-          "confidence": 0.38,
+          "score": 1.86,
+          "normalized": 0.465,
+          "confidence": 0.5,
           "probabilities": {
             "0": 0.12,
-            "1": 0.36,
-            "2": 0.37,
-            "3": 0.15,
+            "1": 0.13,
+            "2": 0.53,
+            "3": 0.22,
             "4": 0.0
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1442,
+        "input_tokens": 1420,
         "output_tokens": 76
       }
     },
@@ -2395,76 +2390,76 @@
       "excel": 46,
       "label": "GOLD Classification",
       "section": "DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE",
-      "composite": 0.632,
+      "composite": 0.607,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.56,
-          "normalized": 0.89,
-          "confidence": 0.64,
-          "probabilities": {
-            "0": 0.0,
-            "1": 0.07,
-            "2": 0.01,
-            "3": 0.17,
-            "4": 0.75
-          }
-        },
-        "policy_link": {
-          "score": 3.09,
-          "normalized": 0.772,
-          "confidence": 0.75,
+          "score": 3.64,
+          "normalized": 0.91,
+          "confidence": 0.7,
           "probabilities": {
             "0": 0.0,
             "1": 0.05,
-            "2": 0.0,
-            "3": 0.76,
-            "4": 0.19
+            "2": 0.01,
+            "3": 0.16,
+            "4": 0.78
+          }
+        },
+        "policy_link": {
+          "score": 2.03,
+          "normalized": 0.507,
+          "confidence": 0.64,
+          "probabilities": {
+            "0": 0.0,
+            "1": 0.2,
+            "2": 0.56,
+            "3": 0.23,
+            "4": 0.0
           }
         },
         "policy_options": {
-          "score": 2.71,
-          "normalized": 0.677,
-          "confidence": 0.6,
+          "score": 2.97,
+          "normalized": 0.743,
+          "confidence": 0.58,
           "probabilities": {
-            "0": 0.01,
-            "1": 0.06,
-            "2": 0.23,
-            "3": 0.6,
-            "4": 0.1
+            "0": 0.0,
+            "1": 0.08,
+            "2": 0.1,
+            "3": 0.59,
+            "4": 0.23
           }
         },
         "meaning": {
-          "score": 2.11,
-          "normalized": 0.527,
-          "confidence": 0.55,
+          "score": 1.99,
+          "normalized": 0.497,
+          "confidence": 0.53,
           "probabilities": {
-            "0": 0.01,
-            "1": 0.18,
-            "2": 0.51,
-            "3": 0.28,
+            "0": 0.03,
+            "1": 0.23,
+            "2": 0.48,
+            "3": 0.24,
             "4": 0.02
           }
         },
         "terminology": {
-          "score": 1.2,
-          "normalized": 0.3,
-          "confidence": 0.27,
+          "score": 1.36,
+          "normalized": 0.34,
+          "confidence": 0.37,
           "probabilities": {
-            "0": 0.41,
+            "0": 0.33999999999999997,
             "1": 0.01,
-            "2": 0.55,
-            "3": 0.03,
-            "4": 0.0
+            "2": 0.59,
+            "3": 0.05,
+            "4": 0.01
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1439,
+        "input_tokens": 1424,
         "output_tokens": 76
       }
     },
@@ -2472,77 +2467,77 @@
       "excel": 47,
       "label": "COPD Group",
       "section": "DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE",
-      "composite": 0.636,
-      "verdict": "review",
+      "composite": 0.544,
+      "verdict": "fail",
       "lowConfidenceDimensions": [
         "traceability",
         "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.28,
-          "normalized": 0.82,
-          "confidence": 0.4,
+          "score": 3.03,
+          "normalized": 0.757,
+          "confidence": 0.19,
           "probabilities": {
             "0": 0.0,
-            "1": 0.14,
-            "2": 0.02,
-            "3": 0.25,
-            "4": 0.59
+            "1": 0.19,
+            "2": 0.03,
+            "3": 0.32,
+            "4": 0.46
           }
         },
         "policy_link": {
-          "score": 3.21,
-          "normalized": 0.802,
-          "confidence": 0.68,
+          "score": 2.03,
+          "normalized": 0.507,
+          "confidence": 0.67,
           "probabilities": {
             "0": 0.0,
-            "1": 0.04,
-            "2": 0.0,
-            "3": 0.66,
-            "4": 0.3
+            "1": 0.18,
+            "2": 0.61,
+            "3": 0.21,
+            "4": 0.0
           }
         },
         "policy_options": {
-          "score": 3.09,
-          "normalized": 0.772,
-          "confidence": 0.6,
+          "score": 2.91,
+          "normalized": 0.728,
+          "confidence": 0.56,
           "probabilities": {
             "0": 0.0,
-            "1": 0.02,
-            "2": 0.15,
-            "3": 0.54,
-            "4": 0.28
+            "1": 0.04,
+            "2": 0.22,
+            "3": 0.52,
+            "4": 0.22
           }
         },
         "meaning": {
-          "score": 2.09,
-          "normalized": 0.522,
-          "confidence": 0.52,
+          "score": 1.88,
+          "normalized": 0.47,
+          "confidence": 0.54,
           "probabilities": {
-            "0": 0.03,
-            "1": 0.17,
-            "2": 0.5,
-            "3": 0.27,
-            "4": 0.03
+            "0": 0.06,
+            "1": 0.21,
+            "2": 0.54,
+            "3": 0.17,
+            "4": 0.02
           }
         },
         "terminology": {
-          "score": 1.29,
-          "normalized": 0.323,
-          "confidence": 0.34,
+          "score": 1.04,
+          "normalized": 0.26,
+          "confidence": 0.17,
           "probabilities": {
-            "0": 0.37,
+            "0": 0.48,
             "1": 0.01,
-            "2": 0.58,
-            "3": 0.04,
+            "2": 0.49,
+            "3": 0.02,
             "4": 0.0
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1444,
+        "input_tokens": 1428,
         "output_tokens": 76
       }
     },
@@ -2550,70 +2545,70 @@
       "excel": 48,
       "label": "Pulmonary Tuberculosis",
       "section": "DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE",
-      "composite": 0.738,
+      "composite": 0.724,
       "verdict": "review",
       "lowConfidenceDimensions": [
         "terminology"
       ],
       "dimensions": {
         "traceability": {
-          "score": 3.47,
-          "normalized": 0.868,
-          "confidence": 0.56,
+          "score": 3.53,
+          "normalized": 0.882,
+          "confidence": 0.61,
           "probabilities": {
             "0": 0.01,
-            "1": 0.11,
+            "1": 0.09,
             "2": 0.02,
             "3": 0.13,
-            "4": 0.73
+            "4": 0.75
           }
         },
         "policy_link": {
-          "score": 3.2,
-          "normalized": 0.8,
-          "confidence": 0.82,
+          "score": 3.18,
+          "normalized": 0.795,
+          "confidence": 0.83,
           "probabilities": {
             "0": 0.0,
             "1": 0.0,
             "2": 0.0,
-            "3": 0.79,
-            "4": 0.21
+            "3": 0.81,
+            "4": 0.19
           }
         },
         "policy_options": {
-          "score": 3.01,
-          "normalized": 0.752,
-          "confidence": 0.72,
+          "score": 2.9,
+          "normalized": 0.725,
+          "confidence": 0.7,
           "probabilities": {
             "0": 0.0,
-            "1": 0.0,
-            "2": 0.15,
-            "3": 0.68,
-            "4": 0.17
+            "1": 0.01,
+            "2": 0.2,
+            "3": 0.66,
+            "4": 0.13
           }
         },
         "meaning": {
-          "score": 2.04,
-          "normalized": 0.51,
-          "confidence": 0.51,
+          "score": 1.92,
+          "normalized": 0.48,
+          "confidence": 0.55,
           "probabilities": {
-            "0": 0.1,
-            "1": 0.08,
-            "2": 0.55,
-            "3": 0.23,
-            "4": 0.04
+            "0": 0.11,
+            "1": 0.1,
+            "2": 0.59,
+            "3": 0.17,
+            "4": 0.03
           }
         },
         "terminology": {
-          "score": 3.22,
-          "normalized": 0.805,
-          "confidence": 0.35,
+          "score": 3.1,
+          "normalized": 0.775,
+          "confidence": 0.25,
           "probabilities": {
             "0": 0.03,
-            "1": 0.17,
+            "1": 0.21,
             "2": 0.03,
-            "3": 0.09,
-            "4": 0.68
+            "3": 0.1,
+            "4": 0.63
           }
         }
       },
@@ -2627,77 +2622,74 @@
       "excel": 49,
       "label": "Basis for the final diagnosis of Asthma",
       "section": "DISEASE REGISTRY - CHRONIC OBSTRUCTIVE PULMONARY DISEASE",
-      "composite": 0.644,
+      "composite": 0.616,
       "verdict": "review",
-      "lowConfidenceDimensions": [
-        "policy_options",
-        "terminology"
-      ],
+      "lowConfidenceDimensions": [],
       "dimensions": {
         "traceability": {
-          "score": 3.68,
-          "normalized": 0.92,
-          "confidence": 0.73,
+          "score": 3.55,
+          "normalized": 0.887,
+          "confidence": 0.62,
           "probabilities": {
             "0": 0.01,
-            "1": 0.05,
-            "2": 0.01,
-            "3": 0.11,
-            "4": 0.82
+            "1": 0.06,
+            "2": 0.02,
+            "3": 0.17,
+            "4": 0.74
           }
         },
         "policy_link": {
-          "score": 3.0,
-          "normalized": 0.75,
-          "confidence": 0.74,
+          "score": 1.96,
+          "normalized": 0.49,
+          "confidence": 0.77,
           "probabilities": {
             "0": 0.0,
-            "1": 0.07,
-            "2": 0.0,
-            "3": 0.78,
-            "4": 0.15
+            "1": 0.16,
+            "2": 0.72,
+            "3": 0.12,
+            "4": 0.0
           }
         },
         "policy_options": {
-          "score": 1.95,
-          "normalized": 0.487,
-          "confidence": 0.0,
+          "score": 3.09,
+          "normalized": 0.772,
+          "confidence": 0.61,
           "probabilities": {
-            "0": 0.22,
-            "1": 0.25,
-            "2": 0.03,
-            "3": 0.35,
-            "4": 0.15
+            "0": 0.01,
+            "1": 0.08,
+            "2": 0.0,
+            "3": 0.63,
+            "4": 0.28
           }
         },
         "meaning": {
-          "score": 2.07,
-          "normalized": 0.517,
-          "confidence": 0.58,
+          "score": 1.73,
+          "normalized": 0.432,
+          "confidence": 0.57,
           "probabilities": {
-            "0": 0.03,
-            "1": 0.16,
-            "2": 0.55,
-            "3": 0.23,
-            "4": 0.03
+            "0": 0.06,
+            "1": 0.27,
+            "2": 0.56,
+            "3": 0.09,
+            "4": 0.02
           }
         },
         "terminology": {
-          "score": 1.98,
-          "normalized": 0.495,
-          "confidence": 0.43,
+          "score": 1.94,
+          "normalized": 0.485,
+          "confidence": 0.53,
           "probabilities": {
-            "0": 0.16,
-            "1": 0.02,
-            "2": 0.5,
-            "3": 0.31,
-            "4": 0.01
+            "0": 0.14,
+            "1": 0.03,
+            "2": 0.6,
+            "3": 0.2,
+            "4": 0.03
           }
         }
       },
       "model": "jev-1.13.0",
       "usage": {
-        "input_tokens": 1440,
+        "input_tokens": 1437,
         "output_tokens": 76
       }
     }
